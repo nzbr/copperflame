@@ -1,0 +1,21 @@
+cabal-version:      3.0
+name:               pandoc-filter-bibtex
+version:            0.1.0.0
+license:            ISC
+license-file:       ../../LICENSE
+author:             nzbr
+maintainer:
+build-type:         Simple
+extra-source-files: default.nix
+common warnings
+    ghc-options: -Wall
+
+executable filter-bibtex
+    import:           warnings
+    hs-source-dirs:   src
+    main-is:          Main.hs
+    default-language: Haskell2010
+    ghc-options:      -threaded -O3
+    build-depends:    base >=4.16.4.0 && < 5
+                    , text >= 1.2.5.0
+                    , pandoc-types >= 1.22.2.1 && < 1.23
