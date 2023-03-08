@@ -1,0 +1,86 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{amssymb}          % math symbols
+\usepackage{amsmath}          % more math
+\usepackage{hyperref}         % hyperlinks
+\usepackage{fancyvrb}         % fancy verbatim environtmes (code blocks)
+\usepackage{fontspec}         % ttf fonts
+\usepackage[skins]{tcolorbox} % floating boxes
+
+% ==== BEGIN PANDOC ====
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+% ===== END PANDOC =====
+
+% ==== BEGIN FONTS ====
+\setmainfont{Roboto Slab}
+\setsansfont{Roboto Slab}
+\setromanfont{Roboto Slab}
+\setmonofont{JetBrains Mono}
+% ===== END FONTS =====
+
+% ==== BEGIN COLORS ====
+\usepackage{xcolor}
+$ copperflame-colors-dark() $
+
+\setbeamercolor{background canvas}{bg=background}
+\setbeamercolor{normal text}{fg=foreground}
+% ===== END COLORS =====
+
+% ==== BEGIN CODE BLOCKS ====
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+% ===== END CODE BLOCKS =====
+
+% ==== BEGIN SHADED ====
+\renewtcolorbox{Shaded}{
+    enhanced,
+    colback=background-secondary,
+    colframe=background-secondary,
+    boxrule=0pt,
+    left=0.5em, right=0.5em, top=0.5em, bottom=0.5em,
+    arc=0.5em,
+    auto outer arc,
+%    interior style={fill tile image=acrylic-texture.png},
+    drop fuzzy shadow=black
+}
+% ===== END SHADED =====
+
+% ==== BEGIN BEAMER TEMPLATE ====
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+% ===== END BEAMER TEMPLATE =====
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\begin{document}
+
+    $for(include-before)$
+    $include-before$
+
+    $endfor$
+
+    \begin{frame}
+        TODO: Add a title slide
+    \end{frame}
+
+    $body$
+
+    $if(bibliography)$
+    \begin{frame}[allowframebreaks]
+        \frametitle{References}
+        \bibliographystyle{plain}
+        $for(bibliography)$
+        \bibliography{$bibliography$}
+        $endfor$
+    \end{frame}
+    $endif$
+
+    $for(include-after)$
+    $include-after$
+
+    $endfor$
+
+\end{document}
