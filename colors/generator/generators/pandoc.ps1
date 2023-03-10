@@ -5,7 +5,7 @@ if (-not ($colors -and $mode)) {
 
 [ordered]@{
     "text-color" = $colors["foreground"]
-    "background-color" = $colors["background"]
+    "background-color" = $colors["background-secondary"]
     "line-number-color" = $colors["color7"]
     "line-number-background-color" = $colors["color8"]
 } | ConvertTo-Json | Set-Content -Path "./pandoc/${themeName}-${mode}.theme"

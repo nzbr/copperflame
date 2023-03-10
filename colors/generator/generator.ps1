@@ -17,7 +17,7 @@ $themeName = "copperflame"
 #### FUNCTIONS ####
 
 function Get-XresourcesColors($XresourcesPath) {
-    $colors = @{}
+    $colors = [ordered]@{}
     $Xresources = Get-Content $XresourcesPath
     foreach ($line in $Xresources) {
         if ($line -match '^\*.(.+?):\s+(#[0-9a-f]+)$') {
