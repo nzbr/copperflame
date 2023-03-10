@@ -1,8 +1,11 @@
-{ pkgs ? import <nixpkgs> { } }:
-pkgs.stdenv.mkDerivation {
+{ stdenv
+, haskellPackages
+, ... }:
+
+stdenv.mkDerivation {
   name = "pandoc-filter-bibtex";
   nativeBuildInputs = [
-    (pkgs.haskellPackages.ghcWithPackages (hkgs: with hkgs; [
+    (haskellPackages.ghcWithPackages (hkgs: with hkgs; [
       pandoc-types
     ]))
   ];

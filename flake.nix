@@ -17,11 +17,46 @@
             tectonic
             gnumake
             powershell
-            self.packages.${system}.filter-bibtex
+            self.packages.${system}.pandoc-filter-bibtex
           ];
         };
 
-        packages.filter-bibtex = pkgs.callPackage ./pandoc/pandoc-filter-bibtex { };
+        packages = {
+          copperflame = pkgs.callPackage (
+            { stdenv, powershell, ... }:
+            stdenv.mkDerivation {
+              name = "copperflame";
+              src = ./.;
+              buildInputs = [
+                 powershell
+              ];
+              unpackPhase = ''
+                export HOME=$NIX_BUILD_TOP
+                mkdir build
+                cp -r $src/. build
+                chmod -R +w build
+                cd build
+              '';
+              buildPhase = ''
+                pwsh colors/generator/generator.ps1
+              '';
+              installPhase = ''
+                mkdir -p $out
+                cp -r . $out
+               '';
+            }
+          ) { };
+          pandoc-filter-bibtex = pkgs.callPackage ./pandoc/pandoc-filter-bibtex { };
+          texlive-copperflame = (pkgs.texlive.combine {
+            inherit (pkgs.texlive)
+              scheme-small
+              environ
+              framed
+              tcolorbox
+              ;
+          });
+          examples = pkgs.callPackage ./examples self.packages.${system};
+        };
       }
     );
 

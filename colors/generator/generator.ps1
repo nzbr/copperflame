@@ -36,6 +36,12 @@ foreach ($mode in @("dark", "light")) {
     $generators = Get-ChildItem -Path $PSScriptRoot/generators -Filter "*.ps1"
     foreach ($generator in $generators) {
         Write-Host "Generating $mode colors for $($generator.Name.Replace('.ps1', ''))..."
-        . $generator.FullName
+        try {
+            . $generator.FullName
+       } catch {
+            Write-Error "Failed to generate $mode colors for $($generator.Name.Replace('.ps1', ''))!"
+            Write-Error $_
+            exit 1
+        }
     }
 }
