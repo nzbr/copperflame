@@ -15,11 +15,15 @@
       {
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
-            stack
-            pandoc
-            tectonic
             gnumake
+            inkscape
+            nodePackages.pnpm
+            nodejs
+            pandoc
             powershell
+            roboto-slab
+            stack
+            tectonic
             self.packages.${system}.pandoc-filter-bibtex
           ];
         };
@@ -33,13 +37,15 @@
              }).passthru.nodeModules;
            in
            pkgs.callPackage (
-            { stdenv, powershell, nodejs, ... }:
+            { stdenv, powershell, nodejs, inkscape, roboto-slab, ... }:
             stdenv.mkDerivation {
               name = "copperflame";
               src = ./.;
               buildInputs = [
                  powershell
                  nodejs
+                 inkscape
+                 roboto-slab
               ];
               unpackPhase = ''
                 export HOME=$NIX_BUILD_TOP

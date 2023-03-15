@@ -16,4 +16,6 @@ foreach ($mode in (@("dark", "light")))
 build logo/icon.svg.ejs ../assets/icon.svg
 build logo/logo.svg.ejs ../assets/logo.svg
 
+inkscape --export-type=png --export-filename=../assets/logo.png -w 400 -h 72 ../assets/logo.svg
+
 popd
