@@ -1,3 +1,5 @@
 /.direnv/
 /out/
+result
 result/
+node_modules/

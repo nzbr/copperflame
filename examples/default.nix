@@ -1,4 +1,5 @@
 { stdenv
+, powershell
 , pandoc
 , roboto-slab
 , jetbrains-mono
@@ -11,6 +12,7 @@ stdenv.mkDerivation {
   name = "copperflame-examples";
   src = ./.;
   nativeBuildInputs = [
+    powershell
     pandoc
     pandoc-filter-bibtex
     texlive-copperflame
@@ -18,18 +20,12 @@ stdenv.mkDerivation {
     roboto-slab
     jetbrains-mono
   ];
-  buildPhase = ''
-    pandoc --to=beamer beamer.md -o beamer.tex --template=${copperflame}/pandoc/copperflame.tex --highlight-style=${copperflame}/pandoc/copperflame.theme --filter pandoc-filter-bibtex
 
-    for x in *.tex; do
-      xelatex $x
-      bibtex ''${x%.*}
-      xelatex $x
-      xelatex $x
-    done
-  '';
-  installPhase = ''
+  inherit copperflame;
+
+  buildPhase = ''
     mkdir -p $out
-    cp *.tex *.pdf $out
+    pwsh ./build.ps1
   '';
+  installPhase = "true";
 }

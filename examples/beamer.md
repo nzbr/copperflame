@@ -14,14 +14,19 @@ bibliography:
   - example.bib
 ---
 
----
-
 #### TS:
 ```typescript
 const f = (a: string | number) => (b: string | number) => {
-    return a != b;
+    if (a != b) {
+      return "a";
+    } else {
+      return "b";
+    }
 }
 ```
+
+---
+
 #### Nix
 ```nix
 { pkgs ? import <nixpkgs> {} }:
@@ -51,7 +56,7 @@ b:
 
 ---
 
-## hbs
+## Handlebars
 
 ```hbs
 {{#> Layout lang="en-US" title="Home"}}
@@ -80,6 +85,87 @@ b:
     },
 }
 ```
+
+---
+
+## Java
+
+```java
+import java.lang.*;
+
+public class Main {
+    // Regular comment
+    // TODO: Task comment
+    /**
+     * Prints "Hello World!" to the standard output.
+     * @param args command-line arguments (not used)
+     */
+    @SuppressWarnings("unused")
+    public static void main(String[] args) {
+        System.out.println("\nHello World!\n");
+    }
+}
+```
+
+---
+
+## C\#
+
+```csharp
+public class Main {
+    [SuppressWarnings("unused")]
+    var x = 10;
+    var y = 0xFF;
+    public static void main(String[] args) {
+        Console.WriteLine(str());
+    }
+}
+```
+
+---
+
+# LaTeX
+
+```latex
+\documentclass{article}
+
+\begin{document}
+  \title{Hello World!}
+  \author{nzbr}
+  \date{Today}
+
+  \maketitle
+
+  \section{Introduction}
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+  \section{Conclusion}
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+  sagittis, nunc sit amet gravida varius, magna odio ornare mi,
+  eget lacinia dolor mauris eu est. Nullam ut nulla in ligula
+  vehicula bibendum.
+\end{document}
+```
+
+---
+
+## Markdown
+
+```markdown
+# Hello World!
+
+This is a test.
+
+## Subtitle
+
+This is a test.
+
+### Subsubtitle
+
+This is a test.
+```
+
+---
 
 # Dragons!
 
@@ -119,5 +205,7 @@ Both [@latex; @bibtex]
 
 # TODO
 
-- [x] Basic theme
+- [x] Syntax highlighting theme
+- [ ] Other colors
 - [ ] page numbers
+- [ ] Title Slide

@@ -1,0 +1,11 @@
+% ==== BEGIN COPPERFLAME COLORS ====
+\usepackage{xcolor}
+<% Object.keys(base).forEach((key) => { %>
+\definecolor{base<%- key %>}{HTML}{<%- base[key]["hex"] %>}<% -%>
+<% }); %>
+
+\colorlet{foreground}{base06}
+\colorlet{background}{base00}
+\colorlet{foreground-secondary}{base04}
+\colorlet{background-secondary}{base01}
+% ===== END COPPERFLAME COLORS =====

@@ -2,12 +2,15 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    pnpm2nix.url = "github:nzbr/pnpm2nix-nzbr";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
+  outputs = { self, nixpkgs, flake-utils, pnpm2nix }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = nixpkgs.legacyPackages.${system}.appendOverlays [
+          pnpm2nix.overlays.default
+        ];
       in
       {
         devShells.default = pkgs.mkShell {
@@ -22,13 +25,21 @@
         };
 
         packages = {
-          copperflame = pkgs.callPackage (
-            { stdenv, powershell, ... }:
+          copperflame =
+           let
+             modules = (pkgs.mkPnpmPackage {
+               src = ./.;
+               copyPnpmStore = false;
+             }).passthru.nodeModules;
+           in
+           pkgs.callPackage (
+            { stdenv, powershell, nodejs, ... }:
             stdenv.mkDerivation {
               name = "copperflame";
               src = ./.;
               buildInputs = [
                  powershell
+                 nodejs
               ];
               unpackPhase = ''
                 export HOME=$NIX_BUILD_TOP
@@ -37,8 +48,13 @@
                 chmod -R +w build
                 cd build
               '';
+              configurePhase = ''
+                ln -s ${modules} node_modules
+              '';
               buildPhase = ''
-                pwsh colors/generator/generator.ps1
+                pwsh base16/build.ps1
+                sed -i 's/^%NIX//' pandoc/copperflame-common.tex
+                substituteAll pandoc/copperflame-common.tex pandoc/copperflame-common.tex
               '';
               installPhase = ''
                 mkdir -p $out
