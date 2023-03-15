@@ -68,11 +68,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1678853522,
-        "narHash": "sha256-c0syM2Ww4ZRE0ngjFY3Gsd797Fpxaay6bEx5pVLd7xk=",
+        "lastModified": 1678871097,
+        "narHash": "sha256-6sRihcCKk5ZvD/R1pOzjoQZvJCqC5iQvRiTGO9ZF8Wc=",
         "owner": "nzbr",
         "repo": "pnpm2nix-nzbr",
-        "rev": "876537d4136d9bcc9c8a4f6d21fea7e4319ac622",
+        "rev": "ec65ca6fa8044e857883312af723d2eac7dedf12",
         "type": "github"
       },
       "original": {
