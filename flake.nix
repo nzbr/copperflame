@@ -59,8 +59,8 @@
               '';
               buildPhase = ''
                 pwsh base16/build.ps1
-                sed -i 's/^%NIX//' pandoc/copperflame-common.tex
-                substituteAll pandoc/copperflame-common.tex pandoc/copperflame-common.tex
+                sed -i 's/^%NIX//' pandoc/partials/copperflame-common.tex
+                substituteAll pandoc/partials/copperflame-common.tex pandoc/partials/copperflame-common.tex
               '';
               installPhase = ''
                 mkdir -p $out

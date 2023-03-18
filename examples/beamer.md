@@ -12,9 +12,10 @@ keywords:
   - pandoc
 bibliography:
   - example.bib
+pagenumbers: true
 ---
 
-#### TS:
+# TypeScript:
 ```typescript
 const f = (a: string | number) => (b: string | number) => {
     if (a != b) {
@@ -27,7 +28,7 @@ const f = (a: string | number) => (b: string | number) => {
 
 ---
 
-#### Nix
+# Nix
 ```nix
 { pkgs ? import <nixpkgs> {} }:
 pkgs.mkShell {
@@ -39,7 +40,7 @@ pkgs.mkShell {
 }
 ```
 
----
+----
 
 ## YAML
 
@@ -54,7 +55,7 @@ b:
     - f: *a
 ```
 
----
+----
 
 ## Handlebars
 
@@ -70,7 +71,7 @@ b:
 {{/Layout}}
 ```
 
----
+----
 
 ### JSON
 
@@ -86,7 +87,7 @@ b:
 }
 ```
 
----
+----
 
 ## Java
 
@@ -107,7 +108,7 @@ public class Main {
 }
 ```
 
----
+----
 
 ## C\#
 
@@ -122,7 +123,7 @@ public class Main {
 }
 ```
 
----
+----
 
 # LaTeX
 
@@ -147,7 +148,7 @@ public class Main {
 \end{document}
 ```
 
----
+----
 
 ## Markdown
 
@@ -164,6 +165,14 @@ This is a test.
 
 This is a test.
 ```
+---
+
+# Lists
+
+- This
+- Is
+- A
+- List
 
 ---
 

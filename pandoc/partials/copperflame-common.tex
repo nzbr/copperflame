@@ -4,23 +4,28 @@
 \usepackage{fancyvrb}         % fancy verbatim environments (code blocks)
 \usepackage{fontspec}         % ttf fonts
 \usepackage[skins]{tcolorbox} % floating boxes
+\usepackage{tikz}             % graphics
+\usepackage{calc}             % size calculations
+\usepackage{beamerbaseframe}
+\usepackage{beamerbasemisc}
+\usepackage{beamerbasetemplates}
 
 % ==== BEGIN PANDOC ====
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 % ===== END PANDOC =====
 
 % ==== BEGIN FONTS ====
+\newfontfamily{\familyRobotoSlab}{Roboto Slab}
+\newfontfamily{\familyJetBrainsMono}{JetBrains Mono}
+\newfontfamily{\familyDOS}{More Perfect DOS VGA}
+
 \setmainfont{Roboto Slab}
 \setsansfont{Roboto Slab}
 \setromanfont{Roboto Slab}
 \setmonofont{JetBrains Mono}
-% ===== END FONTS =====
 
-% ==== BEGIN BEAMER COLORS ====
-\setbeamercolor{background canvas}{bg=background}
-\setbeamercolor{normal text}{fg=foreground}
-\setbeamercolor{structure}{fg=baseF6}
-% ===== END BEAMER COLORS =====
+\setbeamerfont{frametitle}{family=\familyDOS}
+% ===== END FONTS =====
 
 % ==== BEGIN CODE BLOCKS ====
 $if(highlighting-macros)$
@@ -42,14 +47,64 @@ $endif$
 }
 % ===== END SHADED =====
 
+% ==== BEGIN BEAMER COLORS ====
+\setbeamercolor{background canvas}{bg=background}
+\setbeamercolor{normal text}{fg=foreground}
+\setbeamercolor{structure}{fg=highlight}
+% ===== END BEAMER COLORS =====
 % ==== BEGIN BEAMER TEMPLATE ====
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{bibliography item}{\insertbiblabel}
+
+\newlength{\progressHeight}%
+\newlength{\progressLength}%
+\setbeamertemplate{footline}{%
+    $if(pagenumbers)$
+    \begin{beamercolorbox}[wd=\textwidth, sep=3ex]{footline}%
+        \hfill%
+        \insertframenumber\color{foreground-secondary}{/\inserttotalframenumber}%
+    \end{beamercolorbox}%
+    $endif$
+    $if(noprogress)$$else$
+    \setlength{\progressHeight}{1pt}%
+    \setlength{\progressLength}{\paperwidth * \ratio{\insertframenumber pt}{\inserttotalframenumber pt}}%
+    \begin{tikzpicture}%
+        \fill[background-secondary] (0,0) rectangle (\paperwidth, \progressHeight);%
+        \fill[highlight] (0,0) rectangle (\progressLength, \progressHeight);%
+    \end{tikzpicture}%
+    $endif$
+}
+
+\newtcolorbox{FrameTitle}{
+    enhanced,
+    colback=shadecolor,
+    colframe=shadecolor,
+    boxrule=0pt,
+%    left=0.5em, right=0.5em, top=0.5em, bottom=0.5em,
+    arc=0pt,
+%NIX    interior style={fill tile image=@out@/assets/acrylic-texture.png},
+    drop fuzzy shadow south=black % gives an overfull \hbox warning
+}
+\setbeamertemplate{frametitle}{%
+    \nointerlineskip
+    \begin{beamercolorbox}[wd=\paperwidth]{frametitle}%
+        \vbox{}\vskip-4pt%
+        \begin{FrameTitle}%
+            \begin{beamercolorbox}[sep=0pt]{frametitle}%
+                \usebeamerfont{frametitle}%
+                \strut\insertframetitle\strut%
+            \end{beamercolorbox}%
+        \end{FrameTitle}%
+    \end{beamercolorbox}%
+}
 % ===== END BEAMER TEMPLATE =====
 
+% ==== BEGIN HEADER INCLUDES ====
 $for(header-includes)$
 $header-includes$
+
 $endfor$
+% ===== END HEADER INCLUDES =====
 
 \begin{document}
 
