@@ -80,6 +80,7 @@ $endif$
 % ==== BEGIN BEAMER COLORS ====
 \setbeamercolor{background canvas}{bg=background}
 \setbeamercolor{normal text}{fg=foreground}
+\setbeamercolor{alerted text}{fg=highlight}
 $if(professional)$
 \setbeamercolor{structure}{fg=foreground}
 $else$
@@ -120,7 +121,7 @@ $endif$
     nobeforeafter,
     top = 4pt, bottom = 4pt,
     %NIX interior style={fill tile image=@out@/assets/acrylic-texture.png},
-    drop fuzzy shadow south=shadow % TODO: shadow is too long
+    fuzzy shadow={0mm}{-2pt}{0mm}{0.5pt}{shadow}
 }
 \setbeamertemplate{frametitle}{%
     \nointerlineskip%

@@ -179,6 +179,20 @@ This is a test.
 
 ---
 
+# Text styles
+
+_emph_
+
+**bold**
+
+~~strikethrough~~
+
+\alert{highlighted}
+
+\textit{italic}
+
+---
+
 # Dragons!
 
 :::arson
@@ -218,6 +232,8 @@ Both [@latex; @bibtex]
 # TODO
 
 - [x] Syntax highlighting theme
-- [ ] Other colors
-- [ ] page numbers
+- [x] page numbers
+- [x] Bullet points
 - [ ] Title Slide
+- [ ] Speechbubbles
+- [ ] Logo command
