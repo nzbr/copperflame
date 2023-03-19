@@ -1,14 +1,17 @@
 ---
 title: Test Presentation
-subtitle: It has a subtitle!
+subtitle: A demonstation of the copperflame beamer theme
 lang: de-DE
 date: 2023-03-08
 author: [ nzbr ]
+institute: An Institute
 description: This is a test presentation
 keywords: [test, copperflame, pandoc]
 bibliography: [ example.bib ]
 pagenumbers: true
 ---
+
+\section{Syntax Highlighting}
 
 # TypeScript:
 
@@ -234,6 +237,9 @@ Both [@latex; @bibtex]
 - [x] Syntax highlighting theme
 - [x] page numbers
 - [x] Bullet points
-- [ ] Title Slide
+- [x] Title Slide
+- [ ] Section Title Slide
+- [ ] Bibliography colors
+
 - [ ] Speechbubbles
 - [ ] Logo command

@@ -5,13 +5,48 @@
 \usepackage{beamerbaseframe}
 \usepackage{beamerbasemisc}
 \usepackage{beamerbasetemplates}
+\usetikzlibrary{calc}         % \coordinate
 
 % ==== BEGIN PANDOC ====
-\usepackage{hyperref} % hyperlinks
+\usepackage{hyperref} % hyperlinks, pdf metadata
 \usepackage{ulem}     % striketrough
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 $if(tables)$
 \usepackage{longtable,booktabs,array}
+\usepackage{beamerbasetitle}
+$endif$
+
+\hypersetup{
+    $if(title-meta)$
+    pdftitle={$title-meta$},
+    $endif$
+    $if(author-meta)$
+    pdfauthor={$author-meta$},
+    $endif$
+    $if(lang)$
+    pdflang={$lang$},
+    $endif$
+    $if(keywords)$
+    pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
+    $endif$
+    pdfcreator={LaTeX via pandoc using the copperflame theme},
+}
+
+$if(title)$
+\title{$title$}
+$endif$
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+$if(author)$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+$endif$
+$if(date)$
+\date{$date$}
+$endif$
+$if(institute)$
+\institute{$for(institute)$$institute$$sep$ \and $endfor$}
 $endif$
 % ===== END PANDOC =====
 
@@ -48,13 +83,18 @@ $endif$
 \renewcommand{\sfdefault}{robotoslab}
 \renewcommand{\ttdefault}{jbmono}
 \renewcommand{\familydefault}{\sfdefault}
+% ===== END FONTS =====
 
+% ==== BEGIN BEAMER FONTS ====
 $if(professional)$
 \setbeamerfont{frametitle}{family=\robotoslab}
+\setbeamerfont{title}{family=\robotoslab}
 $else$
 \setbeamerfont{frametitle}{family=\dosfont}
+\setbeamerfont{title}{family=\dosfont}
 $endif$
-% ===== END FONTS =====
+\setbeamerfont{subtitle}{family=\robotoslab}
+% ==== BEGIN BEAMER FONTS ====
 
 % ==== BEGIN CODE BLOCKS ====
 $if(highlighting-macros)$
@@ -89,26 +129,27 @@ $endif$
 % ===== END BEAMER COLORS =====
 
 % ==== BEGIN BEAMER TEMPLATE ====
-\setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{bibliography item}{\insertbiblabel}
 
-\newlength{\progressHeight}%
-\newlength{\progressLength}%
-\setbeamertemplate{footline}{%
-    $if(pagenumbers)$
-    \begin{beamercolorbox}[wd=\textwidth, sep=3ex]{footline}%
-        \hfill%
-        \insertframenumber\color{foreground-secondary}{/\inserttotalframenumber}%
-    \end{beamercolorbox}%
-    $endif$
-    $if(noprogress)$$else$
-    \setlength{\progressHeight}{1pt}%
-    \setlength{\progressLength}{\paperwidth * \ratio{\insertframenumber pt}{\inserttotalframenumber pt}}%
-    \begin{tikzpicture}%
-        \fill[background-secondary] (0,0) rectangle (\paperwidth, \progressHeight);%
-        \fill[highlight] (0,0) rectangle (\progressLength, \progressHeight);%
-    \end{tikzpicture}%
-    $endif$
+\setbeamertemplate{title page}{%
+    {\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle}
+    \hfill
+    {\usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate}
+    \\
+    {\usebeamercolor[fg]{subtitle}\usebeamerfont{subtitle}\insertsubtitle}
+    \\
+%    \begin{beamercolorbox}[wd=\textwidth]
+        \begin{tikzpicture}
+            \node[anchor=center, inner xsep=0pt] {
+                \begin{tikzpicture}
+                    \fill[highlight] (0,0) rectangle (\textwidth, 1pt);
+                \end{tikzpicture}
+            };
+        \end{tikzpicture}
+%    \end{beamercolorbox}
+    \\
+    {\usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor}
+    \hfill
+    {\usebeamercolor[fg]{institute}\usebeamerfont{intitute}\insertinstitute}
 }
 
 \newtcolorbox{FrameTitle}{
@@ -135,7 +176,29 @@ $endif$
     \end{beamercolorbox}%
 }
 
+\newlength{\progressHeight}%
+\newlength{\progressLength}%
+\setbeamertemplate{footline}{%
+    $if(pagenumbers)$
+    \begin{beamercolorbox}[wd=\textwidth, sep=3ex]{footline}%
+        \hfill%
+        \insertframenumber\color{foreground-secondary}{/\inserttotalframenumber}%
+    \end{beamercolorbox}%
+    $endif$
+    $if(noprogress)$$else$
+    \setlength{\progressHeight}{1pt}%
+    \setlength{\progressLength}{\paperwidth * \ratio{\insertframenumber pt}{\inserttotalframenumber pt}}%
+    \begin{tikzpicture}%
+        \fill[background-secondary] (0,0) rectangle (\paperwidth, \progressHeight);%
+        \fill[highlight] (0,0) rectangle (\progressLength, \progressHeight);%
+    \end{tikzpicture}%
+    $endif$
+}
+
+\setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
 % ===== END BEAMER TEMPLATE =====
 
 % ==== BEGIN HEADER INCLUDES ====
@@ -152,9 +215,7 @@ $endfor$
 
     $endfor$
 
-    \begin{frame}
-        TODO: Add a title slide
-    \end{frame}
+    \maketitle
 
     $body$
 
