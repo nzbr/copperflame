@@ -18,7 +18,7 @@ $endif$
 
 % ==== BEGIN FONTS ====
 \newfontfamily{\robotoslab}{Roboto Slab}[ %NONIX
-    %NIX \newfontfamily{\robotoslab}{RobotoSlab}[
+%NIX \newfontfamily{\robotoslab}{RobotoSlab}[
     %NIX Path = @robotoSlab@/share/fonts/truetype/,
     %NIX Extension = .ttf,
     %NIX UprightFont = *-Regular,
@@ -27,7 +27,7 @@ $endif$
     Scale=1
 ]
 \newfontfamily{\jbmono}{JetBrains Mono}[ %NONIX
-    %NIX \newfontfamily{\jbmono}{JetBrainsMono}[
+%NIX \newfontfamily{\jbmono}{JetBrainsMono}[
     %NIX Path = @jetbrainsMono@/share/fonts/truetype/,
     %NIX Extension = .ttf,
     %NIX UprightFont = *-Regular,
@@ -37,12 +37,12 @@ $endif$
     NFSSFamily=jbmono,
     Scale=1
 ]
-\newfontfamily{\fixedsys}{Fixedsys Excelsior 3.01}[ %NONIX
-    %NIX \newfontfamily{\fixedsys}{fixedsys-excelsior-3.00}[
-    %NIX Path = @fixedsysExcelsior@/share/fonts/truetype/,
+\newfontfamily{\dosfont}{Less Perfect DOS VGA}[ %NONIX
+%NIX \newfontfamily{\dosfont}{less-perfect-dos-vga}[
+    %NIX Path = @perfectDosVga@/share/fonts/truetype/,
     %NIX Extension = .ttf,
-    NFSSFamily=fixedsys,
-    Scale=1.25
+    NFSSFamily=dosfont,
+    Scale=1.2
 ]
 
 \renewcommand{\rmdefault}{robotoslab}
@@ -53,7 +53,7 @@ $endif$
 $if(professional)$
 \setbeamerfont{frametitle}{family=\robotoslab}
 $else$
-\setbeamerfont{frametitle}{family=\fixedsys}
+\setbeamerfont{frametitle}{family=\dosfont}
 $endif$
 % ===== END FONTS =====
 

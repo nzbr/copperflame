@@ -185,9 +185,9 @@ Hallo!
 
 ---
 
-# Umlaute
+# Umlaute ÄÖÜß
 
-ÄÖÜß!
+ÄÖÜß
 
 ---
 

@@ -37,7 +37,7 @@
              }).passthru.nodeModules;
            in
            pkgs.callPackage (
-            { stdenv, powershell, nodejs, inkscape, roboto-slab, jetbrains-mono, fixedsys-excelsior, ... }:
+            { stdenv, powershell, nodejs, inkscape, roboto-slab, jetbrains-mono, perfect-dos-vga ? self.packages.${system}.perfect-dos-vga, ... }:
             stdenv.mkDerivation {
               name = "copperflame";
               src = ./.;
@@ -51,7 +51,7 @@
 
               robotoSlab = roboto-slab;
               jetbrainsMono = jetbrains-mono;
-              fixedsysExcelsior = fixedsys-excelsior;
+              perfectDosVga = perfect-dos-vga;
 
               unpackPhase = ''
                 export HOME=$NIX_BUILD_TOP
@@ -74,6 +74,7 @@
                '';
             }
           ) { };
+          perfect-dos-vga = pkgs.callPackage ./assets/perfect-dos-vga { };
           pandoc-filter-bibtex = pkgs.callPackage ./pandoc/pandoc-filter-bibtex { };
           texlive-copperflame = (pkgs.texlive.combine {
             inherit (pkgs.texlive)
