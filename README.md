@@ -1,6 +1,6 @@
 <div align="center">
   <h1>
-    <img alt="Copperflame" src="assets/logo.png"/>
+    <img alt="Copperflame" src="assets/logo.png"/> <img alt="Copperflame Pro" src="assets/logo-pro.png"/>
   </h1>
 </div>
 

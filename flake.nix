@@ -37,16 +37,22 @@
              }).passthru.nodeModules;
            in
            pkgs.callPackage (
-            { stdenv, powershell, nodejs, inkscape, roboto-slab, ... }:
+            { stdenv, powershell, nodejs, inkscape, roboto-slab, jetbrains-mono, fixedsys-excelsior, ... }:
             stdenv.mkDerivation {
               name = "copperflame";
               src = ./.;
+
               buildInputs = [
                  powershell
                  nodejs
                  inkscape
                  roboto-slab
               ];
+
+              robotoSlab = roboto-slab;
+              jetbrainsMono = jetbrains-mono;
+              fixedsysExcelsior = fixedsys-excelsior;
+
               unpackPhase = ''
                 export HOME=$NIX_BUILD_TOP
                 mkdir build
@@ -59,7 +65,7 @@
               '';
               buildPhase = ''
                 pwsh base16/build.ps1
-                sed -i 's/^%NIX//' pandoc/partials/copperflame-common.tex
+                sed -E '/%NONIX$/d;s/^(\s*)%NIX /\1/' -i pandoc/partials/copperflame-common.tex
                 substituteAll pandoc/partials/copperflame-common.tex pandoc/partials/copperflame-common.tex
               '';
               installPhase = ''

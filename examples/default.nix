@@ -1,8 +1,6 @@
 { stdenv
 , powershell
 , pandoc
-, roboto-slab
-, jetbrains-mono
 , copperflame
 , pandoc-filter-bibtex
 , texlive-copperflame
@@ -16,9 +14,6 @@ stdenv.mkDerivation {
     pandoc
     pandoc-filter-bibtex
     texlive-copperflame
-
-    roboto-slab
-    jetbrains-mono
   ];
 
   inherit copperflame;

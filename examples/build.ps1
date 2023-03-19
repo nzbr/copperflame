@@ -25,6 +25,7 @@ Get-ChildItem *.bib | % { Copy-Item $_.FullName $out }
 foreach ($mode in (@("dark", "light")))
 {
     pandoc --to=beamer beamer.md -o "${out}/beamer-${mode}.tex" --template="${copperflame}/pandoc/copperflame-${mode}.tex" --highlight-style="${copperflame}/pandoc/copperflame-${mode}.theme" --filter "$bibtexFilterPath"
+    pandoc --to=beamer beamer.md -o "${out}/beamer-professional-${mode}.tex" --metadata=professional:true --template="${copperflame}/pandoc/copperflame-${mode}.tex" --highlight-style="${copperflame}/pandoc/copperflame-${mode}.theme" --filter "$bibtexFilterPath"
 }
 
 pushd $out
@@ -32,10 +33,11 @@ Get-ChildItem *.tex | % {
     if (Get-Command tectonic -ErrorAction SilentlyContinue) {
         tectonic $_.Name
     } else {
-        xelatex -interaction=batchmode $_.Name
+        $latex = "xelatex -interaction=batchmode $($_.Name)"
+        iex $latex
         bibtex $_.BaseName
-        xelatex -interaction=batchmode $_.Name
-        xelatex -interaction=batchmode $_.Name
+        iex $latex
+        iex $latex
     }
 }
 popd

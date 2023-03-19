@@ -1,7 +1,6 @@
 \usepackage{amssymb}          % math symbols
 \usepackage{amsmath}          % more math
 \usepackage{hyperref}         % hyperlinks
-\usepackage{fancyvrb}         % fancy verbatim environments (code blocks)
 \usepackage{fontspec}         % ttf fonts
 \usepackage[skins]{tcolorbox} % floating boxes
 \usepackage{tikz}             % graphics
@@ -12,19 +11,50 @@
 
 % ==== BEGIN PANDOC ====
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+$if(tables)$
+\usepackage{longtable,booktabs,array}
+$endif$
 % ===== END PANDOC =====
 
 % ==== BEGIN FONTS ====
-\newfontfamily{\familyRobotoSlab}{Roboto Slab}
-\newfontfamily{\familyJetBrainsMono}{JetBrains Mono}
-\newfontfamily{\familyDOS}{More Perfect DOS VGA}
+\newfontfamily{\robotoslab}{Roboto Slab}[ %NONIX
+    %NIX \newfontfamily{\robotoslab}{RobotoSlab}[
+    %NIX Path = @robotoSlab@/share/fonts/truetype/,
+    %NIX Extension = .ttf,
+    %NIX UprightFont = *-Regular,
+    %NIX BoldFont = *-Bold,
+    NFSSFamily=robotoslab,
+    Scale=1
+]
+\newfontfamily{\jbmono}{JetBrains Mono}[ %NONIX
+    %NIX \newfontfamily{\jbmono}{JetBrainsMono}[
+    %NIX Path = @jetbrainsMono@/share/fonts/truetype/,
+    %NIX Extension = .ttf,
+    %NIX UprightFont = *-Regular,
+    %NIX BoldFont = *-Bold,
+    %NIX ItalicFont = *-Italic,
+    %NIX BoldItalicFont = *-BoldItalic,
+    NFSSFamily=jbmono,
+    Scale=1
+]
+\newfontfamily{\fixedsys}{Fixedsys Excelsior 3.01}[ %NONIX
+    %NIX \newfontfamily{\fixedsys}{fixedsys-excelsior-3.00}[
+    %NIX Path = @fixedsysExcelsior@/share/fonts/truetype/,
+    %NIX Extension = .ttf,
+    NFSSFamily=fixedsys,
+    Scale=1.25
+]
 
-\setmainfont{Roboto Slab}
-\setsansfont{Roboto Slab}
-\setromanfont{Roboto Slab}
-\setmonofont{JetBrains Mono}
+\renewcommand{\rmdefault}{robotoslab}
+\renewcommand{\sfdefault}{robotoslab}
+\renewcommand{\ttdefault}{jbmono}
+\renewcommand{\familydefault}{\sfdefault}
 
-\setbeamerfont{frametitle}{family=\familyDOS}
+$if(professional)$
+\setbeamerfont{frametitle}{family=\robotoslab}
+$else$
+\setbeamerfont{frametitle}{family=\fixedsys}
+$endif$
 % ===== END FONTS =====
 
 % ==== BEGIN CODE BLOCKS ====
@@ -38,6 +68,7 @@ $endif$
     enhanced,
     colback=shadecolor,
     colframe=shadecolor,
+    opacityback=0.8,
     boxrule=0pt,
     left=0.5em, right=0.5em, top=0.5em, bottom=0.5em,
     arc=0.5em,
@@ -50,8 +81,13 @@ $endif$
 % ==== BEGIN BEAMER COLORS ====
 \setbeamercolor{background canvas}{bg=background}
 \setbeamercolor{normal text}{fg=foreground}
+$if(professional)$
+\setbeamercolor{structure}{fg=foreground}
+$else$
 \setbeamercolor{structure}{fg=highlight}
+$endif$
 % ===== END BEAMER COLORS =====
+
 % ==== BEGIN BEAMER TEMPLATE ====
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{bibliography item}{\insertbiblabel}
@@ -79,16 +115,17 @@ $endif$
     enhanced,
     colback=shadecolor,
     colframe=shadecolor,
+    opacityback=0.8,
     boxrule=0pt,
-%    left=0.5em, right=0.5em, top=0.5em, bottom=0.5em,
-    arc=0pt,
-%NIX    interior style={fill tile image=@out@/assets/acrylic-texture.png},
+    sharp corners,
+    nobeforeafter,
+    top = 4pt, bottom = 4pt,
+    %NIX interior style={fill tile image=@out@/assets/acrylic-texture.png},
     drop fuzzy shadow south=black % gives an overfull \hbox warning
 }
 \setbeamertemplate{frametitle}{%
-    \nointerlineskip
+    \nointerlineskip%
     \begin{beamercolorbox}[wd=\paperwidth]{frametitle}%
-        \vbox{}\vskip-4pt%
         \begin{FrameTitle}%
             \begin{beamercolorbox}[sep=0pt]{frametitle}%
                 \usebeamerfont{frametitle}%

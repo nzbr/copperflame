@@ -15,8 +15,10 @@ foreach ($mode in (@("dark", "light")))
 
 build logo/icon.svg.ejs ../assets/icon.svg
 build logo/logo.svg.ejs ../assets/logo.svg
+build logo/logo-pro.svg.ejs ../assets/logo-pro.svg
 
 Write-Host "Converting ../assets/logo.svg to png"
-inkscape --export-type=png --export-filename=../assets/logo.png -w 400 -h 72 ../assets/logo.svg
+inkscape --export-type=png --export-filename=../assets/logo.png -w 508 -h 72 ../assets/logo.svg
+inkscape --export-type=png --export-filename=../assets/logo-pro.png -w 568 -h 72 ../assets/logo-pro.svg
 
 popd

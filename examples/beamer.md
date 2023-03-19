@@ -3,32 +3,29 @@ title: Test Presentation
 subtitle: It has a subtitle!
 lang: de-DE
 date: 2023-03-08
-author:
-  - nzbr
+author: [ nzbr ]
 description: This is a test presentation
-keywords:
-  - test
-  - copperflame
-  - pandoc
-bibliography:
-  - example.bib
+keywords: [test, copperflame, pandoc]
+bibliography: [ example.bib ]
 pagenumbers: true
 ---
 
 # TypeScript:
+
 ```typescript
 const f = (a: string | number) => (b: string | number) => {
-    if (a != b) {
-      return "a";
-    } else {
-      return "b";
-    }
+  if (a != b) {
+    return "a";
+  } else {
+    return "b";
+  }
 }
 ```
 
 ---
 
 # Nix
+
 ```nix
 { pkgs ? import <nixpkgs> {} }:
 pkgs.mkShell {
@@ -78,12 +75,12 @@ b:
 ```json
 {
   "Alert": {
-      "text-color": "#ffffff",
-      "background-color": null,
-      "bold": true,
-      "italic": false,
-      "underline": false
-    },
+    "text-color": "#ffffff",
+    "background-color": null,
+    "bold": true,
+    "italic": false,
+    "underline": false
+  }
 }
 ```
 
@@ -97,6 +94,7 @@ import java.lang.*;
 public class Main {
     // Regular comment
     // TODO: Task comment
+
     /**
      * Prints "Hello World!" to the standard output.
      * @param args command-line arguments (not used)
@@ -131,20 +129,22 @@ public class Main {
 \documentclass{article}
 
 \begin{document}
-  \title{Hello World!}
-  \author{nzbr}
-  \date{Today}
+    \title{Hello World!}
+    \author{nzbr}
+    \date{Today}
 
-  \maketitle
+    \maketitle
 
-  \section{Introduction}
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-  \section{Conclusion}
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-  sagittis, nunc sit amet gravida varius, magna odio ornare mi,
-  eget lacinia dolor mauris eu est. Nullam ut nulla in ligula
-  vehicula bibendum.
+    \section{Introduction}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+
+    \section{Conclusion}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+    sagittis, nunc sit amet gravida varius, magna odio ornare mi,
+    eget lacinia dolor mauris eu est. Nullam ut nulla in ligula
+    vehicula bibendum.
 \end{document}
 ```
 
@@ -165,6 +165,7 @@ This is a test.
 
 This is a test.
 ```
+
 ---
 
 # Lists
