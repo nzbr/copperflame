@@ -8,7 +8,7 @@ institute: An Institute
 description: This is a test presentation
 keywords: [test, copperflame, pandoc]
 bibliography: [ example.bib ]
-bibliographystyle: ieeetr
+bibliographystyle: plain
 pagenumbers: true
 isodate: true
 ---
