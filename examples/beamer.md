@@ -1,17 +1,24 @@
 ---
 title: Test Presentation
 subtitle: A demonstation of the copperflame beamer theme
-lang: de-DE
-date: 2023-03-08
+lang: en-US
+date: \DTMDate{2023-03-20}
 author: [ nzbr ]
 institute: An Institute
 description: This is a test presentation
 keywords: [test, copperflame, pandoc]
 bibliography: [ example.bib ]
 pagenumbers: true
+isodate: true
 ---
 
 \section{Syntax Highlighting}
+
+\subsection{Subsection}
+
+\mksectiontitle
+
+---
 
 # TypeScript:
 

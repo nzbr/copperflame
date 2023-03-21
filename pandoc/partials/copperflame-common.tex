@@ -2,10 +2,17 @@
 \usepackage[skins]{tcolorbox} % floating boxes
 \usepackage{tikz}             % graphics
 \usepackage{calc}             % size calculations
+\usepackage[
+    $if(lang)$$lang$$else$de-DE$endif$
+]{datetime2}                  % date format
 \usepackage{beamerbaseframe}
 \usepackage{beamerbasemisc}
 \usepackage{beamerbasetemplates}
 \usetikzlibrary{calc}         % \coordinate
+
+$if(isodate)$
+\DTMsetstyle{iso} % iso date format
+$endif$
 
 % ==== BEGIN PANDOC ====
 \usepackage{hyperref} % hyperlinks, pdf metadata
@@ -15,6 +22,7 @@
 $if(tables)$
 \usepackage{longtable,booktabs,array}
 \usepackage{beamerbasetitle}
+\usepackage{beamerbasesection}
 $endif$
 
 \hypersetup{
@@ -47,6 +55,10 @@ $if(date)$
 $endif$
 $if(institute)$
 \institute{$for(institute)$$institute$$sep$ \and $endfor$}
+$endif$
+
+$if(highlighting-macros)$
+$highlighting-macros$
 $endif$
 % ===== END PANDOC =====
 
@@ -94,13 +106,11 @@ $else$
 \setbeamerfont{title}{family=\dosfont}
 $endif$
 \setbeamerfont{subtitle}{family=\robotoslab}
+\setbeamerfont{author}{family=\robotoslab}
+\setbeamerfont{institute}{parent=author}
+\setbeamerfont{section title}{parent=title}
+\setbeamerfont{subsection title}{parent=subtitle}
 % ==== BEGIN BEAMER FONTS ====
-
-% ==== BEGIN CODE BLOCKS ====
-$if(highlighting-macros)$
-$highlighting-macros$
-$endif$
-% ===== END CODE BLOCKS =====
 
 % ==== BEGIN SHADED ====
 \renewtcolorbox{Shaded}{
@@ -126,30 +136,58 @@ $if(professional)$
 $else$
 \setbeamercolor{structure}{fg=highlight}
 $endif$
+\setbeamercolor{subsection title}{fg=foreground}
 % ===== END BEAMER COLORS =====
 
 % ==== BEGIN BEAMER TEMPLATE ====
 
-\setbeamertemplate{title page}{%
+\newcommand\titleline{
+    \usebeamerfont{title}
+    \begin{tikzpicture}
+        \node[anchor=center, inner xsep=0pt] {
+            \begin{tikzpicture}
+                \fill[highlight] (0,0) rectangle (\textwidth, 1pt);
+            \end{tikzpicture}
+        };
+    \end{tikzpicture}
+}
+
+\setbeamertemplate{title page}{
+    \vfill
     {\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle}
     \hfill
     {\usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate}
     \\
     {\usebeamercolor[fg]{subtitle}\usebeamerfont{subtitle}\insertsubtitle}
-    \\
-%    \begin{beamercolorbox}[wd=\textwidth]
-        \begin{tikzpicture}
-            \node[anchor=center, inner xsep=0pt] {
-                \begin{tikzpicture}
-                    \fill[highlight] (0,0) rectangle (\textwidth, 1pt);
-                \end{tikzpicture}
-            };
-        \end{tikzpicture}
-%    \end{beamercolorbox}
+    \titleline
     \\
     {\usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor}
     \hfill
     {\usebeamercolor[fg]{institute}\usebeamerfont{intitute}\insertinstitute}
+    \vfill
+}
+
+\newcommand\currentsection{}
+\newcommand\currentsubsection{}
+
+\AtBeginSection[]{
+    \renewcommand\currentsection{\insertsection}
+    \renewcommand\currentsubsection{}
+}
+
+\AtBeginSubsection[]{
+    \renewcommand\currentsubsection{\insertsubsection}
+}
+
+% Does not seem to work properly
+\newcommand{\mksectiontitle}{
+    \vfill
+    {\usebeamercolor[fg]{section title}\usebeamerfont{section title}\currentsection}
+    \leavevmode\\
+    \titleline
+    \\
+    {\usebeamercolor[fg]{subsection title}\usebeamerfont{subsection title}\currentsubsection}
+    \vfill
 }
 
 \newtcolorbox{FrameTitle}{
@@ -215,7 +253,10 @@ $endfor$
 
     $endfor$
 
+    $if(notitle)$
+    $else$
     \maketitle
+    $endif$
 
     $body$
 
