@@ -263,7 +263,7 @@ $endfor$
     $if(bibliography)$
     \begin{frame}[allowframebreaks]
         \frametitle{References}
-        \bibliographystyle{plain}
+        \bibliographystyle{$if(bibliographystyle)$$bibliographystyle$$else$plain$endif$}
         $for(bibliography)$
         \bibliography{$bibliography$}
         $endfor$
