@@ -10,10 +10,6 @@
 \usepackage{beamerbasetemplates}
 \usetikzlibrary{calc}         % \coordinate
 
-$if(isodate)$
-\DTMsetstyle{iso} % iso date format
-$endif$
-
 % ==== BEGIN PANDOC ====
 \usepackage{hyperref} % hyperlinks, pdf metadata
 \usepackage{ulem}     % striketrough
@@ -60,6 +56,19 @@ $endif$
 $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
+
+\renewtcolorbox{Shaded}{
+    enhanced,
+    colback=shadecolor,
+    colframe=shadecolor,
+    opacityback=0.8,
+    boxrule=0pt,
+    left=0.5em, right=0.5em, top=0.5em, bottom=0.5em,
+    arc=0.5em,
+    auto outer arc,
+%NIX interior style={fill tile image*={height=64pt}{@out@/assets/acrylic-texture.png}},
+    drop fuzzy shadow=shadow
+}
 % ===== END PANDOC =====
 
 % ==== BEGIN FONTS ====
@@ -112,20 +121,16 @@ $endif$
 \setbeamerfont{subsection title}{parent=subtitle}
 % ==== BEGIN BEAMER FONTS ====
 
-% ==== BEGIN SHADED ====
-\renewtcolorbox{Shaded}{
-    enhanced,
-    colback=shadecolor,
-    colframe=shadecolor,
-    opacityback=0.8,
-    boxrule=0pt,
-    left=0.5em, right=0.5em, top=0.5em, bottom=0.5em,
-    arc=0.5em,
-    auto outer arc,
-    %NIX interior style={fill tile image*={height=64pt}{@out@/assets/acrylic-texture.png}},
-    drop fuzzy shadow=shadow
-}
-% ===== END SHADED =====
+% ==== BEGIN COMMON ====
+$if(isodate)$
+\DTMsetstyle{iso} % iso date format
+$endif$
+
+\newcommand\citestyle[1]{\textcolor{foreground-secondary}{\textsuperscript{#1}}}
+\newcommand\citationneeded{\citestyle{[citation needed]}}
+\let\oldcite=\cite
+\renewcommand{\cite}[1]{\citestyle{\oldcite{#1}}}
+% ===== END COMMON =====
 
 % ==== BEGIN BEAMER COLORS ====
 \setbeamercolor{background canvas}{bg=background}

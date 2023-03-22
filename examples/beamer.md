@@ -224,6 +224,8 @@ BibTeX [@bibtex]
 
 Both [@latex; @bibtex]
 
+This theme looks awesome! \citationneeded
+
 ---
 
 # H1
@@ -240,14 +242,20 @@ Both [@latex; @bibtex]
 
 ---
 
+> This is a direct quote
+
+---
+
 # TODO
 
 - [x] Syntax highlighting theme
 - [x] page numbers
 - [x] Bullet points
 - [x] Title Slide
-- [ ] Section Title Slide
-- [ ] Bibliography colors
+- [x] Section Title Slide
+- [x] Bibliography colors
+
+Maybe later:
 
 - [ ] Speechbubbles
 - [ ] Logo command
