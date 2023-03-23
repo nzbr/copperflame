@@ -25,6 +25,7 @@
             stack
             tectonic
             self.packages.${system}.pandoc-filter-bibtex
+            self.packages.${system}.texlive-copperflame
           ];
         };
 
@@ -95,6 +96,8 @@
           texlive-copperflame = (pkgs.texlive.combine {
             inherit (pkgs.texlive)
               scheme-small
+
+              datetime2
               environ
               framed
               tcolorbox

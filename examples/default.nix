@@ -20,7 +20,6 @@ stdenv.mkDerivation {
   inherit copperflame;
 
   buildPhase = ''
-    mkdir -p $out
     pwsh ./build.ps1
   '';
   installPhase = "true";

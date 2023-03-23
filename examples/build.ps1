@@ -12,6 +12,9 @@ $out = "$PsScriptRoot/../out"
 if (Test-Path env:out) {
     $out = $env:out
 }
+if (!(Test-Path $out)) {
+    New-Item -ItemType Directory -Path $out | Out-Null
+}
 
 $copperflame = "$PsScriptRoot/.."
 if (Test-Path env:copperflame) {
@@ -33,11 +36,17 @@ Get-ChildItem *.tex | % {
     if (Get-Command tectonic -ErrorAction SilentlyContinue) {
         tectonic $_.Name
     } else {
-        $latex = "xelatex -interaction=batchmode $($_.Name)"
-        iex $latex
-        bibtex $_.BaseName
-        iex $latex
-        iex $latex
+        try
+        {
+            $latex = "xelatex -interaction=nonstopmode $( $_.Name )"
+            iex $latex
+            bibtex $_.BaseName
+            iex $latex
+            iex $latex
+        } catch {
+            Write-Error $_
+            exit 1
+        }
     }
 }
 popd
