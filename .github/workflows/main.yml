@@ -1,0 +1,33 @@
+name: Push 🐲
+
+on:
+  push: {}
+
+jobs:
+  checks:
+    uses: nzbr/actions/.github/workflows/run_checks.yml@main
+    secrets:
+      SECRET_DECRYPTION_KEY: ${{ secrets.SECRET_DECRYPTION_KEY }}
+
+  build:
+    name: Build Copperflame 🔥
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        drv:
+          - copperflame
+          - devShells.x86_64-linux.default
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Nix Build ❄️
+        uses: nzbr/actions/nix-build@main
+        with:
+          expression: .#copperflame
+          cache: true
+          cache-tag: ${{ matrix.drv }}
+          secret-key: ${{ secrets.SECRET_DECRYPTION_KEY }}
