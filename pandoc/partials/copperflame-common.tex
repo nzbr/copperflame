@@ -19,6 +19,7 @@ $if(tables)$
 \usepackage{longtable,booktabs,array}
 \usepackage{beamerbasetitle}
 \usepackage{beamerbasesection}
+\usepackage{beamerbaseoverlay}
 $endif$
 
 \hypersetup{
@@ -57,6 +58,10 @@ $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
 
+\ifcsname Shaded\endcsname
+\else
+    \newenvironment{Shaded}{}{}
+\fi
 \renewtcolorbox{Shaded}{
     enhanced,
     colback=shadecolor,
