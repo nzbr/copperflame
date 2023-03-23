@@ -1,6 +1,7 @@
 { stdenv
 , haskellPackages
-, ... }:
+, ...
+}:
 
 stdenv.mkDerivation {
   name = "pandoc-filter-bibtex";

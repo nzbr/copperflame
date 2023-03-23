@@ -4,7 +4,8 @@
 , copperflame
 , pandoc-filter-bibtex
 , texlive-copperflame
-, ... }:
+, ...
+}:
 
 stdenv.mkDerivation {
   name = "copperflame-examples";
