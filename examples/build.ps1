@@ -36,8 +36,7 @@ Get-ChildItem *.tex | % {
     if (Get-Command tectonic -ErrorAction SilentlyContinue) {
         tectonic $_.Name
     } else {
-        try
-        {
+        try {
             $latex = "xelatex -interaction=nonstopmode $( $_.Name )"
             iex $latex
             bibtex $_.BaseName
