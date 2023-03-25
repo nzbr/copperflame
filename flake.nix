@@ -91,7 +91,7 @@
                 nativeBuildInputs = (attrs.nativeBuildInputs or [ ]) ++ [
                   pandoc
                   pandoc-filter-bibtex
-                  texlive-copperflame
+                  (attrs.texlive or texlive-copperflame)
                 ];
 
                 inherit copperflame;
