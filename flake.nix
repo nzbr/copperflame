@@ -37,6 +37,7 @@
         };
 
         packages = {
+
           copperflame =
             let
               modules = (pkgs.mkPnpmPackage {
@@ -84,6 +85,7 @@
                 }
               )
               self.packages.${system};
+
           mkCopperflamePandoc = pkgs.callPackage
             (
               { stdenv, pandoc, copperflame, pandoc-filter-bibtex, texlive-copperflame, ... }:
@@ -98,9 +100,12 @@
               })
             )
             self.packages.${system};
+
           perfect-dos-vga = pkgs.callPackage ./assets/perfect-dos-vga { };
+
           pandoc-filter-bibtex = pkgs.callPackage ./pandoc/pandoc-filter-bibtex { };
-          texlive-copperflame = (pkgs.texlive.combine {
+
+          texlive-scheme-copperflame = {
             inherit (pkgs.texlive)
               scheme-small
 
@@ -109,8 +114,12 @@
               framed
               tcolorbox
               ;
-          });
+          };
+
+          texlive-copperflame = pkgs.texlive.combine self.packages.${system}.texlive-scheme-copperflame;
+
           examples = pkgs.callPackage ./examples self.packages.${system};
+
         };
       }
     );
