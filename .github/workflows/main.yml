@@ -27,7 +27,7 @@ jobs:
       - name: Nix Build ❄️
         uses: nzbr/actions/nix-build@main
         with:
-          expression: .#copperflame
+          expression: .#${{ matrix.drv }}
           cache: true
           cache-tag: ${{ matrix.drv }}
           secret-key: ${{ secrets.SECRET_DECRYPTION_KEY }}
