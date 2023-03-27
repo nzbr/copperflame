@@ -36,15 +36,17 @@ Get-ChildItem *.tex | % {
     if (Get-Command tectonic -ErrorAction SilentlyContinue) {
         tectonic $_.Name
     } else {
-        try {
-            $latex = "xelatex -interaction=nonstopmode $( $_.Name )"
-            iex $latex
-            bibtex $_.BaseName
-            iex $latex
-            iex $latex
-        } catch {
-            Write-Error $_
-            exit 1
+        $latex = "xelatex -interaction=nonstopmode $( $_.Name )"
+        @(
+            $latex,
+            "bibtex $_.BaseName",
+            $latex,
+            $latex
+        ) | % {
+            Invoke-Expression $_
+            if ($LastExitCode -ne 0) {
+                exit $LastExitCode
+            }
         }
     }
 }
