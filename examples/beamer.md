@@ -204,6 +204,37 @@ _emph_
 
 ---
 
+# Minipages
+
+:::{.minipage width=0.5}
+```latex
+Some \LaTeX code
+```
+:::
+:::{.minipage width=0.5}
+Some \LaTeX code
+:::
+
+:::{.minipage width=0.4}
+```latex
+$\frac{4}{10}$
+```
+:::
+:::{.minipage width=0.6}
+$\frac{4}{10}$
+:::
+
+:::{.minipage width=0.9}
+```latex
+$\frac{9}{10}$
+```
+:::
+:::{.minipage width=0.1}
+$\frac{9}{10}$
+:::
+
+---
+
 # Dragons!
 
 :::arson

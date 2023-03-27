@@ -1,11 +1,11 @@
 #!/usr/bin/env pwsh
 
-$bibtexFilterPath = if (Get-Command pandoc-filter-bibtex -ErrorAction SilentlyContinue) {
-    "pandoc-filter-bibtex"
+$filterPath = if (Get-Command pandoc-filter-copperflame-latex -ErrorAction SilentlyContinue) {
+    "pandoc-filter-copperflame-latex"
 } elseif ($IsWindows) {
-    "../pandoc/pandoc-filter-bibtex/run.bat"
+    "../pandoc/pandoc-filter-copperflame-latex/run.bat"
 } else {
-    "../pandoc/pandoc-filter-bibtex/run.sh"
+    "../pandoc/pandoc-filter-copperflame-latex/run.sh"
 }
 
 $out = "$PsScriptRoot/../out"
@@ -27,8 +27,8 @@ Get-ChildItem *.bib | % { Copy-Item $_.FullName $out }
 
 foreach ($mode in (@("dark", "light")))
 {
-    pandoc --to=beamer beamer.md -o "${out}/beamer-${mode}.tex" --template="${copperflame}/pandoc/copperflame-${mode}.tex" --highlight-style="${copperflame}/pandoc/copperflame-${mode}.theme" --filter "$bibtexFilterPath"
-    pandoc --to=beamer beamer.md -o "${out}/beamer-professional-${mode}.tex" --metadata=professional:true --template="${copperflame}/pandoc/copperflame-${mode}.tex" --highlight-style="${copperflame}/pandoc/copperflame-${mode}.theme" --filter "$bibtexFilterPath"
+    pandoc --to=beamer beamer.md -o "${out}/beamer-${mode}.tex" --template="${copperflame}/pandoc/copperflame-${mode}.tex" --highlight-style="${copperflame}/pandoc/copperflame-${mode}.theme" --filter "$filterPath"
+    pandoc --to=beamer beamer.md -o "${out}/beamer-professional-${mode}.tex" --metadata=professional:true --template="${copperflame}/pandoc/copperflame-${mode}.tex" --highlight-style="${copperflame}/pandoc/copperflame-${mode}.theme" --filter "$filterPath"
 }
 
 pushd $out

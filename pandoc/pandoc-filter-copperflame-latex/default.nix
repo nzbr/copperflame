@@ -4,10 +4,11 @@
 }:
 
 stdenv.mkDerivation {
-  name = "pandoc-filter-bibtex";
+  name = "pandoc-filter-copeprflame-latex";
   nativeBuildInputs = [
     (haskellPackages.ghcWithPackages (hkgs: with hkgs; [
       pandoc-types
+      regex-tdfa
     ]))
   ];
   src = ./src;
@@ -16,6 +17,6 @@ stdenv.mkDerivation {
   '';
   installPhase = ''
     mkdir -p $out/bin
-    cp Main $out/bin/pandoc-filter-bibtex
+    cp Main $out/bin/pandoc-filter-copperflame-latex
   '';
 }

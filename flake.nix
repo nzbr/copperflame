@@ -24,7 +24,7 @@
             roboto-slab
             stack
             tectonic
-            self.packages.${system}.pandoc-filter-bibtex
+            self.packages.${system}.pandoc-filter-copperflame-latex
             self.packages.${system}.texlive-copperflame
           ];
         };
@@ -89,11 +89,11 @@
 
           mkCopperflamePandoc = pkgs.callPackage
             (
-              { stdenv, pandoc, copperflame, pandoc-filter-bibtex, texlive-copperflame, ... }:
+              { stdenv, pandoc, copperflame, pandoc-filter-copperflame-latex, texlive-copperflame, ... }:
               attrs: stdenv.mkDerivation (attrs // {
                 nativeBuildInputs = (attrs.nativeBuildInputs or [ ]) ++ [
                   pandoc
-                  pandoc-filter-bibtex
+                  pandoc-filter-copperflame-latex
                   (attrs.texlive or texlive-copperflame)
                 ];
 
@@ -104,7 +104,7 @@
 
           perfect-dos-vga = pkgs.callPackage ./assets/perfect-dos-vga { };
 
-          pandoc-filter-bibtex = pkgs.callPackage ./pandoc/pandoc-filter-bibtex { };
+          pandoc-filter-copperflame-latex = pkgs.callPackage ./pandoc/pandoc-filter-copperflame-latex { };
 
           texlive-scheme-copperflame = {
             inherit (pkgs.texlive)
