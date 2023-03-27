@@ -111,6 +111,8 @@
               scheme-small
 
               datetime2
+              datetime2-english
+              datetime2-german
               environ
               framed
               latexmk
