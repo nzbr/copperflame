@@ -123,7 +123,8 @@ $else$
 $endif$
 \setbeamerfont{subtitle}{family=\robotoslab}
 \setbeamerfont{author}{family=\robotoslab}
-\setbeamerfont{institute}{parent=author}
+\setbeamerfont{date}{parent=author}
+\setbeamerfont{institute}{family=\robotoslab}
 \setbeamerfont{section title}{parent=title}
 \setbeamerfont{subsection title}{parent=subtitle}
 % ==== BEGIN BEAMER FONTS ====
@@ -173,15 +174,15 @@ $endif$
 \setbeamertemplate{title page}{
     \vfill
     {\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle}
-    \hfill
-    {\usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate}
     \\
     {\usebeamercolor[fg]{subtitle}\usebeamerfont{subtitle}\insertsubtitle}
     \titleline
     \\
     {\usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor}
     \hfill
-    {\usebeamercolor[fg]{institute}\usebeamerfont{intitute}\insertinstitute}
+    {\usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate}
+    \\
+    {\usebeamercolor[fg]{institute}\usebeamerfont{institute}\insertinstitute}
     \vfill
 }
 
