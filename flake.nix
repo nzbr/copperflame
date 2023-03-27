@@ -113,6 +113,7 @@
               datetime2
               environ
               framed
+              latexmk
               tcolorbox
               ;
           };

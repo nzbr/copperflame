@@ -32,24 +32,19 @@ foreach ($mode in (@("dark", "light")))
 }
 
 pushd $out
-Get-ChildItem *.tex | % {
     if (Get-Command tectonic -ErrorAction SilentlyContinue) {
-        tectonic $_.Name
-    } else {
-        $latex = "xelatex -interaction=nonstopmode $( $_.Name )"
-        @(
-            $latex,
-            "bibtex $_.BaseName",
-            $latex,
-            $latex
-        ) | % {
-            Invoke-Expression $_
+        Get-ChildItem *.tex | % {
+            tectonic $_.Name
             if ($LastExitCode -ne 0) {
                 exit $LastExitCode
             }
         }
+    } else {
+        latexmk -xelatex @(Get-ChildItem *.tex | % { $_.Name })
+        if ($LastExitCode -ne 0) {
+            exit $LastExitCode
+        }
     }
-}
 popd
 
 popd
