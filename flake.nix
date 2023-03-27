@@ -34,6 +34,7 @@
             nixpkgs-fmt --check ${./.}
             touch $out
           '';
+          examples = self.packages.${system}.examples;
         };
 
         packages = {
