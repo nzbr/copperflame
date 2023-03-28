@@ -115,6 +115,12 @@ $endif$
 \renewcommand{\sfdefault}{robotoslab}
 \renewcommand{\ttdefault}{jbmono}
 \renewcommand{\familydefault}{\sfdefault}
+
+% https://tex.stackexchange.com/questions/460233/redefine-em-to-use-slshape
+\makeatletter
+\DeclareRobustCommand\em{\@nomath\em \ifdim \fontdimen\@ne\font >\z@ \eminnershape \else \slshape \fi}
+\DeclareTextFontCommand{\emph}{\em}
+\makeatother
 % ===== END FONTS =====
 
 % ==== BEGIN BEAMER FONTS ====
