@@ -116,6 +116,7 @@
               environ
               framed
               latexmk
+              polyglossia
               tcolorbox
               ;
           };
