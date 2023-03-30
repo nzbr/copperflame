@@ -110,6 +110,9 @@
             inherit (pkgs.texlive)
               scheme-small
 
+              biber
+              biblatex
+              csquotes
               datetime2
               datetime2-english
               datetime2-german

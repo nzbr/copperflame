@@ -27,8 +27,8 @@ Get-ChildItem *.bib | % { Copy-Item $_.FullName $out }
 
 foreach ($mode in (@("dark", "light")))
 {
-    pandoc --to=beamer beamer.md -o "${out}/beamer-${mode}.tex" --template="${copperflame}/pandoc/copperflame-${mode}.tex" --highlight-style="${copperflame}/pandoc/copperflame-${mode}.theme" --filter "$filterPath"
-    pandoc --to=beamer beamer.md -o "${out}/beamer-professional-${mode}.tex" --metadata=professional:true --template="${copperflame}/pandoc/copperflame-${mode}.tex" --highlight-style="${copperflame}/pandoc/copperflame-${mode}.theme" --filter "$filterPath"
+    pandoc --to=beamer beamer.md -o "${out}/beamer-${mode}.tex" --template="${copperflame}/pandoc/copperflame-${mode}.tex" --highlight-style="${copperflame}/pandoc/copperflame-${mode}.theme" --biblatex --filter "$filterPath"
+    pandoc --to=beamer beamer.md -o "${out}/beamer-professional-${mode}.tex" --metadata=professional:true --template="${copperflame}/pandoc/copperflame-${mode}.tex" --highlight-style="${copperflame}/pandoc/copperflame-${mode}.theme" --biblatex --filter "$filterPath"
 }
 
 pushd $out

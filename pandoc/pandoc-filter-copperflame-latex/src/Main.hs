@@ -47,10 +47,7 @@ processInline (Superscript is) = Superscript $ map processInline is
 processInline (Subscript is) = Subscript $ map processInline is
 processInline (SmallCaps is) = SmallCaps $ map processInline is
 processInline (Quoted q is) = Quoted q $ map processInline is
-processInline (Cite cs _) = processInline $ Span nullAttr $ map (processInline . citeToTex) cs
-  where
-    citeToTex (Citation {citationId = cId, citationPrefix = p, citationSuffix = s}) =
-      Span nullAttr $ map processInline $ p ++ [RawInline (Format $ pack "tex") $ pack $ "\\cite{" ++ (unpack cId) ++ "}" ] ++ s
+processInline (Cite cs xs) = Cite cs (map processInline xs) -- technically there's citationPrefix and citationSuffix which contain inlines
 processInline (Code a t) = Code a $ processText t
 processInline Space = Space
 processInline SoftBreak = SoftBreak

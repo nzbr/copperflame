@@ -7,6 +7,7 @@ author: [ nzbr ]
 institute: An Institute
 description: This is a test presentation
 keywords: [test, copperflame, pandoc]
+biblio-title: References
 bibliography: [ example.bib ]
 bibliographystyle: plain
 pagenumbers: true

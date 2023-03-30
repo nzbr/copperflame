@@ -14,6 +14,15 @@
     $if(lang)$$lang$$else$en-US$endif$
 ]{datetime2}                  % date format
 
+% biblatex
+\usepackage{csquotes}
+$if(biblatex)$
+\usepackage[$if(biblio-style)$style=$biblio-style$,$endif$$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$]{biblatex}
+$for(bibliography)$
+\addbibresource{$bibliography$}
+$endfor$
+$endif$
+
 % ==== BEGIN PANDOC ====
 \usepackage{hyperref} % hyperlinks, pdf metadata
 \usepackage{ulem}     % striketrough
@@ -162,7 +171,7 @@ $endif$
 \setbeamercolor{subsection title}{fg=foreground}
 
 \setbeamercolor{bibliography item}{parent=item,fg=highlight}
-\setbeamercolor{bibliography entry author}{use=structure,fg=highlight}
+\setbeamercolor{bibliography entry author}{use=structure,fg=normal text.fg}
 \setbeamercolor{bibliography entry title}{use=normal text,fg=normal text.fg}
 \setbeamercolor{bibliography entry location}{use=structure,fg=foreground-secondary}
 \setbeamercolor{bibliography entry note}{use=structure,fg=foreground-secondary}
@@ -243,6 +252,8 @@ $endif$
     \end{beamercolorbox}%
 }
 
+\setbeamertemplate{frametitle continuation}{\insertcontinuationcount}
+
 \newlength{\progressHeight}%
 \newlength{\progressLength}%
 \setbeamertemplate{footline}{%
@@ -289,13 +300,12 @@ $endfor$
 
     $body$
 
-    $if(bibliography)$
+    $if(biblatex)$
     \begin{frame}[allowframebreaks]
-        \frametitle{References}
-        \bibliographystyle{$if(bibliographystyle)$$bibliographystyle$$else$plain$endif$}
-        $for(bibliography)$
-        \bibliography{$bibliography$}
-        $endfor$
+    $if(biblio-title)$
+        \frametitle{$biblio-title$}
+    $endif$
+        \printbibliography[heading=none]
     \end{frame}
     $endif$
 
