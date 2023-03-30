@@ -2,6 +2,8 @@ name: Push 🐲
 
 on:
   push: {}
+  schedule:
+    - cron: '0 18 * * 5'
 
 jobs:
   checks:
