@@ -77,6 +77,7 @@ processBlock (Table a caption col thead tbody tfoot) = Table a (processCaption c
 processBlock (Div (id, classes, attrs) blocks) | (pack "minipage") `elem` classes =
                Div (id, (pack "merge") : classes, attrs)
                $ ((RawBlock (Format $ pack "glue{tex}") $ pack $ "\\begin{minipage}{" ++ (unpack width) ++ "\\textwidth}"))
+               : (Plain []) -- prepend an empty block to prevent begin and end from being glued together if there's no other content
                : (processBlockList blocks)
                ++ [RawBlock (Format $ pack "glue{tex}") $ pack "\\end{minipage}"]
              where
@@ -93,15 +94,19 @@ processBlockList blocks = processSequence $ map processBlock blocks
   where
     processSequence ((Div (xi, xc, xa) xb) : (Div (_, yc, ya) yb) : xs)
       | (pack "merge") `elem` xc && (pack "merge") `elem` yc =
-        (Div (xi, (merge xc yc), (merge xa ya)) (processSequence $ xb ++ yb)) : processSequence (xs)
+        processSequence $ (Div (xi, (merge xc yc), (merge xa ya)) (xb ++ yb)) : xs
+    processSequence ((Div (i, c, a) b) : xs)
+      | (pack "merge") `elem` c =
+         (Div (i, c, a) $ processSequence b) : (processSequence xs) -- process sequence inside freshly merged div
     processSequence ((RawBlock (Format xf) xt) : (RawBlock (Format yf) yt) : xs)
       | xf =~ "glue{.*}" && yf =~ "glue{.*}" && extractFormat xf == extractFormat yf =
         processSequence $ (RawBlock (Format $ xf) $ xt <> yt) : xs
     processSequence ((RawBlock (Format f) t) : xs)
       | f =~ "glue{.*}" =
-        (RawBlock (Format $ extractFormat f) t) : processSequence (xs)
+        processSequence $ (RawBlock (Format $ extractFormat f) t) : xs
     processSequence (x : xs) = x : processSequence xs
     processSequence [] = []
+
     merge xs ys = HashSet.toList $ HashSet.fromList xs `HashSet.union` HashSet.fromList ys
     extractFormat f = pack $ firstGroup ((unpack f) =~ "glue{(.*)}" :: (String, String, String, [String]))
     firstGroup (_, _, _, [g]) = g
