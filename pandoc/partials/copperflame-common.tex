@@ -157,6 +157,8 @@ $endif$
 \newcommand\citationneeded{\citestyle{[citation needed]}}
 \let\oldcite=\cite
 \renewcommand{\cite}[1]{\citestyle{\oldcite{#1}}}
+\let\oldautocite\autocite
+\renewcommand{\autocite}[1]{\citestyle{\oldautocite{#1}}}
 % ===== END COMMON =====
 
 % ==== BEGIN BEAMER COLORS ====
