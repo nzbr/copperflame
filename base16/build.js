@@ -17,12 +17,11 @@ function build(template, destination) {
     join("skylighting", `${mode}.theme.ejs`),
     join("..", "pandoc", `copperflame-${mode}.theme`)
   );
-  build(
-    join("latex", `${mode}.tex.ejs`),
-    join("..", "pandoc", "partials", `copperflame-colors-${mode}.tex`)
-  );
 });
 
+build(
+  "tex.ejs", join("..", "pandoc", "partials", `copperflame-colors.tex`)
+);
 build(join("logo", "icon.svg.ejs"), join("..", "assets", "icon.svg"));
 build(join("logo", "logo.svg.ejs"), join("..", "assets", "logo.svg"));
 build(join("logo", "logo-pro.svg.ejs"), join("..", "assets", "logo-pro.svg"));

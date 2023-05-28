@@ -2,6 +2,21 @@ $ partials/copperflame-header() $
 
 \lightmodefalse
 
-$ partials/copperflame-colors-dark() $
+$ partials/copperflame-colors() $
+
+% ==== BEGIN COPPERFLAME DARK ====
+\colorlet{foreground}{base06}
+\colorlet{background}{base00}
+\colorlet{foreground-secondary}{base04}
+\colorlet{background-secondary}{base01}
+
+\colorlet{shadow}{black}
+
+$if(professional)$
+\colorlet{highlight}{baseF4}
+$else$
+\colorlet{highlight}{baseF6}
+$endif$
+% ===== END COPPERFLAME DARK =====
 
 $ partials/copperflame-common() $
