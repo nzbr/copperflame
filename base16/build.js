@@ -22,6 +22,7 @@ function build(template, destination) {
 build(
   "tex.ejs", join("..", "pandoc", "partials", `copperflame-colors.tex`)
 );
+build("scss.ejs", join("..", "css", "colors.scss"));
 build(join("logo", "icon.svg.ejs"), join("..", "assets", "icon.svg"));
 build(join("logo", "logo.svg.ejs"), join("..", "assets", "logo.svg"));
 build(join("logo", "logo-pro.svg.ejs"), join("..", "assets", "logo-pro.svg"));
