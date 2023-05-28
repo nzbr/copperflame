@@ -28,7 +28,7 @@
       "bold": true
     },
     "Char": {
-      "text-color": "#755DB4"
+      "text-color": "#736299"
     },
     "Comment": {
       "text-color": "#919191",
@@ -86,19 +86,19 @@
       "text-color": "#303030"
     },
     "Preprocessor": {
-      "text-color": "#7F5CFF"
+      "text-color": "#755DB4"
     },
     "RegionMarker": {
-      "text-color": "#7F5CFF"
+      "text-color": "#755DB4"
     },
     "SpecialChar": {
-      "text-color": "#7F5CFF"
+      "text-color": "#755DB4"
     },
     "SpecialString": {
-      "text-color": "#755DB4"
+      "text-color": "#736299"
     },
     "String": {
-      "text-color": "#755DB4"
+      "text-color": "#736299"
     },
     "Variable": {
       "text-color": "#718C48"
