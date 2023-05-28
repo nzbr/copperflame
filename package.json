@@ -2,6 +2,10 @@
   "name": "copperflame",
   "author": "nzbr",
   "license": "ISC",
+  "scripts": {
+    "base16": "node base16/build.js",
+    "build": "pnpm run base16"
+  },
   "dependencies": {
     "base16-builder": "^1.3.0"
   }

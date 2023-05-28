@@ -15,5 +15,5 @@ if (!(Test-Path -Path "./node_modules")) {
 
 }
 
-pwsh ./base16/build.ps1
+node ./base16/build.js
 pwsh ./examples/build.ps1

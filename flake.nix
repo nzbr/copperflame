@@ -40,22 +40,13 @@
         packages = {
 
           copperflame =
-            let
-              modules = (pkgs.mkPnpmPackage {
-                src = ./.;
-                copyPnpmStore = false;
-              }).passthru.nodeModules;
-            in
             pkgs.callPackage
               (
-                { stdenv, powershell, nodejs, inkscape, roboto-slab, jetbrains-mono, perfect-dos-vga, ... }:
-                stdenv.mkDerivation {
-                  name = "copperflame";
+                { mkPnpmPackage, inkscape, roboto-slab, jetbrains-mono, perfect-dos-vga, ... }: mkPnpmPackage {
                   src = ./.;
+                  copyPnpmStore = true;
 
-                  buildInputs = [
-                    powershell
-                    nodejs
+                  extraBuildInputs = [
                     inkscape
                     roboto-slab
                   ];
@@ -64,21 +55,15 @@
                   jetbrainsMono = jetbrains-mono;
                   perfectDosVga = perfect-dos-vga;
 
-                  unpackPhase = ''
+                  preBuild = ''
                     export HOME=$NIX_BUILD_TOP
-                    mkdir build
-                    cp -r $src/. build
-                    chmod -R +w build
-                    cd build
                   '';
-                  configurePhase = ''
-                    ln -s ${modules} node_modules
-                  '';
-                  buildPhase = ''
-                    pwsh base16/build.ps1
+
+                  postBuild = ''
                     sed -E '/%NONIX$/d;s/^(\s*)%NIX /\1/' -i pandoc/partials/copperflame-common.tex
                     substituteAll pandoc/partials/copperflame-common.tex pandoc/partials/copperflame-common.tex
                   '';
+
                   installPhase = ''
                     mkdir -p $out
                     cp -r . $out
