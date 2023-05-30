@@ -41,6 +41,5 @@ try {
     `inkscape --export-type=png --export-filename=${logoPro}.png -w 568 -h 72 ${logoPro}.svg`
   );
 } catch (_) {
-  console.log(_);
   console.warn("Inkscape failed or is not installed");
 }
