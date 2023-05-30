@@ -4,7 +4,8 @@
   "license": "ISC",
   "scripts": {
     "base16": "node base16/build.js",
-    "build": "pnpm run base16"
+    "build": "npm run base16",
+    "install": "npm run build"
   },
   "dependencies": {
     "base16-builder": "^1.3.0"

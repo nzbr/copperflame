@@ -2,7 +2,13 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    pnpm2nix.url = "github:nzbr/pnpm2nix-nzbr";
+    pnpm2nix= {
+      url = "github:nzbr/pnpm2nix-nzbr";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
+    };
   };
 
   outputs = { self, nixpkgs, flake-utils, pnpm2nix }:
@@ -45,6 +51,7 @@
                 { mkPnpmPackage, inkscape, roboto-slab, jetbrains-mono, perfect-dos-vga, ... }: mkPnpmPackage {
                   src = ./.;
                   copyPnpmStore = true;
+                  isolatePackageDefinition = false;
 
                   extraBuildInputs = [
                     inkscape
@@ -54,10 +61,6 @@
                   robotoSlab = roboto-slab;
                   jetbrainsMono = jetbrains-mono;
                   perfectDosVga = perfect-dos-vga;
-
-                  preBuild = ''
-                    export HOME=$NIX_BUILD_TOP
-                  '';
 
                   postBuild = ''
                     sed -E '/%NONIX$/d;s/^(\s*)%NIX /\1/' -i pandoc/partials/copperflame-common.tex
