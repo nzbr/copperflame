@@ -1,0 +1,9 @@
+@use "../colors";
+@use "../config";
+
+@mixin acrylic($background-color: colors.$background-secondary, $background-opacity: 0.8) {
+  //noinspection CssUnknownTarget
+  background-image: url("#{config.$root}/assets/acrylic-texture.png?as=#{config.$image-format}");
+  background-color: rgba($background-color, $background-opacity);
+  backdrop-filter: blur(8px);
+}

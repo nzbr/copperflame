@@ -1,0 +1,49 @@
+@use "../colors";
+@use "acrylic";
+
+@mixin floating($shadow-offset: .25rem) {
+  box-shadow: $shadow-offset $shadow-offset calc($shadow-offset * 2) colors.$shadow;
+}
+
+@mixin floating-box(
+  $background-color: colors.$background-secondary,
+  $background-opacity: 0.8,
+  $shadow-offset: .25rem,
+  $padding: 1rem,
+  $margin: 1rem,
+  $border-radius: calc($padding / 2)
+) {
+  @include acrylic.acrylic($background-color: $background-color, $background-opacity: $background-opacity);
+  @include floating($shadow-offset: $shadow-offset);
+
+  // TODO: Put something behind it, to make it look transparent
+
+  padding: $padding;
+  border-radius: $border-radius;
+
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+
+@mixin floating-text(
+  $background-color: colors.$background-secondary,
+  $background-opacity: 0.8,
+  $shadow-offset: .25rem,
+  $padding: 1rem,
+  $margin: 1rem
+) {
+  @include floating-box(
+    $background-color: $background-color,
+    $background-opacity: $background-opacity,
+    $shadow-offset: $shadow-offset,
+    $padding: $padding,
+    $margin: $margin
+  );
+
+  width: calc(100% - $padding * 2);
+  overflow-x: auto;
+
+  & > p {
+    margin: 0;
+  }
+}

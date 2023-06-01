@@ -1,0 +1,17 @@
+@use "../util";
+
+$name: "Roboto Slab";
+$font-family: $name, "Roboto", "Helvetica", "Arial", sans-serif;
+
+@include util.generate-font-faces(
+  $name: $name,
+  $basePath: "/node_modules/@fontsource/roboto-slab/files/roboto-slab",
+  $supported-weights: (100, 200, 300, 400, 500, 600, 700, 800, 900),
+  $supported-ranges: (cyrillic-ext, cyrillic, greek-ext, greek, vietnamese, latin-ext, latin),
+  $supported-styles: (normal),
+);
+
+@mixin roboto-slab {
+  font-family: $font-family;
+  font-weight: 300;
+}

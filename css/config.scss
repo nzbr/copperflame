@@ -1,0 +1,13 @@
+$debug: false !default;
+
+$root: "/node_modules/copperflame" !default;
+
+$professional: false !default;
+$darkmode: true !default;
+
+$image-format: "webp" !default; // TODO: Switch to AVIF once edge supports it
+
+$font-weights: (100, 200, 300, 400, 500, 600, 700, 800, 900) !default;
+$font-ranges: (cyrillic-ext, cyrillic, greek-ext, greek, vietnamese, latin-ext, latin) !default;
+$font-styles: (normal, italic) !default;
+$font-ttf-fallback: true !default;

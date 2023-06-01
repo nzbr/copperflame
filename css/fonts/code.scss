@@ -1,0 +1,6 @@
+@use "font-face/jetbrains-mono";
+@forward "font-face/jetbrains-mono";
+
+@mixin font-regular {
+  @include jetbrains-mono.jetbrains-mono;
+}

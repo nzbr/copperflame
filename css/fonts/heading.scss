@@ -1,0 +1,22 @@
+@use "../config";
+@use "font-face/roboto-slab";
+@use "font-face/perfect-dos-vga";
+
+$name: null !default;
+$font-family: null !default;
+
+@if config.$professional {
+  $name: roboto-slab.$name;
+  $font-family: roboto-slab.$font-family;
+} @else {
+  $name: perfect-dos-vga.$name;
+  $font-family: perfect-dos-vga.$font-family;
+}
+
+@mixin font-regular {
+  @if config.$professional {
+    @include roboto-slab.roboto-slab;
+  } @else {
+    @include perfect-dos-vga.perfect-dos-vga;
+  }
+}

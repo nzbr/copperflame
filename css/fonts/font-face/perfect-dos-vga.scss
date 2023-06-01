@@ -1,0 +1,33 @@
+@use "sass:list";
+@use "../util";
+@use "../../config";
+
+$name: "Perfect DOS VGA";
+$font-family: $name, "Courier", "Courier New", monospace;
+
+@if (not config.$professional) {
+  @font-face {
+    /* Font from https://laemeur.sdf.org/fonts/ */
+    font-family: $name;
+
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+
+    $src-file: "#{config.$root}/assets/perfect-dos-vga/More Perfect DOS VGA.ttf";
+    $src: local($name), url("#{$src-file}?as=woff2") format("woff2");
+    @if config.$font-ttf-fallback {
+      $src: list.append($src, url("#{$src-file}?as=ttf") format("truetype"));
+    }
+    src: $src;
+  }
+}
+
+@mixin perfect-dos-vga {
+  font-family: $font-family;
+  //noinspection CssUnknownProperty
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  text-decoration: none;
+  font-weight: normal;
+}

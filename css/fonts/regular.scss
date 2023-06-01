@@ -1,0 +1,6 @@
+@use "font-face/roboto-slab";
+@forward "font-face/roboto-slab";
+
+@mixin font-regular {
+  @include roboto-slab.roboto-slab;
+}

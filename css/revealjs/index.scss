@@ -1,0 +1,165 @@
+@use "../colors";
+@use "../config";
+@use "../fonts/regular" as regular-font;
+@use "../fonts/heading" as heading-font;
+@use "../elements";
+
+$segment: min(calc(1vh / 9), calc(1vw / 16));
+$sw: calc($segment * 16);
+$sh: calc($segment * 9);
+
+.reveal section {
+  opacity: 1 !important;
+
+  height: 100vh;
+  width: 100vw;
+
+  $header-height: 7;
+  $header-padding: .5;
+  $header-gap: 2;
+
+  h1 {
+    @include elements.acrylic;
+    @include elements.floating;
+    font-size: calc(3.25 * $sw);
+    text-align: left;
+    padding-left: calc($header-padding * 2 * $sw);
+    padding-top: calc($header-padding * $sh);
+    padding-bottom: calc($header-padding * $sh);
+    height: calc($header-height * $sh);
+    vertical-align: middle;
+    margin-bottom: calc($header-gap * $sh);
+
+    margin-right: calc(-50vw); // connect to next slide
+  }
+
+  .section-content {
+    font-size: calc(2.25 * $sw);
+
+    width: calc(100 * $sw);
+    height: calc((100 - $header-height - $header-padding * 2 - $header-gap) * $sh);
+
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    &.noheader {
+      height: calc(100 * $sh);
+    }
+
+    @if config.$debug {
+      border: 1px solid fuchsia;
+    }
+
+    .main-content {
+      flex: 1;
+      align-self: center;
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    .sidebar {
+
+      width: 25%;
+      margin: 0;
+      height: 100%;
+
+      padding-left: calc(1 * $sw);
+      padding-right: calc(1 * $sw);
+
+      font-size: .5em;
+
+      @if config.$debug {
+        border: 1px solid cyan;
+      }
+
+      .citation {
+        font-size: inherit;
+        top: 0
+      }
+
+      p {
+        margin-top: 0;
+      }
+
+      img, video {
+        margin: 0;
+        max-width: 100%;
+      }
+    }
+
+    .citation {
+      color: colors.$foreground-secondary;
+      // superset
+      position: relative;
+      top: -1ex;
+      font-size: 0.6em;
+      height: 100%;
+    }
+
+    video {
+      @include elements.floating-box($padding: 0px, $border-radius: $sw);
+    }
+
+    #refs {
+      @include elements.floating-text($padding: $sw, $margin: 0px);
+
+      font-size: 0.75em;
+      max-height: calc((100 - $header-height - $header-padding * 2 - $header-gap - 6) * $sh);
+      width: calc((100 - 4) * $sw);
+      margin: auto auto calc(2 * $sh);
+      overflow: auto;
+
+      text-align: left;
+    }
+
+  }
+
+}
+
+/**
+ * The following is adapted from the white theme for reveal.js by Hakim El Hattab
+ */
+
+// Default mixins and settings -----------------
+@import "/node_modules/reveal.js/css/theme/template/mixins";
+@import "/node_modules/reveal.js/css/theme/template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts
+//@import url(/css/roboto-slab.scss);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: colors.$background;
+
+$mainColor: colors.$foreground;
+$headingColor: colors.$foreground;
+
+$mainFontSize: 42px;
+$mainFont: regular-font.$font-family;
+$headingFont: heading-font.$font-family;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+//$linkColor: #2a76dd;
+$linkColor: colors.$baseF4;
+$linkColorHover: colors.$baseF6;
+$selectionBackgroundColor: colors.$baseF5;
+
+$heading1Size: 1.5em;
+$heading2Size: 1.25em;
+$heading3Size: 1.1em;
+$heading4Size: 1.0em;
+
+// Change text colors against dark slide backgrounds
+@include dark-bg-text-color(#fff);
+
+
+// Theme template ------------------------------
+@import "/node_modules/reveal.js/css/theme/template/theme";
+// ---------------------------------------------
