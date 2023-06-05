@@ -48,14 +48,18 @@
           copperflame =
             pkgs.callPackage
               (
-                { mkPnpmPackage, inkscape, roboto-slab, jetbrains-mono, perfect-dos-vga, ... }: mkPnpmPackage {
+                { mkPnpmPackage, inkscape, roboto-slab, jetbrains-mono, perfect-dos-vga, vips, ... }: mkPnpmPackage {
                   src = ./.;
                   copyPnpmStore = true;
-                  isolatePackageDefinition = false;
+                  installInPlace = true;
+
+                  buildInputs = [
+                    vips
+                    roboto-slab
+                  ];
 
                   extraBuildInputs = [
                     inkscape
-                    roboto-slab
                   ];
 
                   robotoSlab = roboto-slab;
