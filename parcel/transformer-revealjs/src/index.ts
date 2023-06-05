@@ -1,5 +1,6 @@
 import { Transformer } from '@parcel/plugin';
-import * as cheerio from 'cheerio/lib/slim'; // use slim because parse5 doesn't like the input
+import * as cheerio from 'cheerio/lib/slim';
+import {SpecifierType} from "@parcel/types"; // use slim because parse5 doesn't like the input
 
 export default new Transformer<{}>({
   async transform({ asset, options }) {
@@ -27,6 +28,16 @@ export default new Transformer<{}>({
           ${sidebar}
         </div>
       `);
+    });
+
+    $('[data-src]').each((i, el) => {
+      const src = $(el).attr('data-src');
+      if (src) {
+        $(el).attr('data-src', asset.addURLDependency(src, {
+          specifier: src,
+          specifierType: "url",
+        }));
+      }
     });
 
     asset.setCode($.html());
