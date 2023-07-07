@@ -33,6 +33,10 @@ $sh: calc($segment * 9);
     margin-right: calc(-50vw); // connect to next slide
   }
 
+  h2.title {
+    font-size: calc(5 * $sw);
+  }
+
   .section-content {
     font-size: calc(2.25 * $sw);
 
