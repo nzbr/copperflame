@@ -7,7 +7,7 @@ process.chdir(__dirname);
 function build(template, destination) {
   console.log(`Generating ${destination}`);
   const output = execSync(
-    `npx base16-builder -s copperflame.yaml -t ${template}`
+    `${join('..', 'node_modules', '.bin', 'base16-builder')} -s copperflame.yaml -t ${template}`
   );
   fs.writeFileSync(destination, output);
 }
