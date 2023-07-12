@@ -9,6 +9,7 @@ $foreground-secondary: null !default;
 $background-secondary: null !default;
 $shadow: null !default;
 $highlight: null !default;
+$error: null !default;
 
 @if config.$darkmode {
 
@@ -18,6 +19,7 @@ $highlight: null !default;
   $background-secondary: palette.$base01;
 
   $shadow: rgba(black, 0.25);
+  $error: palette.$base08;
 
   @if config.$professional {
     $highlight: palette.$baseF4;
@@ -33,6 +35,7 @@ $highlight: null !default;
   $background-secondary: palette.$base06;
 
   $shadow: rgba(palette.$base03, 0.25);
+  $error: palette.$base08;
 
   @if config.$professional {
     $highlight: palette.$baseF4;
