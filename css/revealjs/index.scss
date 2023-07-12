@@ -2,6 +2,7 @@
 @use "../config";
 @use "../fonts/regular" as regular-font;
 @use "../fonts/heading" as heading-font;
+@use "../fonts/code" as code-font;
 @use "../elements";
 
 $segment: min(calc(1vh / 9), calc(1vw / 16));
@@ -134,9 +135,6 @@ $sh: calc($segment * 9);
 @import "/node_modules/reveal.js/css/theme/template/settings";
 // ---------------------------------------------
 
-// Include theme-specific fonts
-//@import url(/css/roboto-slab.scss);
-
 
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: colors.$background;
@@ -147,6 +145,7 @@ $headingColor: colors.$foreground;
 $mainFontSize: 42px;
 $mainFont: regular-font.$font-family;
 $headingFont: heading-font.$font-family;
+$codeFont: code-font.$font-family;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
