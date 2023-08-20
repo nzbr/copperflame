@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    pnpm2nix= {
+    pnpm2nix = {
       url = "github:nzbr/pnpm2nix-nzbr";
       inputs = {
         nixpkgs.follows = "nixpkgs";
