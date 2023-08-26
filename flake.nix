@@ -113,6 +113,7 @@
               latexmk
               polyglossia
               tcolorbox
+              tikzfill
               ;
           };
 
