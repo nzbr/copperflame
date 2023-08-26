@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -15,7 +15,7 @@ dependencies:
     specifier: ^18.11.18
     version: 18.11.18
   rimraf:
-    specifier: ^4.1.2
+    specifier: ^4.1.2 || ^5.0.0
     version: 4.1.2
   typescript:
     specifier: ^4.9.5
@@ -777,6 +777,7 @@ packages:
   /node-gyp-build-optional-packages@5.0.7:
     resolution: {integrity: sha512-YlCCc6Wffkx0kHkmam79GKvDQ6x+QZkMjFGrIMxgFNILFvGSbCp2fCBC55pGTT9gVaz8Na5CLmxt/urtzRv36w==}
     hasBin: true
+    requiresBuild: true
     dev: false
     optional: true
 
