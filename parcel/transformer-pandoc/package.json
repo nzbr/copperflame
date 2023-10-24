@@ -17,7 +17,7 @@
   },
   "peerDependencies": {
     "@parcel/types": "^2.8.3",
-    "@types/node": "^18.11.18",
+    "@types/node": "^18.11.18 || ^20.0.0",
     "rimraf": "^5.0.0",
     "typescript": "^5.0.0"
   }
