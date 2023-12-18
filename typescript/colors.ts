@@ -1,6 +1,6 @@
 import { palette } from "./palette";
 
-export interface ColorScheme {
+type ColorScheme = typeof palette & {
   foreground: string;
   background: string;
   foregroundSecondary: string;
@@ -11,6 +11,7 @@ export interface ColorScheme {
 }
 
 export const darkColors: ColorScheme = {
+  ...palette,
   foreground: palette.base06,
   background: palette.base00,
   foregroundSecondary: palette.base04,
@@ -26,6 +27,7 @@ export const darkProColors: ColorScheme = {
 }
 
 export const lightColors: ColorScheme = {
+  ...palette,
   foreground: palette.base01,
   background: palette.base07,
   foregroundSecondary: palette.base03,
