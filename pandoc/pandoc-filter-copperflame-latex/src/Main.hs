@@ -73,7 +73,7 @@ processBlock (DefinitionList xs) = DefinitionList $ map (\(a, b) -> (map process
 processBlock (Header i a xs) = Header i a $ map processInline xs
 processBlock HorizontalRule = HorizontalRule
 processBlock (Table a caption col thead tbody tfoot) = Table a (processCaption caption) col (processTableHead thead) (map processTableBody tbody) (processTableFoot tfoot)
---filterBibTeX (Figure a c xs) = Figure a (processCaption c) (map filterBibTeX xs)
+processBlock (Figure a c xs) = Figure a (processCaption c) (map processBlock xs)
 processBlock (Div (id, classes, attrs) blocks) | (pack "minipage") `elem` classes =
                Div (id, (pack "merge") : classes, attrs)
                $ ((RawBlock (Format $ pack "glue{tex}") $ pack $ "\\begin{minipage}{" ++ (unpack width) ++ "\\textwidth}"))
@@ -86,7 +86,6 @@ processBlock (Div (id, classes, attrs) blocks) | (pack "minipage") `elem` classe
                   Nothing -> (pack "0.5")
 
 processBlock (Div attr blocks) | otherwise = Div attr $ processBlockList blocks
-processBlock Null = Null
 
 
 processBlockList :: [Block] -> [Block]
