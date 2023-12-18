@@ -1,0 +1,5 @@
+export const palette = {
+<% Object.keys(base).forEach((key) => { -%>
+    base<%- key %>: "#<%- base[key]["hex"] %>",
+<% }); -%>
+};

@@ -1,6 +1,7 @@
 {
   "name": "copperflame",
   "author": "nzbr",
+  "version": "0.0.1",
   "license": "ISC",
   "scripts": {
     "base16": "node base16/build.js",
