@@ -1,6 +1,6 @@
 import { palette } from "./palette";
 
-type ColorScheme = typeof palette & {
+export type ColorScheme = typeof palette & {
   foreground: string;
   background: string;
   foregroundSecondary: string;
