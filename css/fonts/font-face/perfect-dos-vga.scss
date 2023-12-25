@@ -14,7 +14,7 @@ $font-family: $name, "Courier", "Courier New", monospace;
     font-style: normal;
     font-display: swap;
 
-    $src-file: "#{config.$root}/assets/perfect-dos-vga/More Perfect DOS VGA.ttf";
+    $src-file: "#{config.$root}/assets/perfect-dos-vga/more-perfect-dos-vga.ttf";
     $src: local($name), url("#{$src-file}?as=woff2") format("woff2");
     @if config.$font-ttf-fallback {
       $src: list.append($src, url("#{$src-file}?as=ttf") format("truetype"));
