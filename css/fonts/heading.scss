@@ -18,5 +18,7 @@ $font-family: null !default;
     @include roboto-slab.roboto-slab;
   } @else {
     @include perfect-dos-vga.perfect-dos-vga;
+    font-weight: normal;
+    text-shadow: none;
   }
 }

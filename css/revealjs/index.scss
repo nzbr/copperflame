@@ -38,6 +38,14 @@ $sh: calc($segment * 9);
     font-size: calc(5 * $sw);
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    @if not config.$professional {
+      font-weight: normal;
+      text-shadow: none;
+      color: colors.$highlight;
+    }
+  }
+
   .section-content {
     font-size: calc(2.25 * $sw);
 
@@ -150,10 +158,9 @@ $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 600;
-//$linkColor: #2a76dd;
-$linkColor: colors.$baseF4;
-$linkColorHover: colors.$baseF6;
-$selectionBackgroundColor: colors.$baseF5;
+$linkColor: darken(colors.$highlight, 20%);
+$linkColorHover: colors.$highlight;
+$selectionBackgroundColor: colors.$highlight;
 
 $heading1Size: 1.5em;
 $heading2Size: 1.25em;
