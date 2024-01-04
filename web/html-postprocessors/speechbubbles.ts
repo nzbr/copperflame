@@ -68,7 +68,7 @@ export function fn({ $, asset, options, config, logger }: StepInputs): void {
       const alt = fs.readFileSync(sticker.stickerAltFile, 'utf-8').trim();
 
       const url = asset.addURLDependency(
-        `/${path.posix.relative(root, sticker.stickerFile)}`,
+        `/${path.posix.relative(projectRoot, sticker.stickerFile)}`,
         {},
       );
 
