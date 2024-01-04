@@ -5,11 +5,13 @@ import { toPosixPath } from '@nzbr/parcel-transformer-postprocess-html';
 
 export const name = 'speechbubbles';
 
-export function fn({ $, asset, options, config }: StepInputs): void {
+export function fn({ $, asset, options, config, logger }: StepInputs): void {
   const projectRoot = toPosixPath(options.projectRoot);
   const possibleCopperflameRoot = path.posix.join(projectRoot, 'node_modules', '@nzbr', 'copperflame');
   const root = fs.existsSync(possibleCopperflameRoot) ? possibleCopperflameRoot : projectRoot;
   const stickers = config.stickerPath ?? path.posix.join(root, 'assets', 'stickers');
+
+  logger.info({message: `Using stickers from ${stickers}`});
 
   asset.invalidateOnFileCreate({
     glob: path.posix.join(stickers, '*'),
