@@ -1,4 +1,4 @@
-const { execSync } = require("child_process");
+const {execSync} = require("child_process");
 const join = require("path").join;
 const fs = require("fs");
 
@@ -22,8 +22,8 @@ function build(template, destination) {
 build(
   "tex.ejs", join("..", "pandoc", "partials", `copperflame-colors.tex`)
 );
-build("scss.ejs", join("..", "css", "palette.scss"));
-build("ts.ejs", join("..", "typescript", "palette.ts"));
+build("scss.ejs", join("..", "web", "css", "palette.scss"));
+build("ts.ejs", join("..", "web", "js", "palette.ts"));
 build(join("logo", "icon.svg.ejs"), join("..", "assets", "icon.svg"));
 build(join("logo", "logo.svg.ejs"), join("..", "assets", "logo.svg"));
 build(join("logo", "logo-pro.svg.ejs"), join("..", "assets", "logo-pro.svg"));
