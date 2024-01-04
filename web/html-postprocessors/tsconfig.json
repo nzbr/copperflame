@@ -1,0 +1,13 @@
+{
+  "include": [
+    "*.ts"
+  ],
+  "exclude": [],
+  "compilerOptions": {
+    "module": "CommonJS",
+    "outDir": ".",
+    "lib": [
+      "ES2021"
+    ]
+  }
+}
