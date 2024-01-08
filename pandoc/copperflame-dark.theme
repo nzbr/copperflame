@@ -5,9 +5,9 @@
   },
 
   "text-color": "#C6C6C6",
-  "background-color": "#1B1B1B",
+  "background-color": "#303030",
   "line-number-color": "#C6C6C6",
-  "line-number-background-color": "#303030",
+  "line-number-background-color": "#5E5E5E",
   "text-styles": {
     "Alert": {
       "text-color": "#ED4F5A",

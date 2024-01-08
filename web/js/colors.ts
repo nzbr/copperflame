@@ -15,7 +15,7 @@ export const darkColors: ColorScheme = {
   foreground: palette.base06,
   background: palette.base00,
   foregroundSecondary: palette.base04,
-  backgroundSecondary: palette.base01,
+  backgroundSecondary: palette.base02,
   error: palette.base08,
   shadow: "#000000",
   highlight: palette.baseF6,
