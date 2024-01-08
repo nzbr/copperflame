@@ -1,0 +1,89 @@
+@use "../colors";
+@use "floating";
+
+$arrow-size: 1em;
+$gap-size: .5em;
+$padding: 1em;
+$sticker-size: $padding * 2 + $arrow-size * 2;
+
+$speechbubble-margin: $arrow-size + $gap-size;
+
+.speechbubble {
+  display: flex;
+  align-items: end;
+
+  margin-bottom: $padding;
+  margin-top: $padding;
+
+  .text {
+    @include floating.floating-text;
+
+    min-height: $sticker-size - ($padding * 2);
+
+    padding: $padding;
+    border-radius: $padding;
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow-x: unset; // Arrow gets hidden otherwise
+
+    // Speechbubbles shouldn't always be full width
+    width: max-content;
+    max-width: calc(100% - $padding * 2);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      bottom: calc($sticker-size / 2 - $arrow-size);
+      border-top: $arrow-size solid transparent;
+      border-bottom: $arrow-size solid transparent;
+    }
+  }
+
+  // Sticker
+  & > img, & > picture, & > picture > img {
+    width: $sticker-size;
+    height: $sticker-size;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+
+  &.left-speechbubble {
+    justify-content: flex-start;
+
+    .text {
+      margin-left: $speechbubble-margin;
+
+      // Arrow
+      &:after {
+        left: - calc($arrow-size * 2);
+        transform: translateX(.5px); // Fix a gap on some devices
+        border-left: $arrow-size solid transparent;
+        border-right: $arrow-size solid colors.$background-secondary;
+      }
+    }
+  }
+
+  &.right-speechbubble {
+    justify-content: flex-end;
+
+    .text {
+      margin-right: $speechbubble-margin;
+
+      // Arrow
+      &:after {
+        right: - calc($arrow-size * 2);
+        transform: translateX(-.5px); // Fix a gap on some devices
+        border-left: $arrow-size solid colors.$background-secondary;
+        border-right: $arrow-size solid transparent;
+      }
+    }
+  }
+}

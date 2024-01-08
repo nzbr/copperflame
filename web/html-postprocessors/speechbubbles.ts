@@ -72,13 +72,17 @@ export function fn({ $, asset, options, config, logger }: StepInputs): void {
         {},
       );
 
+      const img = `<img src="${url}" title=${character} alt="${alt}" width='128' />`;
+      const text = `<div class="text">${$(el).html() ?? ''}</div>`;
       $(el).addClass('speechbubble');
-      $(el).html(`
-        <img src="${url}" title=${character} alt="${alt}" width='128' />
-        <div class="text">
-          ${$(el).html() ?? ''}
-        </div>
-      `);
+      if ($(el).hasClass('inverted')) {
+        $(el).removeClass('inverted');
+        $(el).addClass('right-speechbubble');
+          $(el).html(text + img);
+      } else {
+        $(el).addClass('left-speechbubble');
+        $(el).html(img + text);
+      }
       // width=128 is a fallback for the reader mode, because it ignores the CSS
     });
   });

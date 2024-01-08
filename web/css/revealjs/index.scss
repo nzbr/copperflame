@@ -4,20 +4,22 @@
 @use "../fonts/heading" as heading-font;
 @use "../fonts/code" as code-font;
 @use "../elements";
+@use "../elements/speechbubble";
 
 $segment: min(calc(1vh / 9), calc(1vw / 16));
 $sw: calc($segment * 16);
 $sh: calc($segment * 9);
+
+$header-height: 7;
+$header-padding: .5;
+$header-gap: 2;
+$contentHeight: calc((100 - $header-height - $header-padding * 2 - $header-gap) * $sh);
 
 .reveal section {
   opacity: 1 !important;
 
   height: 100vh;
   width: 100vw;
-
-  $header-height: 7;
-  $header-padding: .5;
-  $header-gap: 2;
 
   h1 {
     @include elements.acrylic;
@@ -50,7 +52,7 @@ $sh: calc($segment * 9);
     font-size: calc(2.25 * $sw);
 
     width: calc(100 * $sw);
-    height: calc((100 - $header-height - $header-padding * 2 - $header-gap) * $sh);
+    height: $contentHeight;
 
     margin: auto;
 
@@ -116,6 +118,17 @@ $sh: calc($segment * 9);
 
     video, img.floating {
       @include elements.floating-box($padding: 0px, $border-radius: $sw);
+    }
+
+    .speechbubble {
+      $padding: speechbubble.$padding;
+
+      margin-left: $padding;
+      margin-right: $padding;
+
+      img {
+        margin: 0;
+      }
     }
 
     #refs {
