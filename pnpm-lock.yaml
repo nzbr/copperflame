@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -13,21 +13,21 @@ dependencies:
     version: 5.0.2
   '@nzbr/parcel-transformer-postprocess-html':
     specifier: github:nzbr/parcel-transformer-postprocess-html
-    version: github.com/nzbr/parcel-transformer-postprocess-html/9b9466324e35ad9db9999064f7ed2251e547affb(@parcel/core@2.11.0)
+    version: github.com/nzbr/parcel-transformer-postprocess-html/5042be83e0c116beb9d6a66f689b2b5f3140ebdd(@parcel/core@2.11.0)
   base16-builder:
     specifier: ^1.3.0
     version: 1.3.0
   sharp:
     specifier: ^0.31.1
     version: 0.31.1
+  typescript:
+    specifier: ^5.3.3
+    version: 5.3.3
 
 devDependencies:
   '@types/node':
     specifier: ^20.10.6
     version: 20.10.6
-  typescript:
-    specifier: ^5.3.3
-    version: 5.3.3
 
 packages:
 
@@ -1433,10 +1433,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /markdown-it-emoji@2.0.2:
-    resolution: {integrity: sha512-zLftSaNrKuYl0kR5zm4gxXjHaOI3FAOEaloKmRA5hijmJZvSjmxcokOLlzycb/HXlUFWzXqpIEoyEMCE4i9MvQ==}
-    dev: false
-
   /meow@3.7.0:
     resolution: {integrity: sha512-TNdwZs0skRlpPpCUK25StC4VH+tP5GgeY1HQOOGP+lQ2xtdkN2VtT/5tiX9k3IWpkBPV9b3LsAWXn4GGi/PrSA==}
     engines: {node: '>=0.10.0'}
@@ -2223,15 +2219,10 @@ packages:
     resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
+    dev: false
 
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
-
-  /unicode@14.0.0:
-    resolution: {integrity: sha512-BjinxTXkbm9Jomp/YBTMGusr4fxIG67fNGShHIRAL16Ur2GJTq2xvLi+sxuiJmInCmwqqev2BCFKyvbfp/yAkg==}
-    engines: {node: '>= 0.8.x'}
-    dev: false
 
   /unzip-response@1.0.2:
     resolution: {integrity: sha512-pwCcjjhEcpW45JZIySExBHYv5Y9EeL2OIGEfrSKp2dMUFGFv4CpvZkwJbVge8OvGH2BNNtJBx67DuKuJhf+N5Q==}
@@ -2348,18 +2339,17 @@ packages:
     requiresBuild: true
     dev: false
 
-  github.com/nzbr/parcel-transformer-postprocess-html/9b9466324e35ad9db9999064f7ed2251e547affb(@parcel/core@2.11.0):
-    resolution: {tarball: https://codeload.github.com/nzbr/parcel-transformer-postprocess-html/tar.gz/9b9466324e35ad9db9999064f7ed2251e547affb}
-    id: github.com/nzbr/parcel-transformer-postprocess-html/9b9466324e35ad9db9999064f7ed2251e547affb
+  github.com/nzbr/parcel-transformer-postprocess-html/5042be83e0c116beb9d6a66f689b2b5f3140ebdd(@parcel/core@2.11.0):
+    resolution: {tarball: https://codeload.github.com/nzbr/parcel-transformer-postprocess-html/tar.gz/5042be83e0c116beb9d6a66f689b2b5f3140ebdd}
+    id: github.com/nzbr/parcel-transformer-postprocess-html/5042be83e0c116beb9d6a66f689b2b5f3140ebdd
     name: '@nzbr/parcel-transformer-postprocess-html'
     version: 1.0.0
     engines: {parcel: 2.x}
+    prepare: true
     requiresBuild: true
     dependencies:
       '@parcel/plugin': 2.11.0(@parcel/core@2.11.0)
       cheerio: 1.0.0-rc.12
-      markdown-it-emoji: 2.0.2
-      unicode: 14.0.0
     transitivePeerDependencies:
       - '@parcel/core'
     dev: false
