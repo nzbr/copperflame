@@ -119,6 +119,8 @@
 
           texlive-copperflame = pkgs.texlive.combine self.packages.${system}.texlive-scheme-copperflame;
 
+          copperflame-mono = pkgs.callPackage ./font/default.nix { };
+
           examples = pkgs.callPackage ./examples self.packages.${system};
 
         };

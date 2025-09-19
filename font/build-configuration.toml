@@ -1,0 +1,332 @@
+[buildPlans.CopperflameMono]
+family = "Copperflame Mono"
+spacing = "normal"
+serifs = "sans"
+noCvSs = false
+exportGlyphNames = true
+
+[buildPlans.CopperflameMono.variants.design]
+two = "straight-neck-serifless"
+three = "flat-top-serifless"
+five = "upright-flat-serifless"
+eight = "two-circles"
+zero = "slashed-cutout"
+capital-g = "toothless-corner-serifless-hooked"
+capital-j = "serifless"
+capital-k = "symmetric-touching-serifless"
+capital-q = "crossing"
+capital-r = "standing-serifless"
+capital-w = "straight-flat-top-serifless"
+f = "flat-hook-serifless"
+j = "flat-hook-serifed"
+k = "symmetric-touching-serifless"
+r = "hookless-serifless"
+t = "flat-hook"
+u = "toothless-rounded-serifless"
+w = "straight-flat-top-serifless"
+capital-eszet = "corner-serifless"
+long-s = "flat-hook-descending"
+eszet = "traditional-flat-hook-descending-serifless"
+lower-gamma = "curly"
+lower-delta = "flat-top"
+lower-theta = "capsule"
+lower-kappa = "symmetric-touching-serifless"
+lower-mu = "toothless-rounded-serifless"
+lower-nu = "curly"
+lower-pi = "tailless"
+lower-tau = "flat-tailed"
+lower-upsilon = "straight-serifed"
+lower-psi = "serifless"
+partial-derivative = "straight-bar"
+cyrl-capital-zhe = "straight"
+cyrl-zhe = "straight"
+cyrl-capital-ka = "symmetric-touching-serifless"
+cyrl-ka = "symmetric-touching-serifless"
+cyrl-em = "hanging-serifless"
+cyrl-capital-ya = "standing-serifless"
+cyrl-ya = "standing-serifless"
+asterisk = "turn-hex-low"
+paren = "flat-arc"
+brace = "straight"
+guillemet = "straight"
+number-sign = "slanted"
+percent = "rings-continuous-slash"
+question = "smooth"
+micro-sign = "toothless-rounded-serifless"
+
+[buildPlans.CopperflameMono.variants.italic]
+two = "straight-neck-serifless"
+three = "flat-top-serifless"
+five = "upright-flat-serifless"
+eight = "two-circles"
+zero = "slashed-cutout"
+capital-g = "toothless-corner-serifless-hooked"
+capital-j = "serifless"
+capital-k = "symmetric-touching-serifless"
+capital-q = "crossing"
+capital-r = "standing-serifless"
+capital-w = "straight-flat-top-serifless"
+a = "double-storey-tailed"
+f = "flat-hook-tailed"
+i = "serifed-flat-tailed"
+j = "flat-hook-serifed"
+k = "symmetric-touching-serifless"
+l = "serifed-flat-tailed"
+r = "hookless-serifless"
+t = "flat-hook"
+u = "toothless-rounded-serifless"
+w = "straight-flat-top-serifless"
+y = "straight-turn-serifless"
+capital-eszet = "corner-serifless"
+long-s = "flat-hook-descending"
+eszet = "traditional-flat-hook-descending-serifless"
+lower-gamma = "curly"
+lower-delta = "flat-top"
+lower-theta = "capsule"
+lower-kappa = "symmetric-touching-serifless"
+lower-mu = "toothless-rounded-serifless"
+lower-nu = "curly"
+lower-pi = "tailless"
+lower-tau = "flat-tailed"
+lower-upsilon = "straight-serifed"
+lower-psi = "serifless"
+partial-derivative = "straight-bar"
+cyrl-capital-zhe = "straight"
+cyrl-zhe = "straight"
+cyrl-capital-ka = "symmetric-touching-serifless"
+cyrl-ka = "symmetric-touching-serifless"
+cyrl-em = "hanging-serifless"
+cyrl-capital-ya = "standing-serifless"
+cyrl-ya = "standing-serifless"
+asterisk = "turn-hex-low"
+paren = "flat-arc"
+brace = "straight"
+guillemet = "straight"
+number-sign = "slanted"
+percent = "rings-continuous-slash"
+question = "smooth"
+micro-sign = "toothless-rounded-serifless"
+
+[buildPlans.CopperflameMono.ligations]
+inherits = "default-calt"
+disabled = [ "kern-dotty", "arrow-l-wave", "arrow-r-wave", "arrow-lr-wave" ]
+
+[buildPlans.CopperflameMono.weights.Regular]
+shape = 400
+menu = 400
+css = 400
+
+[buildPlans.CopperflameMono.weights.Bold]
+shape = 700
+menu = 700
+css = 700
+
+[buildPlans.CopperflameMono.widths.Condensed]
+shape = 500
+menu = 3
+css = "condensed"
+
+[buildPlans.CopperflameMono.widths.Normal]
+shape = 600
+menu = 5
+css = "normal"
+
+[buildPlans.CopperflameMono.slopes.Upright]
+angle = 0
+shape = "upright"
+menu = "upright"
+css = "normal"
+
+[buildPlans.CopperflameMono.slopes.Italic]
+angle = 9.4
+shape = "italic"
+menu = "italic"
+css = "italic"
+
+
+[buildPlans.CopperflameMonoSlab]
+family = "Copperflame Mono Slab"
+spacing = "normal"
+serifs = "slab"
+noCvSs = false
+exportGlyphNames = true
+
+[buildPlans.CopperflameMonoSlab.ligations]
+inherits = "dlig"
+
+[buildPlans.CopperflameMonoSlab.variants.design]
+one = "base"
+two = "curly-neck-serifed"
+three = "flat-top-serifed"
+four = "semi-open-serifed"
+five = "upright-flat-serifed"
+six = "closed-contour"
+seven = "straight-serifed-crossbar"
+eight = "two-circles"
+nine = "closed-contour"
+zero = "tall-slashed-cutout"
+capital-a = "straight-base-serifed"
+capital-b = "standard-bilateral-serifed"
+capital-c = "unilateral-serifed"
+capital-d = "standard-bilateral-serifed"
+capital-e = "serifed"
+capital-f = "serifed"
+capital-g = "toothed-serifed-hooked"
+capital-h = "serifed"
+capital-i = "serifed"
+capital-j = "serifed"
+capital-k = "symmetric-connected-serifed"
+capital-l = "serifed"
+capital-m = "hanging-serifed"
+capital-n = "standard-serifed"
+capital-p = "closed-serifed"
+capital-q = "crossing-baseline"
+capital-r = "standing-top-left-and-bottom-right-serifed"
+capital-s = "bilateral-serifed"
+capital-t = "serifed"
+capital-u = "toothed-motion-serifed"
+capital-v = "straight-serifed"
+capital-w = "straight-serifed"
+capital-x = "straight-serifed"
+capital-y = "straight-serifed"
+capital-z = "straight-serifed-with-horizontal-crossbar"
+a = "double-storey-serifed"
+b = "toothed-serifed"
+c = "unilateral-serifed"
+d = "toothed-serifed"
+e = "flat-crossbar"
+f = "flat-hook-serifed"
+g = "single-storey-serifed"
+h = "straight-serifed"
+i = "serifed"
+j = "serifed"
+k = "symmetric-connected-serifed"
+l = "serifed"
+m = "tailed-top-left-serifed"
+n = "tailed-motion-serifed"
+p = "eared-serifed"
+q = "straight-serifed"
+r = "corner-hooked-serifed"
+s = "bilateral-serifed"
+t = "flat-hook-asymmetric"
+u = "toothed-motion-serifed"
+v = "straight-serifed"
+w = "straight-serifed"
+x = "straight-serifed"
+y = "straight-serifed"
+z = "straight-serifed-with-horizontal-crossbar"
+capital-eszet = "corner-serifed"
+long-s = "flat-hook-descending"
+eszet = "traditional-flat-hook-descending-middle-serifed"
+lower-eth = "curly-bar"
+capital-thorn = "serifed"
+lower-thorn = "serifed"
+lower-alpha = "crossing"
+lower-beta = "standard"
+capital-gamma = "serifed"
+lower-gamma = "curly"
+capital-delta = "straight"
+lower-delta = "rounded"
+lower-eta = "motion-serifed"
+lower-theta = "capsule"
+lower-iota = "serifed-semi-tailed"
+lower-kappa = "straight-tri-serifed"
+capital-lambda = "straight-top-serifed"
+lower-lambda = "straight-turn"
+lower-mu = "tailed-serifed"
+lower-nu = "curly"
+lower-xi = "flat-top"
+lower-pi = "tailed"
+lower-tau = "flat-tailed"
+lower-upsilon = "straight-serifed"
+lower-phi = "cursive"
+lower-chi = "straight-bilateral-motion-serifed"
+lower-psi = "flat-top-serifed"
+partial-derivative = "closed-contour"
+cyrl-a = "double-storey-serifed"
+cyrl-ve = "standard-bilateral-serifed"
+cyrl-capital-zhe = "symmetric-connected"
+cyrl-zhe = "symmetric-connected"
+cyrl-capital-ze = "unilateral-serifed"
+cyrl-ze = "unilateral-serifed"
+cyrl-capital-ka = "symmetric-connected-serifed"
+cyrl-ka = "symmetric-connected-serifed"
+cyrl-el = "straight"
+cyrl-em = "flat-bottom-serifed"
+cyrl-capital-en = "serifed"
+cyrl-en = "serifed"
+cyrl-capital-er = "closed-serifed"
+cyrl-er = "eared-serifed"
+cyrl-capital-u = "straight-serifed"
+cyrl-u = "straight-serifed"
+cyrl-ef = "serifed"
+cyrl-che = "standard"
+cyrl-yeri = "corner"
+cyrl-yery = "corner"
+cyrl-capital-e = "unilateral-serifed"
+cyrl-e = "unilateral-serifed"
+cyrl-capital-ya = "standing-motion-serifed"
+cyrl-ya = "standing-motion-serifed"
+tittle = "round"
+diacritic-dot = "round"
+punctuation-dot = "round"
+braille-dot = "round"
+tilde = "low"
+asterisk = "turn-hex-low"
+underscore = "high"
+caret = "medium"
+ascii-grave = "straight"
+ascii-single-quote = "straight"
+paren = "flat-arc"
+brace = "straight"
+guillemet = "straight"
+number-sign = "upright"
+ampersand = "closed"
+at = "fourfold"
+dollar = "through"
+cent = "through"
+percent = "rings-continuous-slash"
+bar = "natural-slope"
+question = "corner"
+pilcrow = "low"
+micro-sign = "tailed-motion-serifed"
+decorative-angle-brackets = "middle"
+lig-ltgteq = "flat"
+lig-neq = "slightly-slanted"
+lig-equal-chain = "without-notch"
+lig-hyphen-chain = "without-notch"
+lig-plus-chain = "without-notch"
+lig-double-arrow-bar = "without-notch"
+lig-single-arrow-bar = "without-notch"
+
+[buildPlans.CopperflameMonoSlab.weights.Regular]
+shape = 400
+menu = 400
+css = 400
+
+[buildPlans.CopperflameMonoSlab.weights.Bold]
+shape = 700
+menu = 700
+css = 700
+
+[buildPlans.CopperflameMonoSlab.widths.Condensed]
+shape = 500
+menu = 3
+css = "condensed"
+
+[buildPlans.CopperflameMonoSlab.widths.Normal]
+shape = 600
+menu = 5
+css = "normal"
+
+[buildPlans.CopperflameMonoSlab.slopes.Upright]
+angle = 0
+shape = "upright"
+menu = "upright"
+css = "normal"
+
+[buildPlans.CopperflameMonoSlab.slopes.Italic]
+angle = 9.4
+shape = "italic"
+menu = "italic"
+css = "italic"
