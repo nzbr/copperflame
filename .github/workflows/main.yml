@@ -19,6 +19,7 @@ jobs:
       matrix:
         drv:
           - copperflame
+          - copperflame-mono
           - devShells.x86_64-linux.default
     steps:
       - name: Checkout
