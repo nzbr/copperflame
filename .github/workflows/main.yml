@@ -20,6 +20,7 @@ jobs:
         drv:
           - copperflame
           - copperflame-mono
+          - copperflame-mono.unpatched
           - devShells.x86_64-linux.default
     steps:
       - name: Checkout
