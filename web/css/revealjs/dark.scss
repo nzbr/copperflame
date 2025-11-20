@@ -1,6 +1,7 @@
 @use "../config" with (
   $root: "../../..",
   $professional: false,
+  $auto-darkmode: false,
   $darkmode: true
 );
 @use "index";

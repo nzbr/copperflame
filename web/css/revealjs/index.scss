@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @use "../colors";
 @use "../config";
 @use "../fonts/regular" as regular-font;
@@ -156,12 +158,24 @@ $contentHeight: calc((100 - $header-height - $header-padding * 2 - $header-gap) 
 @import "/node_modules/reveal.js/css/theme/template/settings";
 // ---------------------------------------------
 
+$palette: colors.$lightColors;
+
+@if config.$darkmode {
+  $palette: colors.$darkColors;
+}
 
 // Override theme settings (see ../template/settings.scss)
-$backgroundColor: colors.$background;
+$backgroundColor: map.get($palette, 'background');
 
-$mainColor: colors.$foreground;
-$headingColor: colors.$foreground;
+$mainColor: map.get($palette, 'foreground');
+$headingColor: map.get($palette, 'highlight');
+@if config.$professional {
+  $headingColor: map.get($palette, 'foreground');
+}
+
+$linkColor: map.get($palette, 'highlight');
+$linkColorHover: lighten(map.get($palette, 'highlight'), 5%);
+$selectionBackgroundColor: darken(map.get($palette, 'highlight'), 5%);
 
 $mainFontSize: 42px;
 $mainFont: regular-font.$font-family;
@@ -171,9 +185,10 @@ $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 600;
-$linkColor: darken(colors.$highlight, 20%);
-$linkColorHover: colors.$highlight;
-$selectionBackgroundColor: colors.$highlight;
+
+@if config.$professional {
+  $headingTextTransform: none;
+}
 
 $heading1Size: 1.5em;
 $heading2Size: 1.25em;

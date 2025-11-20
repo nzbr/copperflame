@@ -1,46 +1,96 @@
+@use "sass:math";
+@use "sass:map";
+
 @use "palette";
 @use "config";
 
 @forward "palette";
 
-$foreground: null !default;
-$background: null !default;
-$foreground-secondary: null !default;
-$background-secondary: null !default;
-$shadow: null !default;
-$highlight: null !default;
-$error: null !default;
+$foreground: var(--cf-foreground);
+$background: var(--cf-background);
+$foreground-secondary: var(--cf-foreground-secondary);
+$background-secondary: var(--cf-background-secondary);
+$background-secondary-transparent: var(--cf-background-secondary-transparent);
+$alpha: var(--cf-alpha);
+$shadow: var(--cf-shadow);
+$highlight: var(--cf-highlight);
+$error: var(--cf-error);
 
-@if config.$darkmode {
+@function makeTransparentChannel($channel, $backgroundChannel, $alpha) {
+  @return math.div(($channel - (1-$alpha) * $backgroundChannel), $alpha);
+}
 
-  $foreground: palette.$base06;
-  $background: palette.$base00;
-  $foreground-secondary: palette.$base04;
-  $background-secondary: palette.$base02;
+@function makeTransparent($color, $background, $alpha) {
+  @return rgba(
+    makeTransparentChannel(red($color), red($background), $alpha),
+    makeTransparentChannel(green($color), green($background), $alpha),
+    makeTransparentChannel(blue($color), blue($background), $alpha),
+    $alpha
+  );
+}
 
-  $shadow: rgba(black, 0.25);
-  $error: palette.$base08;
+$_lightHighlight: palette.$baseF5 !default;
+$_darkHighlight: palette.$baseF6 !default;
 
-  @if config.$professional {
-    $highlight: palette.$baseF4;
-  } @else {
-    $highlight: palette.$baseF6;
+@if config.$professional {
+  $_lightHighlight: palette.$baseF4 !default;
+  $_darkHighlight: palette.$baseF4 !default;
+}
+
+$darkColors: (
+  foreground: palette.$base06,
+  background: palette.$base00,
+  foreground-secondary: palette.$base04,
+  background-secondary: palette.$base02,
+
+  alpha: 0.8,
+  highlight: $_darkHighlight,
+  shadow: rgba(black, 0.25),
+  error: palette.$base08,
+) !default;
+
+$lightColors: (
+  foreground: palette.$base01,
+  background: palette.$base07,
+  foreground-secondary: palette.$base03,
+  background-secondary: palette.$base06,
+
+  alpha: 0.75,
+  highlight: $_lightHighlight,
+  shadow: rgba(palette.$base03, 0.25),
+  error: palette.$base08,
+) !default;
+
+@mixin useColors($palette) {
+  --cf-alpha: #{map.get($palette, 'alpha')};
+  --cf-foreground: #{map.get($palette, 'foreground')};
+  --cf-background: #{map.get($palette, 'background')};
+  --cf-foreground-secondary: #{map.get($palette, 'foreground-secondary')};
+  --cf-background-secondary: #{map.get($palette, 'background-secondary')};
+  --cf-background-secondary-transparent: #{makeTransparent(map.get($palette, 'background-secondary'), map.get($palette, 'background'), map.get($palette, 'alpha'))};
+
+  --cf-highlight: #{map.get($palette, 'highlight')};
+  --cf-shadow: #{map.get($palette, 'shadow')};
+  --cf-error: #{map.get($palette, 'error')};
+}
+
+@if config.$auto-darkmode {
+  :root {
+    @include useColors($lightColors);
   }
-
+  @media (prefers-color-scheme: dark) {
+    :root {
+      @include useColors($darkColors);
+    }
+  }
 } @else {
-
-  $foreground: palette.$base01;
-  $background: palette.$base07;
-  $foreground-secondary: palette.$base03;
-  $background-secondary: palette.$base06;
-
-  $shadow: rgba(palette.$base03, 0.25);
-  $error: palette.$base08;
-
-  @if config.$professional {
-    $highlight: palette.$baseF4;
+  @if config.$darkmode {
+    :root {
+      @include useColors($darkColors);
+    }
   } @else {
-    $highlight: palette.$baseF5;
+    :root {
+      @include useColors($lightColors);
+    }
   }
-
 }

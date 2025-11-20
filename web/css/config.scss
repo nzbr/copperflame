@@ -3,7 +3,8 @@ $debug: false !default;
 $root: "/node_modules/@nzbr/copperflame" !default;
 
 $professional: false !default;
-$darkmode: true !default;
+$auto-darkmode: true !default;
+$darkmode: false !default;
 
 $image-format: "webp" !default; // TODO: Switch to AVIF once edge supports it
 
