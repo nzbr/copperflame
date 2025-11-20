@@ -1,6 +1,6 @@
-@use "font-face/jetbrains-mono";
-@forward "font-face/jetbrains-mono";
+@use "font-face/copperflame-mono";
+@forward "font-face/copperflame-mono";
 
 @mixin font-regular {
-  @include jetbrains-mono.jetbrains-mono;
+  @include copperflame-mono.copperflame-mono;
 }

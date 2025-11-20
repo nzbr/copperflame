@@ -1,0 +1,31 @@
+@use "../util";
+
+$name: "Copperflame Mono";
+$font-family: $name, "JetBrains Mono", Courier, "Courier New", monospace;
+
+@each $style
+  in (
+    Bold,
+    BoldItalic,
+    Condensed,
+    CondensedBold,
+    CondensedBoldItalic,
+    CondensedItalic,
+    Italic,
+    Regular
+  )
+{
+  @font-face {
+    font-family: $name;
+    font-style: $style;
+    src: url("/node_modules/@nzbr/copperflame/font/dist/CopperflameMono/WOFF2/CopperflameMono-#{$style}.woff2")
+        format("woff2"),
+      url("/node_modules/@nzbr/copperflame/font/dist/CopperflameMono/TTF/CopperflameMono-#{$style}.ttf")
+        format("truetype");
+  }
+}
+
+@mixin copperflame-mono {
+  font-family: $font-family;
+  font-size: 1em;
+}
