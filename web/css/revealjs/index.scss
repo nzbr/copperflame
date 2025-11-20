@@ -13,11 +13,47 @@ $sw: calc($segment * 16);
 $sh: calc($segment * 9);
 
 $header-height: 7;
-$header-padding: .5;
+$header-padding: 0.5;
 $header-gap: 2;
-$contentHeight: calc((100 - $header-height - $header-padding * 2 - $header-gap) * $sh);
+$contentHeight: calc(
+  (100 - $header-height - $header-padding * 2 - $header-gap) * $sh
+);
 
-.reveal:not([data-background-transition=none]) .slides section {
+@if config.$debug {
+  section,
+  .section-content {
+    outline: 1px solid fuchsia;
+    .main-content,
+    .sidebar {
+      outline: 1px solid #aa00ff;
+    }
+  }
+  li,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    outline: 1px solid lime;
+  }
+  a {
+    outline: 1px solid cyan;
+  }
+  #refs {
+    .csl-entry {
+      outline: 1px solid #aa00ff;
+      .csl-left-margin {
+        outline: 1px solid lime;
+      }
+      .csl-right-inline {
+        outline: 1px solid lime;
+      }
+    }
+  }
+}
+
+.reveal:not([data-background-transition="none"]) .slides section {
   opacity: 1 !important;
 }
 
@@ -25,26 +61,84 @@ $contentHeight: calc((100 - $header-height - $header-padding * 2 - $header-gap) 
   height: 100vh;
   width: 100vw;
 
+  &.title-slide {
+    background-color: colors.$background-secondary;
+
+    :before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50vw;
+      height: 100vh;
+      margin-left: -50vw;
+      background-color: colors.$background-secondary;
+    }
+
+    :after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 100vh;
+      width: 100vw;
+      height: 50vh;
+      background-color: colors.$background-secondary;
+    }
+  }
+
   h1 {
     @include elements.acrylic;
     @include elements.floating;
     font-size: calc(3.25 * $sw);
     text-align: left;
-    padding-left: calc($header-padding * 2 * $sw);
+    padding-left: calc(
+      $header-padding * 2 * $sw + 50vw
+    ); // 50vw because header extends into whitespace between slides
     padding-top: calc($header-padding * $sh);
     padding-bottom: calc($header-padding * $sh);
     height: calc($header-height * $sh);
     vertical-align: middle;
     margin-bottom: calc($header-gap * $sh);
 
-    margin-right: calc(-50vw); // connect to next slide
+    // connect to next slide (horizontal)
+    margin-left: -50vw;
+    // margin-right: -26vw;
+
+    // connect to next slide (vertical)
+    &::before {
+      content: "";
+      // Use background-secondary at 100% opacity here regardless of palette.alpha, because it should look the same as the header color calculated through makeTransparent
+      $bg-color: none !default;
+      @if config.$darkmode {
+        $bg-color: map.get(colors.$darkColors, "background-secondary");
+      } @else {
+        $bg-color: map.get(colors.$lightColors, "background-secondary");
+      }
+      background: linear-gradient(
+        180deg,
+        rgba($bg-color, 0) 0%,
+        rgba($bg-color, 1) 100%
+      );
+
+      display: block;
+      position: absolute;
+      top: -25vh;
+      left: 0;
+      width: 100%;
+      height: 25vh;
+    }
   }
 
   h2.title {
     font-size: calc(5 * $sw);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @if not config.$professional {
       font-weight: normal;
       text-shadow: none;
@@ -52,9 +146,66 @@ $contentHeight: calc((100 - $header-height - $header-padding * 2 - $header-gap) 
     }
   }
 
-  .section-content {
-    font-size: calc(2.25 * $sw);
+  li::marker {
+    color: colors.$highlight;
+  }
 
+  font-size: calc(2.25 * $sw);
+
+  .citation,
+  .csl-left-margin {
+    color: colors.$foreground-secondary;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .citation {
+    // superset
+    position: relative;
+    top: -1ex;
+    font-size: 0.6em;
+    height: 100%;
+  }
+
+  video,
+  img.floating {
+    @include elements.floating-box($padding: 0px, $border-radius: $sw);
+  }
+
+  .speechbubble {
+    $padding: speechbubble.$padding;
+
+    margin-left: $padding;
+    margin-right: $padding;
+
+    img {
+      margin: 0;
+    }
+  }
+
+  .fragment.custom.highlight {
+    &.visible {
+      color: colors.$highlight;
+    }
+  }
+
+  #refs {
+    @include elements.floating-text($padding: $sw, $margin: 0px);
+
+    font-size: 0.75em;
+    max-height: calc(
+      (100 - $header-height - $header-padding * 2 - $header-gap - 6) * $sh
+    );
+    width: calc((100 - 4) * $sw);
+    margin: auto auto calc(2 * $sh);
+    overflow: auto;
+
+    text-align: left;
+  }
+
+  .section-content {
     width: calc(100 * $sw);
     height: $contentHeight;
 
@@ -69,10 +220,6 @@ $contentHeight: calc((100 - $header-height - $header-padding * 2 - $header-gap) 
       height: calc(100 * $sh);
     }
 
-    @if config.$debug {
-      border: 1px solid fuchsia;
-    }
-
     .main-content {
       flex: 1;
       align-self: center;
@@ -82,7 +229,6 @@ $contentHeight: calc((100 - $header-height - $header-padding * 2 - $header-gap) 
     }
 
     .sidebar {
-
       width: 25%;
       margin: 0;
       height: 100%;
@@ -90,65 +236,24 @@ $contentHeight: calc((100 - $header-height - $header-padding * 2 - $header-gap) 
       padding-left: calc(1 * $sw);
       padding-right: calc(1 * $sw);
 
-      font-size: .5em;
-
-      @if config.$debug {
-        border: 1px solid cyan;
-      }
+      font-size: 0.5em;
 
       .citation {
         font-size: inherit;
-        top: 0
+        top: 0;
       }
 
       p {
         margin-top: 0;
       }
 
-      img, video {
+      img,
+      video {
         margin: 0;
         width: 100%;
       }
     }
-
-    .citation {
-      color: colors.$foreground-secondary;
-      // superset
-      position: relative;
-      top: -1ex;
-      font-size: 0.6em;
-      height: 100%;
-    }
-
-    video, img.floating {
-      @include elements.floating-box($padding: 0px, $border-radius: $sw);
-    }
-
-    .speechbubble {
-      $padding: speechbubble.$padding;
-
-      margin-left: $padding;
-      margin-right: $padding;
-
-      img {
-        margin: 0;
-      }
-    }
-
-    #refs {
-      @include elements.floating-text($padding: $sw, $margin: 0px);
-
-      font-size: 0.75em;
-      max-height: calc((100 - $header-height - $header-padding * 2 - $header-gap - 6) * $sh);
-      width: calc((100 - 4) * $sw);
-      margin: auto auto calc(2 * $sh);
-      overflow: auto;
-
-      text-align: left;
-    }
-
   }
-
 }
 
 /**
@@ -167,17 +272,17 @@ $palette: colors.$lightColors;
 }
 
 // Override theme settings (see ../template/settings.scss)
-$backgroundColor: map.get($palette, 'background');
+$backgroundColor: map.get($palette, "background");
 
-$mainColor: map.get($palette, 'foreground');
-$headingColor: map.get($palette, 'highlight');
+$mainColor: map.get($palette, "foreground");
+$headingColor: map.get($palette, "highlight");
 @if config.$professional {
-  $headingColor: map.get($palette, 'foreground');
+  $headingColor: map.get($palette, "foreground");
 }
 
-$linkColor: map.get($palette, 'highlight');
-$linkColorHover: lighten(map.get($palette, 'highlight'), 5%);
-$selectionBackgroundColor: darken(map.get($palette, 'highlight'), 5%);
+$linkColor: map.get($palette, "highlight");
+$linkColorHover: lighten(map.get($palette, "highlight"), 5%);
+$selectionBackgroundColor: darken(map.get($palette, "highlight"), 5%);
 
 $mainFontSize: 42px;
 $mainFont: regular-font.$font-family;
@@ -195,11 +300,10 @@ $headingFontWeight: 600;
 $heading1Size: 1.5em;
 $heading2Size: 1.25em;
 $heading3Size: 1.1em;
-$heading4Size: 1.0em;
+$heading4Size: 1em;
 
 // Change text colors against dark slide backgrounds
 @include dark-bg-text-color(#fff);
-
 
 // Theme template ------------------------------
 @import "/node_modules/reveal.js/css/theme/template/theme";
