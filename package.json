@@ -6,12 +6,11 @@
   "scripts": {
     "base16": "node base16/build.js",
     "font": "node font/build.js",
-    "tsc": "tsc -b web/html-postprocessors web/js",
-    "build": "npm run base16 && npm run font && npm run tsc",
+    "build-postprocessors": "tsc -b web/html-postprocessors web/js",
+    "build": "npm run base16 && npm run font",
     "install": "npm run build"
   },
   "dependencies": {
-    "@fontsource/jetbrains-mono": "^5.0.2",
     "@fontsource/roboto-slab": "^5.0.2",
     "@iosevka/monorepo": "github:be5invis/Iosevka",
     "@nzbr/parcel-transformer-postprocess-html": "github:nzbr/parcel-transformer-postprocess-html",
