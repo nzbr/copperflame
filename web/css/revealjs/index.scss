@@ -97,6 +97,7 @@ $contentHeight: calc(
     padding-top: calc($header-padding * $sh);
     padding-bottom: calc($header-padding * $sh);
     height: calc($header-height * $sh);
+    line-height: calc($header-height * $sh);
     vertical-align: middle;
     margin-bottom: calc($header-gap * $sh);
 
