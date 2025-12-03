@@ -27,7 +27,7 @@ execSync(`npm install ttfautohint`, {
 
 // Run build
 console.log('Starting build...');
-execSync(`npm run build -- contents::CopperflameMono`, {
+execSync(`npm run build -- contents::CopperflameMono --jCmd=1`, {
   cwd: iosevkaDir,
   stdio: 'inherit'
 });
