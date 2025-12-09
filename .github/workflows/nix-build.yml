@@ -1,4 +1,4 @@
-name: Push 🐲
+name: Nix Build ❄️
 
 on:
   push: {}

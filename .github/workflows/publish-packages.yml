@@ -1,0 +1,38 @@
+name: Publish Packages 📦
+
+on:
+  push:
+    paths:
+      - 'font/**'
+
+jobs:
+  publish:
+    name: Publish Packages 🚀
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://npm.pkg.github.com'
+
+      - name: Enable Corepack
+        run: corepack enable pnpm
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Font
+        run: pnpm --filter @nzbr/copperflame-font build
+
+      - name: Publish
+        run: pnpm --filter @nzbr/copperflame-font publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}

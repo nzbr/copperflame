@@ -1,0 +1,16 @@
+{
+  "name": "@nzbr/copperflame-font",
+  "author": "nzbr",
+  "version": "0.0.1",
+  "license": "OFL-1.1",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "@iosevka/monorepo": "github:be5invis/Iosevka"
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "linkDirectory": true
+  }
+}

@@ -18,9 +18,9 @@ $font-family: $name, "JetBrains Mono", Courier, "Courier New", monospace;
   @font-face {
     font-family: $name;
     font-style: $style;
-    src: url("/node_modules/@nzbr/copperflame/font/dist/CopperflameMono/WOFF2/CopperflameMono-#{$style}.woff2")
+    src: url("/node_modules/@nzbr/copperflame-font/CopperflameMono/WOFF2/CopperflameMono-#{$style}.woff2")
         format("woff2"),
-      url("/node_modules/@nzbr/copperflame/font/dist/CopperflameMono/TTF/CopperflameMono-#{$style}.ttf")
+      url("/node_modules/@nzbr/copperflame-font/CopperflameMono/TTF/CopperflameMono-#{$style}.ttf")
         format("truetype");
   }
 }

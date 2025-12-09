@@ -34,12 +34,8 @@ execSync(`npm run build -- contents::CopperflameMono --jCmd=1`, {
 
 // Copy artifacts
 const distDir = path.resolve(__dirname, 'dist');
-const targetDistDir = path.join(distDir, 'CopperflameMono');
+const targetDistDir = path.join(distDir);
 const sourceDistDir = path.join(iosevkaDir, 'dist', 'CopperflameMono');
-
-if (!fs.existsSync(distDir)) {
-  fs.mkdirSync(distDir);
-}
 
 // Remove existing target directory if it exists to ensure clean copy
 if (fs.existsSync(targetDistDir)) {
@@ -72,3 +68,10 @@ if (fs.existsSync(sourceDistDir)) {
   console.error(`Build output not found at ${sourceDistDir}`);
   process.exit(1);
 }
+
+console.log('Creating dist package.json');
+const pkg = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json')));
+delete pkg.publishConfig;
+delete pkg.scripts;
+delete pkg.devDependencies;
+fs.writeFileSync(path.join(distDir, 'package.json'), JSON.stringify(pkg, null, 2));
