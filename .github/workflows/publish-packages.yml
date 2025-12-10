@@ -4,14 +4,25 @@ on:
   push:
     paths:
       - 'font/**'
+      - 'web/**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   publish:
-    name: Publish Packages 🚀
+    name: Publish ${{ matrix.package }} 📦
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          - '@nzbr/copperflame-font'
+          - '@nzbr/copperflame-web'
 
     steps:
       - name: Checkout
@@ -26,13 +37,19 @@ jobs:
       - name: Enable Corepack
         run: corepack enable pnpm
 
+      - name: Create dist directories
+        run: |
+          mkdir font/dist
+          cp font/package.json font/dist/package.json
+
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build Font
-        run: pnpm --filter @nzbr/copperflame-font build
+      - name: Build Package
+        run: pnpm --filter ${{ matrix.package }} build
 
       - name: Publish
-        run: pnpm --filter @nzbr/copperflame-font publish --access public
+        if: github.ref == 'refs/heads/main'
+        run: pnpm --filter ${{ matrix.package }} publish --no-git-checks --access public
         env:
           NODE_AUTH_TOKEN: ${{ github.token }}

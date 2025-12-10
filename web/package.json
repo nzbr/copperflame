@@ -1,0 +1,17 @@
+{
+  "name": "@nzbr/copperflame-web",
+  "author": "nzbr",
+  "version": "0.0.1",
+  "license": "ISC",
+  "scripts": {
+    "build": "tsc -b html-postprocessors js"
+  },
+  "peerDependencies": {
+    "@fontsource/roboto-slab": "^5.0.2",
+    "@nzbr/copperflame-font": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "publishConfig": {}
+}
