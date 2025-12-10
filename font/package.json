@@ -1,5 +1,6 @@
 {
   "name": "@nzbr/copperflame-font",
+  "repository": "https://github.com/nzbr/copperflame",
   "author": "nzbr",
   "version": "0.0.1",
   "license": "OFL-1.1",
