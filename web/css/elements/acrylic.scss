@@ -3,7 +3,7 @@
 
 @mixin acrylic($background-color: colors.$background-secondary-transparent) {
   //noinspection CssUnknownTarget
-  background-image: url("#{config.$root}/assets/acrylic-texture.png?as=#{config.$image-format}");
+  background-image: url("#{config.$root}/assets/acrylic-texture.png");
   background-color: $background-color;
   backdrop-filter: blur(8px);
 }

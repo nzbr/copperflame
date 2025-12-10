@@ -2,7 +2,7 @@
   "name": "@nzbr/copperflame-web",
   "repository": "https://github.com/nzbr/copperflame",
   "author": "nzbr",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "ISC",
   "scripts": {
     "build": "tsc -b html-postprocessors js"
