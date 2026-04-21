@@ -11,6 +11,11 @@
     };
   };
 
+  nixConfig = {
+    substituters = [ "https://nzbr-nix-cache.s3.eu-central-1.wasabisys.com" ];
+    trusted-public-keys = [ "nzbr-nix-cache.s3.eu-central-1.wasabisys.com:3BzCCe4Frvvwamd5wibtMAcEKwbVs4y2xKUR2vQ8gIo=" ];
+  };
+
   outputs = { self, nixpkgs, flake-utils, pnpm2nix }:
     flake-utils.lib.eachDefaultSystem (system:
       let
