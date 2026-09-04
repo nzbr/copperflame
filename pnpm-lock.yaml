@@ -18,8 +18,8 @@ importers:
         specifier: ^1.3.0
         version: 1.3.0
       sharp:
-        specifier: ^0.31.1
-        version: 0.31.3
+        specifier: ^0.35.0
+        version: 0.35.4(@types/node@20.19.25)
       typescript:
         specifier: ^5.3.3
         version: 5.9.3
@@ -32,7 +32,7 @@ importers:
     devDependencies:
       '@iosevka/monorepo':
         specifier: github:be5invis/Iosevka
-        version: https://codeload.github.com/be5invis/Iosevka/tar.gz/f2cab61c0de33c8c7158ede37c6241e04b5cc22b
+        version: https://codeload.github.com/be5invis/Iosevka/tar.gz/fe27e532e296102a2afb5b27963cf034a50866f7
     publishDirectory: dist
 
   web:
@@ -50,15 +50,164 @@ importers:
 
 packages:
 
+  '@emnapi/runtime@1.11.3':
+    resolution: {integrity: sha512-Xz4Tpyki7XyrpbUK1jR1AhdAdaXyhhY4lZ3neLodmhpuWfy2PAQN5B46sAiU4liOXGLkHypn/qU+jvfWSCYYLA==}
+
   '@fontsource/roboto-slab@5.2.8':
     resolution: {integrity: sha512-8+iMCsoUZsDwQUe5omwCp7JPNTVdyAgay5AdhmnFZPEVIVabujrmYaFkSuZ1+GUemPEWlzEQ6aQkg2mPL84SAA==}
 
   '@iarna/toml@2.2.5':
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
 
-  '@iosevka/monorepo@https://codeload.github.com/be5invis/Iosevka/tar.gz/f2cab61c0de33c8c7158ede37c6241e04b5cc22b':
-    resolution: {tarball: https://codeload.github.com/be5invis/Iosevka/tar.gz/f2cab61c0de33c8c7158ede37c6241e04b5cc22b}
-    version: 33.3.6
+  '@img/colour@1.1.0':
+    resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
+    engines: {node: '>=18'}
+
+  '@img/sharp-darwin-arm64@0.35.4':
+    resolution: {integrity: sha512-Uhfl4V4lhP2nbUVF9+hyH1+luj86f1gUFeo8ALYxFoULoU+G87D43BfeMP8XHsk9boxAnCY/bf2EHwhA7MuGsA==}
+    engines: {node: '>=20.9.0'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@img/sharp-darwin-x64@0.35.4':
+    resolution: {integrity: sha512-hWniXY3bG5qKpkKrAwPe4y+VTPmf086YQAnkxWh7uA1YrlRouWGa0M0Mxj3ZjnXFkv7/TD1bTy9lGUK26vRvWw==}
+    engines: {node: '>=20.9.0'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@img/sharp-freebsd-wasm32@0.35.4':
+    resolution: {integrity: sha512-lIsKw/BU+kjB4eZjxrYrZmwOJYi3Ajrv66iAlBmUPyKc3HpnloevB1g3wxGD9P/5BbQ1brBGl65VRRrCvQDEqA==}
+    engines: {node: '>=20.9.0'}
+    os: [freebsd]
+
+  '@img/sharp-libvips-darwin-arm64@1.3.3':
+    resolution: {integrity: sha512-suTBPTDGrI9WodccaDdwZItTSaBYASlBk1NSfElSHrUfzu3szG6lvIF58+WiFvnfzuK8ZBFS5zE00PxqxnRiPg==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@img/sharp-libvips-darwin-x64@1.3.3':
+    resolution: {integrity: sha512-FVJZ5mITMobmXIz/hPDTw0EintTW5H3WfrxwLqEqjiIihlu+hVRyGrFQ60xl0Lxn7Bt3zdpevPaQi0HEzqz9fw==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@img/sharp-libvips-linux-arm64@1.3.3':
+    resolution: {integrity: sha512-0DaL0A6Xu6sQSQFwe4iVCrKWU2cCTItnRsYsCdxAMm9NF6twAA9BKnoqy4hqz4+azQ0JHuA26qiUKsf1XJ/v5A==}
+    cpu: [arm64]
+    os: [linux]
+
+  '@img/sharp-libvips-linux-arm@1.3.3':
+    resolution: {integrity: sha512-3rbU4vqXXc3hY/OiXdl52xZvT0F1yEngWfvqudtPJg/KkyiaQw2DRsFrNzpmLvfavbwOq3qXn36GP8obHRULQA==}
+    cpu: [arm]
+    os: [linux]
+
+  '@img/sharp-libvips-linux-ppc64@1.3.3':
+    resolution: {integrity: sha512-cdn1OvUBwsXhbC0zSzJnNzf5MZ/mTrobawDvNXBTxe8VtqKAm0sRuEY2Evzovb/w9JMk4TvRxqt1mekSuJz64w==}
+    cpu: [ppc64]
+    os: [linux]
+
+  '@img/sharp-libvips-linux-riscv64@1.3.3':
+    resolution: {integrity: sha512-HjPVx7yKz+0lqdhDlTw1tt90wamBoxhiXpvl1XZpJLiHH4RCJ5yDTqH+VlYPv2fwFs89JFw4c1IexYOcQUi4IQ==}
+    cpu: [riscv64]
+    os: [linux]
+
+  '@img/sharp-libvips-linux-s390x@1.3.3':
+    resolution: {integrity: sha512-neWLh+3yCNThxnfy3c4BbVBeGgt9aftno+XbT56iK28RgeDs3UOFWviLWlUu0bArYVYJaFDK+RRohbicUNCm8Q==}
+    cpu: [s390x]
+    os: [linux]
+
+  '@img/sharp-libvips-linux-x64@1.3.3':
+    resolution: {integrity: sha512-4vKmvAst9nrowcqquKFAyZJUDolUaIp8uRiN0mWFguJ1IplC9/pitXtlnnlU4aa/eJw3J7i67V+pwUL+wZGdsA==}
+    cpu: [x64]
+    os: [linux]
+
+  '@img/sharp-libvips-linuxmusl-arm64@1.3.3':
+    resolution: {integrity: sha512-Y9kQaLMuNoB0bPYOOdcZMaseNrFpPodIWWMrx+CZyydf2xn68j9WYc6sWWRrDwNkzCQjKYfc68L7jKjGlHMibw==}
+    cpu: [arm64]
+    os: [linux]
+
+  '@img/sharp-libvips-linuxmusl-x64@1.3.3':
+    resolution: {integrity: sha512-fj8Mv0HHfD1Rr+4I68+3agJynxDWtBFgicTbSOb9Bke6pIwzGcJ+RX/yHjmiEGFMCavY/dxvem7MyNaJF+wDiw==}
+    cpu: [x64]
+    os: [linux]
+
+  '@img/sharp-linux-arm64@0.35.4':
+    resolution: {integrity: sha512-De4jpEnAU8Hd5oT0j1G3uL4ZvTuipVMn7YC6vPaJhy6/7EwEae0SVAoBrUMYQbkLGDm85taVWwuPc1a44LTzCQ==}
+    engines: {node: '>=20.9.0'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@img/sharp-linux-arm@0.35.4':
+    resolution: {integrity: sha512-7OAS8gI0EReKGVN2HssHlM6umJgxF5VI3xN0p9FA91p/YO+ou5hiNghLdZ5BEHztwaaK5+bLKRf8x/o2L2nk9A==}
+    engines: {node: '>=20.9.0'}
+    cpu: [arm]
+    os: [linux]
+
+  '@img/sharp-linux-ppc64@0.35.4':
+    resolution: {integrity: sha512-2oYZJeIl4kCcMGk4ouZVjnkCtFrpQFlNEtJ6GbxzhHQchwH0NH/qEb9ykmOl29dqwMq+JhFdZn+1ak2FKhI9fQ==}
+    engines: {node: '>=20.9.0'}
+    cpu: [ppc64]
+    os: [linux]
+
+  '@img/sharp-linux-riscv64@0.35.4':
+    resolution: {integrity: sha512-cPbNChoRURAWdebDIHSenxRpgEdy7JkPydSnUxRm9VvKD7m0/xVaR/8Fzlu81pk5nHEvHH87UZUA7cTtwnbJSA==}
+    engines: {node: '>=20.9.0'}
+    cpu: [riscv64]
+    os: [linux]
+
+  '@img/sharp-linux-s390x@0.35.4':
+    resolution: {integrity: sha512-RY0JFY8Fd6RonCBtHz+DvadaPkXDSI1AUn6yWL9TipqkZ1vY8w8evqdgyDFnkm4/K1ve1TvZiaePP5oSd4+WVQ==}
+    engines: {node: '>=20.9.0'}
+    cpu: [s390x]
+    os: [linux]
+
+  '@img/sharp-linux-x64@0.35.4':
+    resolution: {integrity: sha512-9qvvEAuk8k89TfWUoX2htWjbAMX8p+NxCppjpcg5k6xMsjhBQPTsoIh36h9Qde4WRuGpJeYnOjdosDn/cnv+OA==}
+    engines: {node: '>=20.9.0'}
+    cpu: [x64]
+    os: [linux]
+
+  '@img/sharp-linuxmusl-arm64@0.35.4':
+    resolution: {integrity: sha512-KB5jxpfWQTr0nc3xdHtWChdbifHrBGsd2SM62Eyxrl8afikm+f5qGBU75SJIZBT/S1MC8XyacdlXBMSWq6OURA==}
+    engines: {node: '>=20.9.0'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@img/sharp-linuxmusl-x64@0.35.4':
+    resolution: {integrity: sha512-f+eZJZIQNEEd26RPSW+76chwOf1XtA2Y/O+5ocVyLliHkeih3e+jhLVBdNTd2rS3IbNXK8+ug93Vf5ZXtF5Lxg==}
+    engines: {node: '>=20.9.0'}
+    cpu: [x64]
+    os: [linux]
+
+  '@img/sharp-wasm32@0.35.4':
+    resolution: {integrity: sha512-zQnl4Kwp7Q6NHsENtU2T/00Zi+w3AQNwz3+UaTyVBy2FpXrzXzGjndpK61onhZjRtRpQXxCTeqw19bVyXOh7jA==}
+    engines: {node: '>=20.9.0'}
+
+  '@img/sharp-webcontainers-wasm32@0.35.4':
+    resolution: {integrity: sha512-ESfNkywmCfPNyaZjxooddJQiQ+l/nTpGEOGthxiLnIHXC/CmcBixnfwUleX9mCz9ovrUUvKMap/pm8RYbzfwaA==}
+    engines: {node: '>=20.9.0'}
+    cpu: [wasm32]
+
+  '@img/sharp-win32-arm64@0.35.4':
+    resolution: {integrity: sha512-iNdlBX9gLVvqe2I3uIJSIKTq6wckP/DYxZtcqxm09x5Gi24DnFBmPAWZmr60ZyYMG0xlzo6goG3670ar+RXvRw==}
+    engines: {node: '>=20.9.0'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@img/sharp-win32-ia32@0.35.4':
+    resolution: {integrity: sha512-kqRsbaa5CS6KHlpxnN7WhE6vAAugXyZButpRdvDWetlv6Qv4N9WTcrWzF7tXfB9T7MsoadqdI8hmwLq6UlLvtw==}
+    engines: {node: ^20.9.0}
+    cpu: [ia32]
+    os: [win32]
+
+  '@img/sharp-win32-x64@0.35.4':
+    resolution: {integrity: sha512-XtmnYhBcrORsJ4XJngyzr/EWP0hRZLAZRFaApdKuviyqF78+ylxh2y06ZmtULAMOnObJ3ucpN0AcwSWnMowTRg==}
+    engines: {node: '>=20.9.0'}
+    cpu: [x64]
+    os: [win32]
+
+  '@iosevka/monorepo@https://codeload.github.com/be5invis/Iosevka/tar.gz/fe27e532e296102a2afb5b27963cf034a50866f7':
+    resolution: {tarball: https://codeload.github.com/be5invis/Iosevka/tar.gz/fe27e532e296102a2afb5b27963cf034a50866f7}
+    version: 34.8.1
     engines: {node: '>=16.0.0'}
 
   '@lezer/common@1.3.0':
@@ -246,113 +395,113 @@ packages:
     version: 1.0.0
     engines: {parcel: 2.x}
 
-  '@ot-builder/bin-composite-types@1.7.6':
-    resolution: {integrity: sha512-l7S8TkRlKJnGA7EP2jS8XGlMe5Bz9030ihyg0iC7AdAnvhYUbCjE/vTB0ogbsVF0eOdYFW9SYC/LK3fqpg5CYQ==}
+  '@ot-builder/bin-composite-types@1.8.0':
+    resolution: {integrity: sha512-81G0+ZgPz7llnHhlmXi0sNZpqWIWBpADoJTRaE1CdOhHbC9z/9rSWEzB9J/Em3ZdWzqzkH5oGv/nzgm8pBnPCQ==}
 
-  '@ot-builder/bin-util@1.7.6':
-    resolution: {integrity: sha512-DlKYSLlfOinzV0JX9hOdkpZuGJX2gmFpxUpw2qGlZvcrohjPuV5HCFUFm4ge5RdR96irLRFpOHPigzbJSMcQWA==}
+  '@ot-builder/bin-util@1.8.0':
+    resolution: {integrity: sha512-VUViLzyCfzx/LIjiorHdGkez9DYBOWJ+DHPZwiW9vZ8OdWTqC3cO3OypK48qwmI1B6iR58xoZgJCAuDHUleh0w==}
 
-  '@ot-builder/cli-help-shower@1.7.5':
-    resolution: {integrity: sha512-DYc2fkhqstLbkvml/0A0Si+6+mT+jS7i3Hq7lPOMVAOrMeo5Aow62Uq2T0F9/ZCjLO7PFHXfWH/RpaTLtoEU9Q==}
+  '@ot-builder/cli-help-shower@1.8.0':
+    resolution: {integrity: sha512-I9Bsfgk2asAq+JmYi5PbFfdldMWJhFcOSWjGfDEzlbYWM/BHSEmZiDudjRfeK3B/D3prktmmR/VYjJQu5NDQ4Q==}
 
-  '@ot-builder/cli-proc@1.7.6':
-    resolution: {integrity: sha512-f4b3KWgM91ECLsVpprVww7b66Ygz2I+0mOhuse4Kjzn2JVwWeN5T5z6tvhrsVOZO+PhF2zXR19yqFItlFYnhgg==}
+  '@ot-builder/cli-proc@1.8.0':
+    resolution: {integrity: sha512-xUiEv2bSj492lIQmwvuWASUQV/8ve16g1kQIknxCZjpTVYYwlDZKkxFoYXUXqfeCuY+9n8pUUBjEcE3nrBFKcA==}
 
-  '@ot-builder/cli-shared@1.7.6':
-    resolution: {integrity: sha512-dlNGLHQAE4m4xmELQKOKb/y3mVOIoEE3D6fHUdzPw1eCxltMyV/033I+huroAW+XsxCXzarre9a/oxjdcrRjWg==}
+  '@ot-builder/cli-shared@1.8.0':
+    resolution: {integrity: sha512-453Ds/0k2QMzIHvVWMNmQk3bOKd0EJ+3YO2C5n0Ko9DYYGdyLP5VXId6aqqV/Yhc20wiYCNV1sfFDFyIm8CKRA==}
 
-  '@ot-builder/common-impl@1.7.5':
-    resolution: {integrity: sha512-/851a55LkWYoTxZ+Whn/C3e4TCuLXxOg6BnDzIwacZYVcQyzqgy8UiFL4yoh6qK+0xK807n+dsiLtc62rk5exw==}
+  '@ot-builder/common-impl@1.8.0':
+    resolution: {integrity: sha512-U2pcbqNWUdQ79nqKGyK95py5/VtY0jpr+F1iLtV28aDlAAmY00XvzdLM3aeziDIWzvoDCnBV1kPbm7l95F9gUQ==}
 
-  '@ot-builder/errors@1.7.5':
-    resolution: {integrity: sha512-Ejic7L9cLkdLGlk7cIg1IyjZ3oEDKB7/qL6ry/2SlurT/TRcLapdwYdbOQ5VfPrRlrS2wnzTsuN5rBNr1nWZMg==}
+  '@ot-builder/errors@1.8.0':
+    resolution: {integrity: sha512-aPiiS6mG32NUk0K9o0S6sepKMKLmRTmU8VyhifBszl6veLxzVNlQpLG+YoCukrYDPUi8wvWQTtulPxj9R1GewA==}
 
-  '@ot-builder/io-bin-cff@1.7.6':
-    resolution: {integrity: sha512-b9QKRYPuQn1v8KOAdg/gi1QPZJdifTi4exSuZOsUYVwOKSdA/ALm/+vWztG8+Ip4YI5K5TGXorP/okEw+aCf8A==}
+  '@ot-builder/io-bin-cff@1.8.0':
+    resolution: {integrity: sha512-wyj5NcDcUOqON0CSMNSuE9EQNzNKouWXlu5ZgFCbyPkGsmhEmLpaOMt3200so1/hBAZi+Fo01skaBtpWHZVSgg==}
 
-  '@ot-builder/io-bin-encoding@1.7.6':
-    resolution: {integrity: sha512-p3Jwq+o8iCC1aKkeqJyiDBqosSd8AFSK3NTqUMVPE/9ugWB9ZNRPGi8CYUjsCXjJCOvtAYshrfuLjIiT+fYXbg==}
+  '@ot-builder/io-bin-encoding@1.8.0':
+    resolution: {integrity: sha512-1WL7DKowkfpohwfyErOMxH+3zZv8M6IIqJH/Xk+QUsqY6NpAYohIi0Ypgwu6F9dP9HfYHs16o54Sf+r//qXLRA==}
 
-  '@ot-builder/io-bin-ext-private@1.7.6':
-    resolution: {integrity: sha512-xUieqwCciqsSuyHEdSz996JgKJBsFn7XjX27x/K4xkpfEje54YRh94NHPTQb1OUM/qAh5XNA3OM4ahafHVFQ7w==}
+  '@ot-builder/io-bin-ext-private@1.8.0':
+    resolution: {integrity: sha512-z/lDbBYuDHtosjba53bDPbBukAoPHKEWj99f6k7BckVaSFrAm7U2P9vSiU0EkAaQkaViEZQRFPEThzd7G8pOYw==}
 
-  '@ot-builder/io-bin-font@1.7.6':
-    resolution: {integrity: sha512-8BAR+PL/h5EyGo72tSf6tDgTumNeQX3SGChdFHLtky/gLbEHR0BGTwXC/TSdk45/KcxnyaNNPJJQ1GP2lOCTAA==}
+  '@ot-builder/io-bin-font@1.8.0':
+    resolution: {integrity: sha512-hzJqtmoQQ8AhRqfB8ERIlXDQi75MgGFIVEdYhiY/DjH3VEw7kZB1UGN8JpsASDy5ohVPuym/EKZZj3NB9DwvWQ==}
 
-  '@ot-builder/io-bin-glyph-store@1.7.6':
-    resolution: {integrity: sha512-7vlULFbRhdKeIFE7WXgRTRzT6F7v/YHT4ArjGYMwt4Gr7j10fA2J0tEa11vBMxr74z/ZaxArH7ogv+21utyDdg==}
+  '@ot-builder/io-bin-glyph-store@1.9.0':
+    resolution: {integrity: sha512-I04ZapA/Z194Ix2FTcTsiJd8pTzNzPl2TIR+uJ8dDEHpU9Y8VSblXp5NQf51BYbubPfZFhctJzS63P3QRmJepg==}
 
-  '@ot-builder/io-bin-layout@1.7.6':
-    resolution: {integrity: sha512-CfK3m9zuiUo1HNK8fE2T2NH/4Wd8ciAyFEalcgQfToDytXiPOcHlFVBs+EGvq5bltsKknRs+GqVEwHTNdpXgNg==}
+  '@ot-builder/io-bin-layout@1.8.0':
+    resolution: {integrity: sha512-sQWig8W/GLosi5VuZTFTXepd0GD3ffAnH/u9d/ZOVydAzlKLE4MtmjY8MEADnJtnqQzltuRLgHKOvu808fiE7A==}
 
-  '@ot-builder/io-bin-metadata@1.7.6':
-    resolution: {integrity: sha512-8Wl6WoozoqNfg154P9cUS0m+vmiOaqc8xjSPVlcASZ4S+EzzvrePy0/hg3Ay/CgH89XFCpe+kDDvTcnHiLtCyQ==}
+  '@ot-builder/io-bin-metadata@1.8.0':
+    resolution: {integrity: sha512-aKAuuVtU8nC5FdCoeL2SYfz7IUc26yb78mUlWuwZeHYVmqk49lcaC51MleFavsHx1mafc04vc2FStsPy1r7G6w==}
 
-  '@ot-builder/io-bin-metric@1.7.6':
-    resolution: {integrity: sha512-yT++dqDMy7u5zi5m/ffWQoYBL7Xx8C4Bg0fznPd9Xr0ISoSCZggwl7SEbR/bJMciqCapULOjG9+zIvfcAS03zA==}
+  '@ot-builder/io-bin-metric@1.8.0':
+    resolution: {integrity: sha512-VLTtOFC98bjaOpXKclk2Fi5tiD5/i4u7x1QM7pq1sRzfCR5mj1M1d7a7ZlzxTXOwhUB0pRSpRYPadjsM1YGiRg==}
 
-  '@ot-builder/io-bin-name@1.7.6':
-    resolution: {integrity: sha512-DAp4ChNVnybFPbViTdE439f/cvOfvKljdjXDjO5mn4LitoJ1kpLVakmkPssP7UVeP1k+/ZaKNx2H9y/OLloWrg==}
+  '@ot-builder/io-bin-name@1.8.0':
+    resolution: {integrity: sha512-43xqM6OcIWMZljyMRyX3TgIhGn1TMIZJmB64sfdaKKXjS98UerOB3Fz1YofZfW+XFbk5BfaiAaW/UCdGParZNA==}
 
-  '@ot-builder/io-bin-sfnt@1.7.6':
-    resolution: {integrity: sha512-iC5Z3UrgdmAS8+ygdBjDogVfyczuneKDplqOnRhaAmRZySBEpGYKJBnOYzwb1bfX1s7vABxTYC+9GicGu/BLoQ==}
+  '@ot-builder/io-bin-sfnt@1.8.0':
+    resolution: {integrity: sha512-d6w2IZPkPxZ2YpMBuGE0lULq/HoPhh8Tgwcp1LogfOmjuoUm4ilJ2hatt3aM0KxsMDtb9O8m0ARnBBu0HvfpBQ==}
 
-  '@ot-builder/io-bin-ttf@1.7.6':
-    resolution: {integrity: sha512-BbMJJQ+2osm5ePCfYWCD6Aq37OuCaX1Ew3KDMlFqxW5WW7fskvlUUAq0ZPSw8zywDPiSN8hnTojXojnOLaNxSQ==}
+  '@ot-builder/io-bin-ttf@1.9.0':
+    resolution: {integrity: sha512-12lduBFFFN2qR9J5kbPVxQ6dti7t1NYxWO+UDpYd2XEgf/iZBWFwhI0DrZ/Hkp0kxUEd9YIJ4HXUfDGUGl6ikw==}
 
-  '@ot-builder/io-bin-vtt-private@1.7.6':
-    resolution: {integrity: sha512-ezljIeESL/+7gtOxwbA37VbGmopy35ydTJ6662xU5G/HcjMmYGhNPsOVPNO7d9RL2yAdqz4m3oa4jefFaLP6Ew==}
+  '@ot-builder/io-bin-vtt-private@1.8.0':
+    resolution: {integrity: sha512-q8knt8HcIjQhBT6ihFB83bjtZ9XB2gqwVYWDe4+0H2gbcJk46XJ4a1tItqr7nIQdS+Urys375AW/H1JdB6XZEA==}
 
-  '@ot-builder/ot-encoding@1.7.6':
-    resolution: {integrity: sha512-XXOgMeTCLRc9oyGU5L4H4TIe3HALzW7CG+5UFwvP+E+YLHUQ+yESnYEjdY9zCyEITmempp+vJFL1U1GcW6BrMw==}
+  '@ot-builder/ot-encoding@1.8.0':
+    resolution: {integrity: sha512-ltB3eDJuEauS8Y0o8efWF1O9HvycBBYt9TV56s16Wn83oOIFxjcNu4tE10XyaiYlifslIX+XcgtP/uVhAvgKdQ==}
 
-  '@ot-builder/ot-ext-private@1.7.6':
-    resolution: {integrity: sha512-X6De7s4Ygqfn2yG+mSqRlrWJGM/LCqPPjTd3iYgg/zCsfHXkPN7IQ8VUdfRCBj3wmeJYnWHv8XThmMcgm1TSHA==}
+  '@ot-builder/ot-ext-private@1.8.0':
+    resolution: {integrity: sha512-gMEUpQEd54ae04XBrhP6XQDECW2TGQ5XFNecDz6KWqKzWRRujxCQT4eOp6dV7aTj2v89qeAX4YmI4Jv4JOqSqA==}
 
-  '@ot-builder/ot-glyphs@1.7.6':
-    resolution: {integrity: sha512-VQlmO5QZLKWR5b833I5G5QSNnd64Yg5d8UdXBE8O6iDGobsjzryYclr18KP+m+X7O2brR9T6jX3sHO7ztvKFBw==}
+  '@ot-builder/ot-glyphs@1.8.0':
+    resolution: {integrity: sha512-G2eOTgsTWdvBZOQUGWOmCnRyV6ZInMHtX6k8F9ygffCh+nWoJh7d8ke+yyS9Ac8heMG6zE21iZpMClktzRDdDg==}
 
-  '@ot-builder/ot-layout@1.7.6':
-    resolution: {integrity: sha512-ugoG/7C/Dqi1Kuk4cC8wpZ+1vmLsOfgsNWzFqXV4yBMwj3PUGyH3ieDogTBbvSApjof66ssRv3m2QI0d4RD+RA==}
+  '@ot-builder/ot-layout@1.8.0':
+    resolution: {integrity: sha512-PjTSGMEDFtUkhl/889gfyCbF4BLE/Xe4lBUJG0F8iDvxspeKdrj524ycgS/qXjyC/HjmOL3ScYF67duynT/nCw==}
 
-  '@ot-builder/ot-metadata@1.7.6':
-    resolution: {integrity: sha512-8kZrr69WST0oxlm/bzg2J1srCcZN9ZFXmNbR3Qcnw6nPx1+/bDHyUCBqGSdDTmkGY/MsNjtjkf6FlrPJqS9NzA==}
+  '@ot-builder/ot-metadata@1.8.0':
+    resolution: {integrity: sha512-OdBnTjEJcXbR+bO4Jpi5T6HIaYeKuqRIfpOwoThhqox1n5nEvNNaC+IJpn0GUuTagbJBJ90ox/RC1GW+kkuZpw==}
 
-  '@ot-builder/ot-name@1.7.6':
-    resolution: {integrity: sha512-Apm4zWaYzFxLciGTFrxHno2GVkYSlrqe2cNigrNUQgIyXIeYXKnZZCxWVnZrt8T4u5gNNc9IYPkNUo/6qSkfpA==}
+  '@ot-builder/ot-name@1.8.0':
+    resolution: {integrity: sha512-5rT84MqHOiBTZTG4TqiU6kaqg2qxHTKRmNpV4qG3pcNyDc+hBKGAC3jKbs0vTjNYbuBglP8YoOjuOiHpN1uZwQ==}
 
-  '@ot-builder/ot-sfnt@1.7.6':
-    resolution: {integrity: sha512-G9S2FhXswFIma5zVS0PW4I0kHB0Gh/D09z5qFXm+mj7qhEk3dQqb+BsIT8TMlOqW/AO+9glDn7YC5O4q7l123Q==}
+  '@ot-builder/ot-sfnt@1.8.0':
+    resolution: {integrity: sha512-ApOV8ril8p2fOVPpJPJ0O8Fm7YNtpQxP/aD9K110fO1dHboc91/WBfgAJC8LXvqUSPhaqKlpg3nnvteQrfa1Qw==}
 
-  '@ot-builder/ot-standard-glyph-namer@1.7.6':
-    resolution: {integrity: sha512-bG7+/upC4ykNOZzgVoXGalD4coyUmhSoIFZ+1p8295utcZ2tVxd1iFtjRx4S0e/7seoG8BeoDn04MGgFOlUXkQ==}
+  '@ot-builder/ot-standard-glyph-namer@1.8.0':
+    resolution: {integrity: sha512-dEHm8T0rUcJbHXyu+ck7qy2gwzI3MpAJ7dQfzlPM5IiGdapDrHsikBsmCCD/B1TCDeRSJSVcNLjUKczNBzpcUw==}
 
-  '@ot-builder/ot-vtt-private@1.7.6':
-    resolution: {integrity: sha512-tR/L0Wn6fpk4VUSPQnRXDf+NILm6YDWyShdD7pfsxxQq6mqZdApONAx6p+zb8w9fmq4hRtUbtfgsHhToNBYPqA==}
+  '@ot-builder/ot-vtt-private@1.8.0':
+    resolution: {integrity: sha512-CRHfO7zCRrMVdHMwi62qH4vVJLXqnX9RCEaigCO30eg1A01geUn5QgtJ3UV0feLdAEy/SkGpOr+YK+d6tk/5qQ==}
 
-  '@ot-builder/ot@1.7.6':
-    resolution: {integrity: sha512-+LPhcWKQo654dTasBuLm869DVotr8RQMhtjPp1OxmauCwrNlc4pImOz8hrSg0RqizhGZt0vBQStPInH5+sNoIg==}
+  '@ot-builder/ot@1.8.0':
+    resolution: {integrity: sha512-nIo7BLJDmPkmfoZmraC/Rh4i2A/2EhutRgJrpj29ttF8rn9rJlv5MgC8HM/pumqlZ2in2itUcLDG4HsyE/Y/cw==}
 
-  '@ot-builder/prelude@1.7.5':
-    resolution: {integrity: sha512-/dJygv9cfKD8Gso6Krli/jmwCORJJgNJFe6/2bFcviOa3LPgdfEeVBj6Au8VqS1DjSg4dymdaje7l1IUxHHfQg==}
+  '@ot-builder/prelude@1.8.0':
+    resolution: {integrity: sha512-UAoBf1sH+VGpG/gyGSjs5gqrwQLRdSY/mBruCgXkDVjYHjkKWEAREWJ5lQzrgi2E2jfR978C1vhsMpL3Km/hNA==}
 
-  '@ot-builder/primitive@1.7.6':
-    resolution: {integrity: sha512-k+Url+wYu/8+4FMxPR2R8VdIWVW5NEwxVSyV+Cz0k/dqqXELG9TG8OHGePDTqqR6W24jfGJ3/EdC54QoJK35kw==}
+  '@ot-builder/primitive@1.8.0':
+    resolution: {integrity: sha512-wtsncqwEVJAZ3cWuB5PbOiWJh3R13T/guOFHx3tjE3vkozsV1eUpSRRNCXCS7omHYOyPPEqGJ4UPz1q3nmGTmA==}
 
-  '@ot-builder/rectify@1.7.6':
-    resolution: {integrity: sha512-ObwzuTycOVz6GLEB4YaaECcgLHH25zsc/sLnqM1OwuK8qvdyC5ocT7LOjZd79bW2qjb6gDzDwV3acfwJSwZI6w==}
+  '@ot-builder/rectify@1.8.0':
+    resolution: {integrity: sha512-scOnITK3lE5GzXbXjoRLy0O/OLewJAG6u6qxL1lJfLWiO+++4zZLm1XsVkrIFLwxBctQzB33vdVw37tu0Ut9BA==}
 
-  '@ot-builder/stat-glyphs@1.7.6':
-    resolution: {integrity: sha512-y6EDgZ+FzM0mxKrQ2beo5XRlVFkUwYGG6/4MaXLm52SmFhBnVmjtfiM6uufDgWxOLxWs8dYjrwMrnHjN+Kbd1g==}
+  '@ot-builder/stat-glyphs@1.8.0':
+    resolution: {integrity: sha512-NVfHbQwybvn2p8MPbsau/toxGAjtWLKyqdzGuhj6evRQEQqbGOd5RgvV7y5lh12tHTsryPzmyf+C1AmWoaJOFg==}
 
-  '@ot-builder/trace@1.7.6':
-    resolution: {integrity: sha512-qjZwUuJruzNYUCG9dvzFGXc3WESVk5dI90JxmyqjT3YaIjKXN/kKLvFHq7VTvdq9V13f4hqkLNdVKcz1gpy0JQ==}
+  '@ot-builder/trace@1.8.0':
+    resolution: {integrity: sha512-uj3jtCFFT31HzcjNW9bjTwPOxfOZJWAgOJwvn7h/WTN+V/CgOaAu3s4eA5hEkwR3N4TajbGoRQjlPS1I+gPvFQ==}
 
-  '@ot-builder/var-store@1.7.6':
-    resolution: {integrity: sha512-PW0lM0ostJ6O9M3EQxBCcONKOValdXMvm0f8QY5kLXG5KUvW2dY3CeWvX37ecMxWks5RWV4DF1BGiSFOsd2DiA==}
+  '@ot-builder/var-store@1.8.0':
+    resolution: {integrity: sha512-gktpJS3+bcGWBxSLqxne7+2c3xtiUtZF+SYqP5Gw7ML16rGZLS8RhxIFZTcJHlx2GJfzCko4frjB2+Ec6SD5iA==}
 
-  '@ot-builder/variance@1.7.6':
-    resolution: {integrity: sha512-kP7IgxtAUkJz3Zv7Y/3BT/yAgIufbjIFWxIsMnkYNpM22WpVIGo8GXlHpw6NJG/6LiuPNL7Yn1JjkXPUHXuBFA==}
+  '@ot-builder/variance@1.8.0':
+    resolution: {integrity: sha512-31xixlL0N3RNz/Kn6dwBU9doAPeHao8Y71aAbPQ68T1BBOneMzTJ0igshoq9AJw7QyhXpYDXuTNk12c7wt0zgw==}
 
   '@parcel/cache@2.16.1':
     resolution: {integrity: sha512-qDlHQQ7RDfSi5MBnuFGCfQYiQQomsA5aZLntO5MCRD62VnMf9qz/RrCqpGFGOooljMoUaeVl0Q8ARvorRJJi8w==}
@@ -734,15 +883,9 @@ packages:
     engines: {node: '>=5'}
     hasBin: true
 
-  base64-js@1.5.1:
-    resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
-
   baseline-browser-mapping@2.8.29:
     resolution: {integrity: sha512-sXdt2elaVnhpDNRDz+1BDx1JQoJRuNk7oVlAlbGiFkLikHCAQiccexF/9e91zVi6RCgqspl04aP+6Cnl9zRLrA==}
     hasBin: true
-
-  bl@4.1.0:
-    resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
 
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
@@ -762,9 +905,6 @@ packages:
     resolution: {integrity: sha512-tbydkR/CxfMwelN0vwdP/pLkDwyAASZ+VfWm4EOwlB6SWhx1sYnWLqo8N5j0rAzPfzfRaxt0mM/4wPU/Su84RQ==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
-
-  buffer@5.7.1:
-    resolution: {integrity: sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==}
 
   call-bind-apply-helpers@1.0.2:
     resolution: {integrity: sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==}
@@ -816,9 +956,6 @@ packages:
     resolution: {integrity: sha512-VqR8m68vM46BNnuZ5NtnGBKIE/DfN0cRIzg9n40EIq9NOv90ayxLBXA8fXC5gquFRGJSTRqBq25Jt2ECLR431Q==}
     engines: {node: '>= 6'}
 
-  chownr@1.1.4:
-    resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
-
   chownr@2.0.0:
     resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
     engines: {node: '>=10'}
@@ -852,16 +989,9 @@ packages:
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
-  color-string@1.9.1:
-    resolution: {integrity: sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg==}
-
   color-support@1.1.3:
     resolution: {integrity: sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==}
     hasBin: true
-
-  color@4.2.3:
-    resolution: {integrity: sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==}
-    engines: {node: '>=12.5.0'}
 
   command-line-args@5.2.1:
     resolution: {integrity: sha512-H4UfQhZyakIjC74I9d34fGYDwk3XpSr17QhEd0Q3I9Xq1CETHo4Hcuo87WyWHpAF1aSLjLRf5lD9ZGX2qStUvg==}
@@ -915,10 +1045,6 @@ packages:
   decamelize@1.2.0:
     resolution: {integrity: sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==}
     engines: {node: '>=0.10.0'}
-
-  decompress-response@6.0.0:
-    resolution: {integrity: sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ==}
-    engines: {node: '>=10'}
 
   deep-equal@2.2.3:
     resolution: {integrity: sha512-ZIwpnevOurS8bpT4192sqAowWM76JDKSHYzMLty3BZGSswgq6pBaH3DhCSW5xVAZICZyKdOBPjwww5wfgT/6PA==}
@@ -990,9 +1116,6 @@ packages:
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
 
-  end-of-stream@1.4.5:
-    resolution: {integrity: sha512-ooEGc6HP26xXq/N+GCGOT0JKCLDGrq2bQUZrQ7gyrJiZANJ/8YDTxTpQBXGMn+WbIQXNVpyWymm7KYVICQnyOg==}
-
   entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
@@ -1032,10 +1155,6 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  expand-template@2.0.3:
-    resolution: {integrity: sha512-XYfuKMvj4O35f/pOXLObndIRvyQ+/+6AhODh+OKWj9S9498pHHn/IMszH+gt0fBCRWMNfk1ZSp5x3AifmnI2vg==}
-    engines: {node: '>=6'}
-
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
 
@@ -1058,9 +1177,6 @@ packages:
   for-each@0.3.5:
     resolution: {integrity: sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg==}
     engines: {node: '>= 0.4'}
-
-  fs-constants@1.0.0:
-    resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
 
   fs-extra@11.3.2:
     resolution: {integrity: sha512-Xr9F6z6up6Ws+NjzMCZc6WXg2YFRlrLP9NQDO3VQrWrfiojdhS56TzueT88ze0uBdCTwEIhQ3ptnmKeWGFAe0A==}
@@ -1100,12 +1216,9 @@ packages:
     resolution: {integrity: sha512-F5aQMywwJ2n85s4hJPTT9RPxGmubonuB10MNYo17/xph174n2MIR33HRguhzVag10O/npM7SPk73LMZNP+FaWw==}
     engines: {node: '>=0.10.0'}
 
-  github-from-package@0.0.0:
-    resolution: {integrity: sha512-SyHy3T1v2NUXn29OsWdxmK6RwHD+vkj3v8en8AOBZ1wBQ/hCAQ5bAQTD02kW4W9tUp/3Qh6J8r9EvntiyCmOOw==}
-
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   gopd@1.2.0:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
@@ -1166,12 +1279,9 @@ packages:
     resolution: {integrity: sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA==}
     engines: {node: '>= 6'}
 
-  iconv-lite@0.6.3:
-    resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
+  iconv-lite@0.7.3:
+    resolution: {integrity: sha512-IKXpvIzjnC9XTAUbVBcMfGS0EPaIXtW6v+zr+RRp+hqULEpo0owZax6wyRwPOJbWbzjYspQwusTsfVr0ifh4uQ==}
     engines: {node: '>=0.10.0'}
-
-  ieee754@1.2.1:
-    resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
 
   imurmurhash@0.1.4:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
@@ -1205,9 +1315,6 @@ packages:
 
   is-arrayish@0.2.1:
     resolution: {integrity: sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==}
-
-  is-arrayish@0.3.4:
-    resolution: {integrity: sha512-m6UrgzFVUYawGBh1dUsWR5M2Clqic9RVXC/9f8ceNlv2IcO9j9J/z8UoCLPqtsPBFNzEpfR3xftohbfqDx8EQA==}
 
   is-bigint@1.1.0:
     resolution: {integrity: sha512-n4ZT37wG78iz03xPRKJrHTdZbe3IicyucEtdRsV5yglwc3GyUfbAfpSeD0FJ41NbUNSt5wbhqfp1fS+BgnvDFQ==}
@@ -1322,6 +1429,10 @@ packages:
     resolution: {integrity: sha512-LpB/54B+/2J5hqQ7imZHfdU31OlgQqx7ZicVlkm9kzg9/w8GKLEcFfJl/t7DCEDueOyBAD6zCCwTO6Fzs0NoEQ==}
     engines: {node: '>=16'}
 
+  isexe@4.0.0:
+    resolution: {integrity: sha512-FFUtZMpoZ8RqHS3XeXEmHWLA4thH+ZxCv2lOiPIn1Xc7CxrqhWzNSDzD+/chS/zbYezmiwWLdQC09JdQKmthOw==}
+    engines: {node: '>=20'}
+
   js-yaml@3.14.2:
     resolution: {integrity: sha512-PMSmkqxr106Xa156c2M265Z+FTrPl+oxd/rgOQy2tijQeK5TxQ43psO1ZCwhVOSdnn+RzkzlRz/eY4BgJBYVpg==}
     hasBin: true
@@ -1388,10 +1499,6 @@ packages:
     resolution: {integrity: sha512-VP79XUPxV2CigYP3jWwAUFSku2aKqBH7uTAapFWCBqutsbmDo96KY5o8uh6U+/YSIn5OxJnXp73beVkpqMIGhA==}
     engines: {node: '>=18'}
 
-  mimic-response@3.1.0:
-    resolution: {integrity: sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==}
-    engines: {node: '>=10'}
-
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
 
@@ -1409,9 +1516,6 @@ packages:
   minizlib@2.1.2:
     resolution: {integrity: sha512-bAxsR8BVfj60DWXHE3u30oHzfl4G7khkSuPW+qvpd7jFRHm7dLxOjUk1EHACJ/hxLY8phGJ0YhYHZo7jil7Qdg==}
     engines: {node: '>= 8'}
-
-  mkdirp-classic@0.5.3:
-    resolution: {integrity: sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==}
 
   mkdirp@0.5.6:
     resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
@@ -1432,18 +1536,8 @@ packages:
   msgpackr@1.11.5:
     resolution: {integrity: sha512-UjkUHN0yqp9RWKy0Lplhh+wlpdt9oQBYgULZOiFhV3VclSF1JnSQWZ5r9gORQlNYaUKQoR8itv7g7z1xDDuACA==}
 
-  napi-build-utils@2.0.0:
-    resolution: {integrity: sha512-GEbrYkbfF7MoNaoh2iGG84Mnf/WZfB0GdGEsM8wz7Expx/LlWf5U8t9nvJKXSp3qr5IsEbK04cBGhol/KwOsWA==}
-
-  node-abi@3.85.0:
-    resolution: {integrity: sha512-zsFhmbkAzwhTft6nd3VxcG0cvJsT70rL+BIGHWVq5fi6MwGrHwzqKaxXE+Hl2GmnGItnDKPPkO5/LQqjVkIdFg==}
-    engines: {node: '>=10'}
-
   node-addon-api@3.2.1:
     resolution: {integrity: sha512-mmcei9JghVNDYydghQmeDX8KoAm0FAiYyIcUt/N4nhyAipB17pllZQDOJD2fotxABnt4Mdz+dKTO7eftLg4d0A==}
-
-  node-addon-api@5.1.0:
-    resolution: {integrity: sha512-eh0GgfEkpnoWDq+VY8OyvYhFEzBk6jIYbRKdIlyTiAXIVJ8PyBaKb0rp7oDtoddbdoHWhq8wwr+XZ81F1rpNdA==}
 
   node-addon-api@6.1.0:
     resolution: {integrity: sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA==}
@@ -1547,11 +1641,11 @@ packages:
     resolution: {integrity: sha512-0CWcCECdMVc2Rw3U5w9ZjqX6ga6ubk1xDVKxtBQPK7wis/0F2r9T6k4ydGYhecl7YUBxBVxhL5oisPsNxAPe2g==}
     deprecated: This package is no longer supported.
 
-  ot-builder@1.7.6:
-    resolution: {integrity: sha512-poC5qJdovDHvbdfRopJdgSvUNykAnJClAmXvIneEWXQgMecrkhtvgAGglfXLVPjcmMz4AhfdJzfzsOez4eOZYw==}
+  ot-builder@1.8.0:
+    resolution: {integrity: sha512-+keLemOJx9MgbtsO44SX1eyLln5OZakZwQrv6+Fua3AmLnnmwPrujWuNr4LaRDQHviJmdLDsLxKlFYP/OE1hrQ==}
 
-  otb-ttc-bundle@1.7.6:
-    resolution: {integrity: sha512-OL+1Fy9VjP1IZcM0tmKwuL80T44EHe9dOqOBiftd9i97uE7tvEXmeATb32PYsOHt6XUsZVViNepjiR7Ulv5Mow==}
+  otb-ttc-bundle@1.8.0:
+    resolution: {integrity: sha512-rucsT2asD9Vr3rkSpX/RN0fqZ/8H1A5IW2maV6oNlMAEL+8v2EZuzdKt9ZmBfctGs7QOFez7Mk3+ezj6hM/fYQ==}
     hasBin: true
 
   package-json@2.4.0:
@@ -1614,20 +1708,12 @@ packages:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
     engines: {node: '>= 0.4'}
 
-  prebuild-install@7.1.3:
-    resolution: {integrity: sha512-8Mf2cbV7x1cXPUILADGI3wuhfqWvtiLA1iclTDbFRZkgRQS0NqsPZphna9V+HyTEadheuPmjaJMsbzKQFOzLug==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   prepend-http@1.0.4:
     resolution: {integrity: sha512-PhmXi5XmoyKw1Un4E+opM2KcsJInDvKyuOumcjjw3waw86ZNjHwVUOOWLc4bCzLdcKNaWBH9e99sbWzDQsVaYg==}
     engines: {node: '>=0.10.0'}
 
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
-
-  pump@3.0.3:
-    resolution: {integrity: sha512-todwxLMY7/heScKmntwQG8CXVkWUOdYxIvY2s0VWAAMh/nd8SoYiRaKjlr7+iCs984f2P8zvrfWcDDYVb73NfA==}
 
   rc@1.2.8:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
@@ -1723,6 +1809,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.8.5:
+    resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   set-blocking@2.0.0:
     resolution: {integrity: sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==}
 
@@ -1734,9 +1825,14 @@ packages:
     resolution: {integrity: sha512-7PGFlmtwsEADb0WYyvCMa1t+yke6daIG4Wirafur5kcf+MhUnPms1UeR0CKQdTZD81yESwMHbtn+TR+dMviakQ==}
     engines: {node: '>= 0.4'}
 
-  sharp@0.31.3:
-    resolution: {integrity: sha512-XcR4+FCLBFKw1bdB+GEhnUNXNXvnt0tDo4WsBsraKymuo/IAuPuCBVAL2wIkUw2r/dwFW5Q5+g66Kwl2dgDFVg==}
-    engines: {node: '>=14.15.0'}
+  sharp@0.35.4:
+    resolution: {integrity: sha512-n++8XWcj+jCOr2IOl7h8LbKnGBDY4aPbmprMONBNFdn0ImXqpGVv5zliDs0V9HbmbCQLpbuo2ej9rAoOQTvMDA==}
+    engines: {node: '>=20.9.0'}
+    peerDependencies:
+      '@types/node': '*'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
 
   side-channel-list@1.0.0:
     resolution: {integrity: sha512-FCLHtRD/gnpCiCHEiJLOwdmFP+wzCmDEkc9y7NsYxeF4u7Btsn1ZuwgwJGxImImHicJArLP4R0yX4c2KCrMrTA==}
@@ -1760,15 +1856,6 @@ packages:
   signal-exit@4.1.0:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
-
-  simple-concat@1.0.1:
-    resolution: {integrity: sha512-cSFtAPtRhljv69IK0hTVZQ+OfE9nePi/rtJmw5UjHeVyVroEqJXP1sFztKUy1qU+xvz3u/sfYJLa947b7nAN2Q==}
-
-  simple-get@4.0.1:
-    resolution: {integrity: sha512-brv7p5WgH0jmQJr1ZDDfKDOSeWWg+OVypG99A/5vYGPqJ6pxiaHLy8nxtFjBA7oMa01ebA9gfh1uMCFqOuXxvA==}
-
-  simple-swizzle@0.2.4:
-    resolution: {integrity: sha512-nAu1WFPQSMNr2Zn9PGSZK9AGn4t/y97lEm+MXTtUDwfP0ksAIX4nO+6ruD9Jwut4C49SB1Ws+fbXsm/yScWOHw==}
 
   slide@1.1.6:
     resolution: {integrity: sha512-NwrtjCg+lZoqhFU8fOwl4ay2ei8PaqCBOUV3/ektPY9trO1yQ1oXEfmHAhKArUVUr/hOHvy5f6AdP17dCM0zMw==}
@@ -1854,16 +1941,10 @@ packages:
     resolution: {integrity: sha512-qd/R7n5rQTRFi+Zf2sk5XVVd9UQl6ZkduPFC3S7WEGJAmetDTjY3qPN50eSKzwuzEyQKy5TN2TiZdkIjos2L6A==}
     engines: {node: '>=8.0.0'}
 
-  tar-fs@2.1.4:
-    resolution: {integrity: sha512-mDAjwmZdh7LTT6pNleZ05Yt65HC3E+NiQzl672vQG38jIrehtJk/J3mNwIg+vShQPcLF/LV7CMnDW6vjj6sfYQ==}
-
-  tar-stream@2.2.0:
-    resolution: {integrity: sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ==}
-    engines: {node: '>=6'}
-
   tar@6.2.1:
     resolution: {integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==}
     engines: {node: '>=10'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   timed-out@3.1.3:
     resolution: {integrity: sha512-3RB4qgvPkxF/FGPnrzaWLhW1rxNK2sdH0mFjbhxkfTR6QXvcM3EtYm9L44UrhODZrZ+yhDXeMncLqi8QXn2MJg==}
@@ -1886,9 +1967,6 @@ packages:
 
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
-
-  tunnel-agent@0.6.0:
-    resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
 
   typescript@5.9.3:
     resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
@@ -1935,19 +2013,15 @@ packages:
     resolution: {integrity: sha512-6Z7Ma2aVEWisaL6TvBCy7P8rm2LQoPv6dJ7ecIaIixHcwfbJ0x7mWdbcwlIM5IGQxPZSFYeqRCqlOOeKoJYMkw==}
     engines: {node: '>= 4'}
 
-  uuid@13.0.0:
-    resolution: {integrity: sha512-XQegIaBTVUjSHliKqcnFqYypAd4S+WCYt5NIeRs6w/UAry7z8Y9j5ZwRRL4kzq9U3sD6v+85er9FvkEaBpji2w==}
-    hasBin: true
-
   uuid@2.0.3:
     resolution: {integrity: sha512-FULf7fayPdpASncVy4DLh3xydlXEJJpvIELjYjNeQWYUZ9pclcpvCZSr2gkmN2FrrGcI7G/cJsIEwk5/8vfXpg==}
-    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
 
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
-  verda@1.13.0:
-    resolution: {integrity: sha512-96t4ABl2mqKaIb2wbvrR4wXmZsTcl0O4G0jjIxFLhK3oVDlhbZfXW9ic47HomiisM/Mmfs6s5nmOjHSeuDaaXQ==}
+  verda@1.14.0:
+    resolution: {integrity: sha512-qJ4eaMZZvvfPYtpKOQCPubV7Wyye3YZMPElgUoJH9Je/UGPrEXp2++V1mu97xZfWuc6Uq1plpXq/8dBvi+qvSA==}
     engines: {node: '>= 14.0.0'}
     hasBin: true
 
@@ -1977,6 +2051,11 @@ packages:
     engines: {node: ^20.17.0 || >=22.9.0}
     hasBin: true
 
+  which@7.0.0:
+    resolution: {integrity: sha512-RancgH2dmbLdHl6LRhEqvklWMgl/Hdnun0Y90KhBOLkMefg8Qa7/Zel8Sm+8HEcP6DEjzsWzpkuBQEZok58isA==}
+    engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
+    hasBin: true
+
   wide-align@1.1.5:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
 
@@ -2003,19 +2082,129 @@ packages:
 
 snapshots:
 
+  '@emnapi/runtime@1.11.3':
+    dependencies:
+      tslib: 2.8.1
+    optional: true
+
   '@fontsource/roboto-slab@5.2.8': {}
 
   '@iarna/toml@2.2.5': {}
 
-  '@iosevka/monorepo@https://codeload.github.com/be5invis/Iosevka/tar.gz/f2cab61c0de33c8c7158ede37c6241e04b5cc22b':
+  '@img/colour@1.1.0': {}
+
+  '@img/sharp-darwin-arm64@0.35.4':
+    optionalDependencies:
+      '@img/sharp-libvips-darwin-arm64': 1.3.3
+    optional: true
+
+  '@img/sharp-darwin-x64@0.35.4':
+    optionalDependencies:
+      '@img/sharp-libvips-darwin-x64': 1.3.3
+    optional: true
+
+  '@img/sharp-freebsd-wasm32@0.35.4':
+    dependencies:
+      '@img/sharp-wasm32': 0.35.4
+    optional: true
+
+  '@img/sharp-libvips-darwin-arm64@1.3.3':
+    optional: true
+
+  '@img/sharp-libvips-darwin-x64@1.3.3':
+    optional: true
+
+  '@img/sharp-libvips-linux-arm64@1.3.3':
+    optional: true
+
+  '@img/sharp-libvips-linux-arm@1.3.3':
+    optional: true
+
+  '@img/sharp-libvips-linux-ppc64@1.3.3':
+    optional: true
+
+  '@img/sharp-libvips-linux-riscv64@1.3.3':
+    optional: true
+
+  '@img/sharp-libvips-linux-s390x@1.3.3':
+    optional: true
+
+  '@img/sharp-libvips-linux-x64@1.3.3':
+    optional: true
+
+  '@img/sharp-libvips-linuxmusl-arm64@1.3.3':
+    optional: true
+
+  '@img/sharp-libvips-linuxmusl-x64@1.3.3':
+    optional: true
+
+  '@img/sharp-linux-arm64@0.35.4':
+    optionalDependencies:
+      '@img/sharp-libvips-linux-arm64': 1.3.3
+    optional: true
+
+  '@img/sharp-linux-arm@0.35.4':
+    optionalDependencies:
+      '@img/sharp-libvips-linux-arm': 1.3.3
+    optional: true
+
+  '@img/sharp-linux-ppc64@0.35.4':
+    optionalDependencies:
+      '@img/sharp-libvips-linux-ppc64': 1.3.3
+    optional: true
+
+  '@img/sharp-linux-riscv64@0.35.4':
+    optionalDependencies:
+      '@img/sharp-libvips-linux-riscv64': 1.3.3
+    optional: true
+
+  '@img/sharp-linux-s390x@0.35.4':
+    optionalDependencies:
+      '@img/sharp-libvips-linux-s390x': 1.3.3
+    optional: true
+
+  '@img/sharp-linux-x64@0.35.4':
+    optionalDependencies:
+      '@img/sharp-libvips-linux-x64': 1.3.3
+    optional: true
+
+  '@img/sharp-linuxmusl-arm64@0.35.4':
+    optionalDependencies:
+      '@img/sharp-libvips-linuxmusl-arm64': 1.3.3
+    optional: true
+
+  '@img/sharp-linuxmusl-x64@0.35.4':
+    optionalDependencies:
+      '@img/sharp-libvips-linuxmusl-x64': 1.3.3
+    optional: true
+
+  '@img/sharp-wasm32@0.35.4':
+    dependencies:
+      '@emnapi/runtime': 1.11.3
+    optional: true
+
+  '@img/sharp-webcontainers-wasm32@0.35.4':
+    dependencies:
+      '@img/sharp-wasm32': 0.35.4
+    optional: true
+
+  '@img/sharp-win32-arm64@0.35.4':
+    optional: true
+
+  '@img/sharp-win32-ia32@0.35.4':
+    optional: true
+
+  '@img/sharp-win32-x64@0.35.4':
+    optional: true
+
+  '@iosevka/monorepo@https://codeload.github.com/be5invis/Iosevka/tar.gz/fe27e532e296102a2afb5b27963cf034a50866f7':
     dependencies:
       '@iarna/toml': 2.2.5
       deep-equal: 2.2.3
-      otb-ttc-bundle: 1.7.6
-      semver: 7.7.3
-      uuid: 13.0.0
-      verda: 1.13.0
-      which: 6.0.0
+      otb-ttc-bundle: 1.8.0
+      semver: 7.8.5
+      verda: 1.14.0
+      which: 7.0.0
 
   '@lezer/common@1.3.0': {}
 
@@ -2161,371 +2350,371 @@ snapshots:
       - '@parcel/core'
       - napi-wasm
 
-  '@ot-builder/bin-composite-types@1.7.6':
+  '@ot-builder/bin-composite-types@1.8.0':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/prelude': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/bin-util@1.7.6':
+  '@ot-builder/bin-util@1.8.0':
     dependencies:
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/prelude': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/cli-help-shower@1.7.5':
+  '@ot-builder/cli-help-shower@1.8.0':
     dependencies:
       picocolors: 1.1.1
       tslib: 2.8.1
 
-  '@ot-builder/cli-proc@1.7.6':
+  '@ot-builder/cli-proc@1.8.0':
     dependencies:
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/io-bin-font': 1.7.6
-      '@ot-builder/ot': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/rectify': 1.7.6
-      '@ot-builder/trace': 1.7.6
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/io-bin-font': 1.8.0
+      '@ot-builder/ot': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      '@ot-builder/rectify': 1.8.0
+      '@ot-builder/trace': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/cli-shared@1.7.6':
+  '@ot-builder/cli-shared@1.8.0':
     dependencies:
-      '@ot-builder/io-bin-font': 1.7.6
-      '@ot-builder/ot': 1.7.6
+      '@ot-builder/io-bin-font': 1.8.0
+      '@ot-builder/ot': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/common-impl@1.7.5':
+  '@ot-builder/common-impl@1.8.0':
     dependencies:
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/prelude': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/errors@1.7.5':
+  '@ot-builder/errors@1.8.0':
     dependencies:
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-cff@1.7.6':
+  '@ot-builder/io-bin-cff@1.8.0':
     dependencies:
-      '@ot-builder/bin-composite-types': 1.7.6
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/stat-glyphs': 1.7.6
-      '@ot-builder/var-store': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-composite-types': 1.8.0
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      '@ot-builder/stat-glyphs': 1.8.0
+      '@ot-builder/var-store': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-encoding@1.7.6':
+  '@ot-builder/io-bin-encoding@1.8.0':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/ot-encoding': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/io-bin-sfnt': 1.8.0
+      '@ot-builder/ot-encoding': 1.8.0
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/ot-sfnt': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-ext-private@1.7.6':
+  '@ot-builder/io-bin-ext-private@1.8.0':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/ot-ext-private': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/io-bin-sfnt': 1.8.0
+      '@ot-builder/ot-ext-private': 1.8.0
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/ot-sfnt': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-font@1.7.6':
+  '@ot-builder/io-bin-font@1.8.0':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/io-bin-encoding': 1.7.6
-      '@ot-builder/io-bin-ext-private': 1.7.6
-      '@ot-builder/io-bin-glyph-store': 1.7.6
-      '@ot-builder/io-bin-layout': 1.7.6
-      '@ot-builder/io-bin-metadata': 1.7.6
-      '@ot-builder/io-bin-name': 1.7.6
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/io-bin-vtt-private': 1.7.6
-      '@ot-builder/ot': 1.7.6
-      '@ot-builder/ot-encoding': 1.7.6
-      '@ot-builder/ot-ext-private': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-layout': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-name': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/ot-vtt-private': 1.7.6
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/io-bin-encoding': 1.8.0
+      '@ot-builder/io-bin-ext-private': 1.8.0
+      '@ot-builder/io-bin-glyph-store': 1.9.0
+      '@ot-builder/io-bin-layout': 1.8.0
+      '@ot-builder/io-bin-metadata': 1.8.0
+      '@ot-builder/io-bin-name': 1.8.0
+      '@ot-builder/io-bin-sfnt': 1.8.0
+      '@ot-builder/io-bin-vtt-private': 1.8.0
+      '@ot-builder/ot': 1.8.0
+      '@ot-builder/ot-encoding': 1.8.0
+      '@ot-builder/ot-ext-private': 1.8.0
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/ot-layout': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/ot-name': 1.8.0
+      '@ot-builder/ot-sfnt': 1.8.0
+      '@ot-builder/ot-vtt-private': 1.8.0
+      '@ot-builder/prelude': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-glyph-store@1.7.6':
+  '@ot-builder/io-bin-glyph-store@1.9.0':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/io-bin-cff': 1.7.6
-      '@ot-builder/io-bin-metric': 1.7.6
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/io-bin-ttf': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/stat-glyphs': 1.7.6
-      '@ot-builder/var-store': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/io-bin-cff': 1.8.0
+      '@ot-builder/io-bin-metric': 1.8.0
+      '@ot-builder/io-bin-sfnt': 1.8.0
+      '@ot-builder/io-bin-ttf': 1.9.0
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/ot-sfnt': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      '@ot-builder/stat-glyphs': 1.8.0
+      '@ot-builder/var-store': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-layout@1.7.6':
+  '@ot-builder/io-bin-layout@1.8.0':
     dependencies:
-      '@ot-builder/bin-composite-types': 1.7.6
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-layout': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/var-store': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-composite-types': 1.8.0
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/io-bin-sfnt': 1.8.0
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/ot-layout': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/ot-sfnt': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      '@ot-builder/var-store': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-metadata@1.7.6':
+  '@ot-builder/io-bin-metadata@1.8.0':
     dependencies:
-      '@ot-builder/bin-composite-types': 1.7.6
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/var-store': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-composite-types': 1.8.0
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/io-bin-sfnt': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/ot-sfnt': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      '@ot-builder/var-store': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-metric@1.7.6':
+  '@ot-builder/io-bin-metric@1.8.0':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/var-store': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      '@ot-builder/var-store': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-name@1.7.6':
+  '@ot-builder/io-bin-name@1.8.0':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-name': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      iconv-lite: 0.6.3
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/io-bin-sfnt': 1.8.0
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/ot-name': 1.8.0
+      '@ot-builder/ot-sfnt': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      iconv-lite: 0.7.3
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-sfnt@1.7.6':
+  '@ot-builder/io-bin-sfnt@1.8.0':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/ot-sfnt': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-ttf@1.7.6':
+  '@ot-builder/io-bin-ttf@1.9.0':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/stat-glyphs': 1.7.6
-      '@ot-builder/var-store': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      '@ot-builder/stat-glyphs': 1.8.0
+      '@ot-builder/var-store': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-vtt-private@1.7.6':
+  '@ot-builder/io-bin-vtt-private@1.8.0':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/io-bin-ttf': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/ot-vtt-private': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/variance': 1.7.6
-      iconv-lite: 0.6.3
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/io-bin-sfnt': 1.8.0
+      '@ot-builder/io-bin-ttf': 1.9.0
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/ot-sfnt': 1.8.0
+      '@ot-builder/ot-vtt-private': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      '@ot-builder/variance': 1.8.0
+      iconv-lite: 0.7.3
       tslib: 2.8.1
 
-  '@ot-builder/ot-encoding@1.7.6':
+  '@ot-builder/ot-encoding@1.8.0':
     dependencies:
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/prelude': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/ot-ext-private@1.7.6':
+  '@ot-builder/ot-ext-private@1.8.0':
     dependencies:
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/prelude': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/ot-glyphs@1.7.6':
+  '@ot-builder/ot-glyphs@1.8.0':
     dependencies:
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/ot-layout@1.7.6':
+  '@ot-builder/ot-layout@1.8.0':
     dependencies:
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/ot-metadata@1.7.6':
+  '@ot-builder/ot-metadata@1.8.0':
     dependencies:
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/ot-name@1.7.6':
+  '@ot-builder/ot-name@1.8.0':
     dependencies:
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/ot-sfnt@1.7.6':
+  '@ot-builder/ot-sfnt@1.8.0':
     dependencies:
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/ot-standard-glyph-namer@1.7.6':
+  '@ot-builder/ot-standard-glyph-namer@1.8.0':
     dependencies:
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/prelude': 1.8.0
       aglfn: 1.0.2
       tslib: 2.8.1
 
-  '@ot-builder/ot-vtt-private@1.7.6':
+  '@ot-builder/ot-vtt-private@1.8.0':
     dependencies:
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/ot@1.7.6':
+  '@ot-builder/ot@1.8.0':
     dependencies:
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/ot-encoding': 1.7.6
-      '@ot-builder/ot-ext-private': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-layout': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-name': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/ot-standard-glyph-namer': 1.7.6
-      '@ot-builder/ot-vtt-private': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/ot-encoding': 1.8.0
+      '@ot-builder/ot-ext-private': 1.8.0
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/ot-layout': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/ot-name': 1.8.0
+      '@ot-builder/ot-sfnt': 1.8.0
+      '@ot-builder/ot-standard-glyph-namer': 1.8.0
+      '@ot-builder/ot-vtt-private': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/prelude@1.7.5':
+  '@ot-builder/prelude@1.8.0':
     dependencies:
       tslib: 2.8.1
 
-  '@ot-builder/primitive@1.7.6':
+  '@ot-builder/primitive@1.8.0':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/prelude': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/rectify@1.7.6':
+  '@ot-builder/rectify@1.8.0':
     dependencies:
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/ot': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/ot': 1.8.0
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/stat-glyphs@1.7.6':
+  '@ot-builder/stat-glyphs@1.8.0':
     dependencies:
-      '@ot-builder/bin-composite-types': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-composite-types': 1.8.0
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/trace@1.7.6':
+  '@ot-builder/trace@1.8.0':
     dependencies:
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/ot': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/ot': 1.8.0
+      '@ot-builder/ot-glyphs': 1.8.0
+      '@ot-builder/ot-metadata': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/var-store@1.7.6':
+  '@ot-builder/var-store@1.8.0':
     dependencies:
-      '@ot-builder/bin-composite-types': 1.7.6
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-composite-types': 1.8.0
+      '@ot-builder/bin-util': 1.8.0
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/errors': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      '@ot-builder/variance': 1.8.0
       tslib: 2.8.1
 
-  '@ot-builder/variance@1.7.6':
+  '@ot-builder/variance@1.8.0':
     dependencies:
-      '@ot-builder/bin-composite-types': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
+      '@ot-builder/bin-composite-types': 1.8.0
+      '@ot-builder/common-impl': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
       tslib: 2.8.1
 
   '@parcel/cache@2.16.1(@parcel/core@2.16.1)':
@@ -2932,15 +3121,7 @@ snapshots:
       - encoding
       - supports-color
 
-  base64-js@1.5.1: {}
-
   baseline-browser-mapping@2.8.29: {}
-
-  bl@4.1.0:
-    dependencies:
-      buffer: 5.7.1
-      inherits: 2.0.4
-      readable-stream: 3.6.2
 
   boolbase@1.0.0: {}
 
@@ -2970,11 +3151,6 @@ snapshots:
       electron-to-chromium: 1.5.258
       node-releases: 2.0.27
       update-browserslist-db: 1.1.4(browserslist@4.28.0)
-
-  buffer@5.7.1:
-    dependencies:
-      base64-js: 1.5.1
-      ieee754: 1.2.1
 
   call-bind-apply-helpers@1.0.2:
     dependencies:
@@ -3044,8 +3220,6 @@ snapshots:
       parse5: 7.3.0
       parse5-htmlparser2-tree-adapter: 7.1.0
 
-  chownr@1.1.4: {}
-
   chownr@2.0.0:
     optional: true
 
@@ -3071,18 +3245,8 @@ snapshots:
 
   color-name@1.1.4: {}
 
-  color-string@1.9.1:
-    dependencies:
-      color-name: 1.1.4
-      simple-swizzle: 0.2.4
-
   color-support@1.1.3:
     optional: true
-
-  color@4.2.3:
-    dependencies:
-      color-convert: 2.0.1
-      color-string: 1.9.1
 
   command-line-args@5.2.1:
     dependencies:
@@ -3146,10 +3310,6 @@ snapshots:
     optional: true
 
   decamelize@1.2.0: {}
-
-  decompress-response@6.0.0:
-    dependencies:
-      mimic-response: 3.1.0
 
   deep-equal@2.2.3:
     dependencies:
@@ -3238,10 +3398,6 @@ snapshots:
   emoji-regex@8.0.0:
     optional: true
 
-  end-of-stream@1.4.5:
-    dependencies:
-      once: 1.4.0
-
   entities@4.5.0: {}
 
   entities@6.0.1: {}
@@ -3276,8 +3432,6 @@ snapshots:
 
   esprima@4.0.1: {}
 
-  expand-template@2.0.3: {}
-
   fast-deep-equal@3.1.3: {}
 
   fill-range@7.1.1:
@@ -3298,8 +3452,6 @@ snapshots:
   for-each@0.3.5:
     dependencies:
       is-callable: 1.2.7
-
-  fs-constants@1.0.0: {}
 
   fs-extra@11.3.2:
     dependencies:
@@ -3355,8 +3507,6 @@ snapshots:
       es-object-atoms: 1.1.1
 
   get-stdin@4.0.1: {}
-
-  github-from-package@0.0.0: {}
 
   glob@7.2.3:
     dependencies:
@@ -3438,11 +3588,9 @@ snapshots:
       - supports-color
     optional: true
 
-  iconv-lite@0.6.3:
+  iconv-lite@0.7.3:
     dependencies:
       safer-buffer: 2.1.2
-
-  ieee754@1.2.1: {}
 
   imurmurhash@0.1.4: {}
 
@@ -3478,8 +3626,6 @@ snapshots:
       get-intrinsic: 1.3.0
 
   is-arrayish@0.2.1: {}
-
-  is-arrayish@0.3.4: {}
 
   is-bigint@1.1.0:
     dependencies:
@@ -3574,6 +3720,8 @@ snapshots:
 
   isexe@3.1.1: {}
 
+  isexe@4.0.0: {}
+
   js-yaml@3.14.2:
     dependencies:
       argparse: 1.0.10
@@ -3663,8 +3811,6 @@ snapshots:
 
   mimic-function@5.0.1: {}
 
-  mimic-response@3.1.0: {}
-
   minimatch@3.1.2:
     dependencies:
       brace-expansion: 1.1.12
@@ -3685,8 +3831,6 @@ snapshots:
       minipass: 3.3.6
       yallist: 4.0.0
     optional: true
-
-  mkdirp-classic@0.5.3: {}
 
   mkdirp@0.5.6:
     dependencies:
@@ -3714,16 +3858,8 @@ snapshots:
     optionalDependencies:
       msgpackr-extract: 3.0.3
 
-  napi-build-utils@2.0.0: {}
-
-  node-abi@3.85.0:
-    dependencies:
-      semver: 7.7.3
-
   node-addon-api@3.2.1:
     optional: true
-
-  node-addon-api@5.1.0: {}
 
   node-addon-api@6.1.0: {}
 
@@ -3807,6 +3943,7 @@ snapshots:
   once@1.4.0:
     dependencies:
       wrappy: 1.0.2
+    optional: true
 
   onetime@7.0.0:
     dependencies:
@@ -3825,22 +3962,22 @@ snapshots:
       os-homedir: 1.0.2
       os-tmpdir: 1.0.2
 
-  ot-builder@1.7.6:
+  ot-builder@1.8.0:
     dependencies:
-      '@ot-builder/cli-proc': 1.7.6
-      '@ot-builder/io-bin-font': 1.7.6
-      '@ot-builder/ot': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/rectify': 1.7.6
-      '@ot-builder/trace': 1.7.6
+      '@ot-builder/cli-proc': 1.8.0
+      '@ot-builder/io-bin-font': 1.8.0
+      '@ot-builder/ot': 1.8.0
+      '@ot-builder/prelude': 1.8.0
+      '@ot-builder/primitive': 1.8.0
+      '@ot-builder/rectify': 1.8.0
+      '@ot-builder/trace': 1.8.0
       tslib: 2.8.1
 
-  otb-ttc-bundle@1.7.6:
+  otb-ttc-bundle@1.8.0:
     dependencies:
-      '@ot-builder/cli-help-shower': 1.7.5
-      '@ot-builder/cli-shared': 1.7.6
-      ot-builder: 1.7.6
+      '@ot-builder/cli-help-shower': 1.8.0
+      '@ot-builder/cli-shared': 1.8.0
+      ot-builder: 1.8.0
       tslib: 2.8.1
 
   package-json@2.4.0:
@@ -3906,29 +4043,9 @@ snapshots:
 
   possible-typed-array-names@1.1.0: {}
 
-  prebuild-install@7.1.3:
-    dependencies:
-      detect-libc: 2.1.2
-      expand-template: 2.0.3
-      github-from-package: 0.0.0
-      minimist: 1.2.8
-      mkdirp-classic: 0.5.3
-      napi-build-utils: 2.0.0
-      node-abi: 3.85.0
-      pump: 3.0.3
-      rc: 1.2.8
-      simple-get: 4.0.1
-      tar-fs: 2.1.4
-      tunnel-agent: 0.6.0
-
   prepend-http@1.0.4: {}
 
   process-nextick-args@2.0.1: {}
-
-  pump@3.0.3:
-    dependencies:
-      end-of-stream: 1.4.5
-      once: 1.4.0
 
   rc@1.2.8:
     dependencies:
@@ -3968,6 +4085,7 @@ snapshots:
       inherits: 2.0.4
       string_decoder: 1.3.0
       util-deprecate: 1.0.2
+    optional: true
 
   redent@1.0.0:
     dependencies:
@@ -4039,6 +4157,8 @@ snapshots:
 
   semver@7.7.3: {}
 
+  semver@7.8.5: {}
+
   set-blocking@2.0.0:
     optional: true
 
@@ -4058,16 +4178,38 @@ snapshots:
       functions-have-names: 1.2.3
       has-property-descriptors: 1.0.2
 
-  sharp@0.31.3:
+  sharp@0.35.4(@types/node@20.19.25):
     dependencies:
-      color: 4.2.3
+      '@img/colour': 1.1.0
       detect-libc: 2.1.2
-      node-addon-api: 5.1.0
-      prebuild-install: 7.1.3
-      semver: 7.7.3
-      simple-get: 4.0.1
-      tar-fs: 2.1.4
-      tunnel-agent: 0.6.0
+      semver: 7.8.5
+    optionalDependencies:
+      '@img/sharp-darwin-arm64': 0.35.4
+      '@img/sharp-darwin-x64': 0.35.4
+      '@img/sharp-freebsd-wasm32': 0.35.4
+      '@img/sharp-libvips-darwin-arm64': 1.3.3
+      '@img/sharp-libvips-darwin-x64': 1.3.3
+      '@img/sharp-libvips-linux-arm': 1.3.3
+      '@img/sharp-libvips-linux-arm64': 1.3.3
+      '@img/sharp-libvips-linux-ppc64': 1.3.3
+      '@img/sharp-libvips-linux-riscv64': 1.3.3
+      '@img/sharp-libvips-linux-s390x': 1.3.3
+      '@img/sharp-libvips-linux-x64': 1.3.3
+      '@img/sharp-libvips-linuxmusl-arm64': 1.3.3
+      '@img/sharp-libvips-linuxmusl-x64': 1.3.3
+      '@img/sharp-linux-arm': 0.35.4
+      '@img/sharp-linux-arm64': 0.35.4
+      '@img/sharp-linux-ppc64': 0.35.4
+      '@img/sharp-linux-riscv64': 0.35.4
+      '@img/sharp-linux-s390x': 0.35.4
+      '@img/sharp-linux-x64': 0.35.4
+      '@img/sharp-linuxmusl-arm64': 0.35.4
+      '@img/sharp-linuxmusl-x64': 0.35.4
+      '@img/sharp-webcontainers-wasm32': 0.35.4
+      '@img/sharp-win32-arm64': 0.35.4
+      '@img/sharp-win32-ia32': 0.35.4
+      '@img/sharp-win32-x64': 0.35.4
+      '@types/node': 20.19.25
 
   side-channel-list@1.0.0:
     dependencies:
@@ -4100,18 +4242,6 @@ snapshots:
   signal-exit@3.0.7: {}
 
   signal-exit@4.1.0: {}
-
-  simple-concat@1.0.1: {}
-
-  simple-get@4.0.1:
-    dependencies:
-      decompress-response: 6.0.0
-      once: 1.4.0
-      simple-concat: 1.0.1
-
-  simple-swizzle@0.2.4:
-    dependencies:
-      is-arrayish: 0.3.4
 
   slide@1.1.6: {}
 
@@ -4160,6 +4290,7 @@ snapshots:
   string_decoder@1.3.0:
     dependencies:
       safe-buffer: 5.2.1
+    optional: true
 
   strip-ansi@3.0.1:
     dependencies:
@@ -4199,21 +4330,6 @@ snapshots:
       typical: 5.2.0
       wordwrapjs: 4.0.1
 
-  tar-fs@2.1.4:
-    dependencies:
-      chownr: 1.1.4
-      mkdirp-classic: 0.5.3
-      pump: 3.0.3
-      tar-stream: 2.2.0
-
-  tar-stream@2.2.0:
-    dependencies:
-      bl: 4.1.0
-      end-of-stream: 1.4.5
-      fs-constants: 1.0.0
-      inherits: 2.0.4
-      readable-stream: 3.6.2
-
   tar@6.2.1:
     dependencies:
       chownr: 2.0.0
@@ -4243,10 +4359,6 @@ snapshots:
       string-format: 2.0.0
 
   tslib@2.8.1: {}
-
-  tunnel-agent@0.6.0:
-    dependencies:
-      safe-buffer: 5.2.1
 
   typescript@5.9.3: {}
 
@@ -4283,8 +4395,6 @@ snapshots:
 
   utility-types@3.11.0: {}
 
-  uuid@13.0.0: {}
-
   uuid@2.0.3: {}
 
   validate-npm-package-license@3.0.4:
@@ -4292,7 +4402,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  verda@1.13.0:
+  verda@1.14.0:
     dependencies:
       chalk: 5.6.2
       cli-cursor: 5.0.0
@@ -4344,6 +4454,10 @@ snapshots:
     dependencies:
       isexe: 3.1.1
 
+  which@7.0.0:
+    dependencies:
+      isexe: 4.0.0
+
   wide-align@1.1.5:
     dependencies:
       string-width: 4.2.3
@@ -4358,7 +4472,8 @@ snapshots:
       reduce-flatten: 2.0.0
       typical: 5.2.0
 
-  wrappy@1.0.2: {}
+  wrappy@1.0.2:
+    optional: true
 
   write-file-atomic@1.3.4:
     dependencies:
