@@ -25,14 +25,14 @@ importers:
         version: 5.9.3
     devDependencies:
       '@types/node':
-        specifier: ^20.10.6
-        version: 20.19.25
+        specifier: ^22.0.0
+        version: 22.20.2
 
   font:
     devDependencies:
       '@iosevka/monorepo':
         specifier: github:be5invis/Iosevka
-        version: https://codeload.github.com/be5invis/Iosevka/tar.gz/f2cab61c0de33c8c7158ede37c6241e04b5cc22b
+        version: https://codeload.github.com/be5invis/Iosevka/tar.gz/fe27e532e296102a2afb5b27963cf034a50866f7
     publishDirectory: dist
 
   web:
@@ -56,9 +56,9 @@ packages:
   '@iarna/toml@2.2.5':
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
 
-  '@iosevka/monorepo@https://codeload.github.com/be5invis/Iosevka/tar.gz/f2cab61c0de33c8c7158ede37c6241e04b5cc22b':
-    resolution: {tarball: https://codeload.github.com/be5invis/Iosevka/tar.gz/f2cab61c0de33c8c7158ede37c6241e04b5cc22b}
-    version: 33.3.6
+  '@iosevka/monorepo@https://codeload.github.com/be5invis/Iosevka/tar.gz/fe27e532e296102a2afb5b27963cf034a50866f7':
+    resolution: {tarball: https://codeload.github.com/be5invis/Iosevka/tar.gz/fe27e532e296102a2afb5b27963cf034a50866f7}
+    version: 34.8.1
     engines: {node: '>=16.0.0'}
 
   '@lezer/common@1.3.0':
@@ -246,113 +246,113 @@ packages:
     version: 1.0.0
     engines: {parcel: 2.x}
 
-  '@ot-builder/bin-composite-types@1.7.6':
-    resolution: {integrity: sha512-l7S8TkRlKJnGA7EP2jS8XGlMe5Bz9030ihyg0iC7AdAnvhYUbCjE/vTB0ogbsVF0eOdYFW9SYC/LK3fqpg5CYQ==}
+  '@ot-builder/bin-composite-types@1.8.1':
+    resolution: {integrity: sha512-AGiPcipJ9ozIeN/Vel212aTO1rbM/k9SOY3U+BVYxF1W7uoUApjtP8cSCbNsMQ7AhxERy7Ti26UU8S7eayTV9Q==}
 
-  '@ot-builder/bin-util@1.7.6':
-    resolution: {integrity: sha512-DlKYSLlfOinzV0JX9hOdkpZuGJX2gmFpxUpw2qGlZvcrohjPuV5HCFUFm4ge5RdR96irLRFpOHPigzbJSMcQWA==}
+  '@ot-builder/bin-util@1.8.1':
+    resolution: {integrity: sha512-q0iUo4BtJ/FO6vw9fYXmucO0vKpPy+yecRGGobo8psHBaOGT/34Sdw8e6TerLXWQdrSvqHhi+MUCHumGmfVfJQ==}
 
-  '@ot-builder/cli-help-shower@1.7.5':
-    resolution: {integrity: sha512-DYc2fkhqstLbkvml/0A0Si+6+mT+jS7i3Hq7lPOMVAOrMeo5Aow62Uq2T0F9/ZCjLO7PFHXfWH/RpaTLtoEU9Q==}
+  '@ot-builder/cli-help-shower@1.8.1':
+    resolution: {integrity: sha512-/fL+NTgx3Gp7/1MaiAyWncO99BUxIhRJTk9xfhVRvGs359WSdksxk+D23XTQoVRwhfAPWZNifSM9s1GKb3g1KQ==}
 
-  '@ot-builder/cli-proc@1.7.6':
-    resolution: {integrity: sha512-f4b3KWgM91ECLsVpprVww7b66Ygz2I+0mOhuse4Kjzn2JVwWeN5T5z6tvhrsVOZO+PhF2zXR19yqFItlFYnhgg==}
+  '@ot-builder/cli-proc@1.8.1':
+    resolution: {integrity: sha512-4HRtfSlN+jQpCNvn/y1Pcld/5Jz+g477JbrBeETVNXblxVgmmwWzTJnjAo1pbDBJplJFqWAYMSiPEkgmtLspCQ==}
 
-  '@ot-builder/cli-shared@1.7.6':
-    resolution: {integrity: sha512-dlNGLHQAE4m4xmELQKOKb/y3mVOIoEE3D6fHUdzPw1eCxltMyV/033I+huroAW+XsxCXzarre9a/oxjdcrRjWg==}
+  '@ot-builder/cli-shared@1.8.1':
+    resolution: {integrity: sha512-eTmLdW3YSBLONIs7o4NLZULcgJltGeyCV4/9PyJRCwfqxNGx8sDZ0M3WpjsYA7zVg1aNkevLn2rdyFhifkDoTA==}
 
-  '@ot-builder/common-impl@1.7.5':
-    resolution: {integrity: sha512-/851a55LkWYoTxZ+Whn/C3e4TCuLXxOg6BnDzIwacZYVcQyzqgy8UiFL4yoh6qK+0xK807n+dsiLtc62rk5exw==}
+  '@ot-builder/common-impl@1.8.1':
+    resolution: {integrity: sha512-qpPaKkEwNDt7L71bjJMA/BlgYszHtIwk90UkSRaRzKLTrQff798dOOp7V8UCQi8VJ3yxyghpZfPbubeg1yL2+Q==}
 
-  '@ot-builder/errors@1.7.5':
-    resolution: {integrity: sha512-Ejic7L9cLkdLGlk7cIg1IyjZ3oEDKB7/qL6ry/2SlurT/TRcLapdwYdbOQ5VfPrRlrS2wnzTsuN5rBNr1nWZMg==}
+  '@ot-builder/errors@1.8.1':
+    resolution: {integrity: sha512-OYe9Y35dNnI8Qd2cylo/EFF9QPT8r/soOZqPRuAJVj02SSsjInDB4BmuLy5YbMekJjFWHN4+JqUJFo0Wfqasuw==}
 
-  '@ot-builder/io-bin-cff@1.7.6':
-    resolution: {integrity: sha512-b9QKRYPuQn1v8KOAdg/gi1QPZJdifTi4exSuZOsUYVwOKSdA/ALm/+vWztG8+Ip4YI5K5TGXorP/okEw+aCf8A==}
+  '@ot-builder/io-bin-cff@1.8.1':
+    resolution: {integrity: sha512-YfEbMIHq++g8ZCQtY0mWM9mla5FeLtFV3qZksHB3CWdUVaiqfUjV+IGuF+XIDVYWsAzjsfQvirnDj81zMKT2QQ==}
 
-  '@ot-builder/io-bin-encoding@1.7.6':
-    resolution: {integrity: sha512-p3Jwq+o8iCC1aKkeqJyiDBqosSd8AFSK3NTqUMVPE/9ugWB9ZNRPGi8CYUjsCXjJCOvtAYshrfuLjIiT+fYXbg==}
+  '@ot-builder/io-bin-encoding@1.8.1':
+    resolution: {integrity: sha512-dLIPpZiYd8ZiC79yRz5IOhAV+Z5BNrtOb7vMli0BD7B5IQv54euo41ZL7IiXATfgZSSfUCQ/x13FyTFZgMOp3A==}
 
-  '@ot-builder/io-bin-ext-private@1.7.6':
-    resolution: {integrity: sha512-xUieqwCciqsSuyHEdSz996JgKJBsFn7XjX27x/K4xkpfEje54YRh94NHPTQb1OUM/qAh5XNA3OM4ahafHVFQ7w==}
+  '@ot-builder/io-bin-ext-private@1.8.1':
+    resolution: {integrity: sha512-9aOtHatoUAIMG50Xa+QmY2L35jVpY1ZX4Y/dFgeQCGD7Jo1ogUwTtA1Yvj1cY6cY8EpOMUNKTlYoZ59kIBOpXw==}
 
-  '@ot-builder/io-bin-font@1.7.6':
-    resolution: {integrity: sha512-8BAR+PL/h5EyGo72tSf6tDgTumNeQX3SGChdFHLtky/gLbEHR0BGTwXC/TSdk45/KcxnyaNNPJJQ1GP2lOCTAA==}
+  '@ot-builder/io-bin-font@1.8.1':
+    resolution: {integrity: sha512-uC/UBNOf9d5NDIlLZ/VA57DCrgbtoZEAjGvLtLbSBA9XVomIXQ8oWVJON1R4laHJhYOCC5vW8XooMbGHP9j+jg==}
 
-  '@ot-builder/io-bin-glyph-store@1.7.6':
-    resolution: {integrity: sha512-7vlULFbRhdKeIFE7WXgRTRzT6F7v/YHT4ArjGYMwt4Gr7j10fA2J0tEa11vBMxr74z/ZaxArH7ogv+21utyDdg==}
+  '@ot-builder/io-bin-glyph-store@1.9.1':
+    resolution: {integrity: sha512-+cmnhBH1ltI+8IIW6y/eZ5CcMJYXi7bl//mQ5oFqjHb18Jv8TJ4kL6r6iMhdtc/Prw76ve2aY0NM+xf3jkrKDQ==}
 
-  '@ot-builder/io-bin-layout@1.7.6':
-    resolution: {integrity: sha512-CfK3m9zuiUo1HNK8fE2T2NH/4Wd8ciAyFEalcgQfToDytXiPOcHlFVBs+EGvq5bltsKknRs+GqVEwHTNdpXgNg==}
+  '@ot-builder/io-bin-layout@1.8.1':
+    resolution: {integrity: sha512-ds+wXdVLaJl1psWErcQfn1IHx8MtoZjEQL8sqOwfzsIMVMNdjh+lHSNwyIiP3xU5emc+hZpHGejX2b7BlrSs4A==}
 
-  '@ot-builder/io-bin-metadata@1.7.6':
-    resolution: {integrity: sha512-8Wl6WoozoqNfg154P9cUS0m+vmiOaqc8xjSPVlcASZ4S+EzzvrePy0/hg3Ay/CgH89XFCpe+kDDvTcnHiLtCyQ==}
+  '@ot-builder/io-bin-metadata@1.8.1':
+    resolution: {integrity: sha512-vCpy+yXQoWXBiAch+HL6gHdbhOn2sMT+RxxdhtPA0L7gGBtKxUlCJL2BPV3h65VImimqrpZ7tZ3M/2mfguDfhA==}
 
-  '@ot-builder/io-bin-metric@1.7.6':
-    resolution: {integrity: sha512-yT++dqDMy7u5zi5m/ffWQoYBL7Xx8C4Bg0fznPd9Xr0ISoSCZggwl7SEbR/bJMciqCapULOjG9+zIvfcAS03zA==}
+  '@ot-builder/io-bin-metric@1.8.1':
+    resolution: {integrity: sha512-PbdH55a84Bi+u+BJEfySssXz86Uyamg9AOzaKtg3K6vVEG5kEBfVe8clz2ybsO3aUU8y7QwvoKoBPxKqP0CDig==}
 
-  '@ot-builder/io-bin-name@1.7.6':
-    resolution: {integrity: sha512-DAp4ChNVnybFPbViTdE439f/cvOfvKljdjXDjO5mn4LitoJ1kpLVakmkPssP7UVeP1k+/ZaKNx2H9y/OLloWrg==}
+  '@ot-builder/io-bin-name@1.8.1':
+    resolution: {integrity: sha512-shFOHB3MmzoDp+hMkLuCvQ87Lyo5S3pDIc+EGVOPtAqA+D9go+qyAvk0yGxQMSyt8e3eIdyb3XRdCu/Os6IpqA==}
 
-  '@ot-builder/io-bin-sfnt@1.7.6':
-    resolution: {integrity: sha512-iC5Z3UrgdmAS8+ygdBjDogVfyczuneKDplqOnRhaAmRZySBEpGYKJBnOYzwb1bfX1s7vABxTYC+9GicGu/BLoQ==}
+  '@ot-builder/io-bin-sfnt@1.8.1':
+    resolution: {integrity: sha512-+rvAMsIva3DEYzM4C51rpYK09TLLqhtNQ7IKArB5bqt9pa5AqpI2ud24GF7aqVPpuSvfMqS9JAup44dHhSi0yQ==}
 
-  '@ot-builder/io-bin-ttf@1.7.6':
-    resolution: {integrity: sha512-BbMJJQ+2osm5ePCfYWCD6Aq37OuCaX1Ew3KDMlFqxW5WW7fskvlUUAq0ZPSw8zywDPiSN8hnTojXojnOLaNxSQ==}
+  '@ot-builder/io-bin-ttf@1.9.1':
+    resolution: {integrity: sha512-gPV7mkwSAF0tNsO1h4qmMR8ROuJQYcXacEBA8Q4FSxvVmw+c9gKZXzjmJN9S8OHa1L55f4P47C046MvPrTtzCA==}
 
-  '@ot-builder/io-bin-vtt-private@1.7.6':
-    resolution: {integrity: sha512-ezljIeESL/+7gtOxwbA37VbGmopy35ydTJ6662xU5G/HcjMmYGhNPsOVPNO7d9RL2yAdqz4m3oa4jefFaLP6Ew==}
+  '@ot-builder/io-bin-vtt-private@1.8.1':
+    resolution: {integrity: sha512-i6WuKKERvV24NLVblxNZQogiIubJgXBiRunwq6v8yorWnnpVi+d/ciwjvGI0hoOiBFGVgMMVZ4JL8IJut7Tpyg==}
 
-  '@ot-builder/ot-encoding@1.7.6':
-    resolution: {integrity: sha512-XXOgMeTCLRc9oyGU5L4H4TIe3HALzW7CG+5UFwvP+E+YLHUQ+yESnYEjdY9zCyEITmempp+vJFL1U1GcW6BrMw==}
+  '@ot-builder/ot-encoding@1.8.1':
+    resolution: {integrity: sha512-t64Li5YcXFe9jP3XTXHDDfvHI+oOa/sQDVNJi/IhB9JMf2rkyhCOSeOtok5ZO6gaIceyBBxU631rWjDzEYc4xQ==}
 
-  '@ot-builder/ot-ext-private@1.7.6':
-    resolution: {integrity: sha512-X6De7s4Ygqfn2yG+mSqRlrWJGM/LCqPPjTd3iYgg/zCsfHXkPN7IQ8VUdfRCBj3wmeJYnWHv8XThmMcgm1TSHA==}
+  '@ot-builder/ot-ext-private@1.8.1':
+    resolution: {integrity: sha512-FKJ2vrkhAluRBfLJOOUhe8NdOTsU4mreipg0ISfZrSCtPEwSGYmv3bgvABpXNo+aDgMTXdNSwgJQAI3srvEpYQ==}
 
-  '@ot-builder/ot-glyphs@1.7.6':
-    resolution: {integrity: sha512-VQlmO5QZLKWR5b833I5G5QSNnd64Yg5d8UdXBE8O6iDGobsjzryYclr18KP+m+X7O2brR9T6jX3sHO7ztvKFBw==}
+  '@ot-builder/ot-glyphs@1.8.1':
+    resolution: {integrity: sha512-cPZ47IhUbgTmRbHz6TyeHK5UKu8HhIIifXKrKEdsAP0p/9zipkViPsDkk6JHs8W/ZAkBXypJ9jp229R0wFd6ag==}
 
-  '@ot-builder/ot-layout@1.7.6':
-    resolution: {integrity: sha512-ugoG/7C/Dqi1Kuk4cC8wpZ+1vmLsOfgsNWzFqXV4yBMwj3PUGyH3ieDogTBbvSApjof66ssRv3m2QI0d4RD+RA==}
+  '@ot-builder/ot-layout@1.8.1':
+    resolution: {integrity: sha512-o9upcUNOwyt4FLba8gYR1yLdK1JQnx9z8C3G/T5f9qRb1ncWuyRXo3rITvKDXz2seRdaGagtQbdEldBLXZ0N5A==}
 
-  '@ot-builder/ot-metadata@1.7.6':
-    resolution: {integrity: sha512-8kZrr69WST0oxlm/bzg2J1srCcZN9ZFXmNbR3Qcnw6nPx1+/bDHyUCBqGSdDTmkGY/MsNjtjkf6FlrPJqS9NzA==}
+  '@ot-builder/ot-metadata@1.8.1':
+    resolution: {integrity: sha512-y53Xmo7LZUmxR5IQsu1HF8LzZ8chRhuQy6Noo8Lx0frXsR3BCWB2i8zcubz2tjebNx3wiigypS4x/8Xf3luwrA==}
 
-  '@ot-builder/ot-name@1.7.6':
-    resolution: {integrity: sha512-Apm4zWaYzFxLciGTFrxHno2GVkYSlrqe2cNigrNUQgIyXIeYXKnZZCxWVnZrt8T4u5gNNc9IYPkNUo/6qSkfpA==}
+  '@ot-builder/ot-name@1.8.1':
+    resolution: {integrity: sha512-ToFlioY26w66AO4Kj7sLplwVFJcOH37J8hP6ZLQ7sy0zecudaj65JFOW8+JZwZ+a67jQzsXOrfKSa+7Ym+iIbA==}
 
-  '@ot-builder/ot-sfnt@1.7.6':
-    resolution: {integrity: sha512-G9S2FhXswFIma5zVS0PW4I0kHB0Gh/D09z5qFXm+mj7qhEk3dQqb+BsIT8TMlOqW/AO+9glDn7YC5O4q7l123Q==}
+  '@ot-builder/ot-sfnt@1.8.1':
+    resolution: {integrity: sha512-TsXw4v17kpa3P4oW53dXXXlRL6Z3kTsSIHYkp7nrgq5NmWtQdDADzXASI/YEveBCtBwb7J87Mcb7yDqYhB66Zw==}
 
-  '@ot-builder/ot-standard-glyph-namer@1.7.6':
-    resolution: {integrity: sha512-bG7+/upC4ykNOZzgVoXGalD4coyUmhSoIFZ+1p8295utcZ2tVxd1iFtjRx4S0e/7seoG8BeoDn04MGgFOlUXkQ==}
+  '@ot-builder/ot-standard-glyph-namer@1.8.1':
+    resolution: {integrity: sha512-y9lii0Oo0Bu5SfQQqhpbjlSPl99xpBt62/xRPsVlnUVctmwb6pUvsvF6CgEBPubDMUtPefyZ2/5cA0g/NQVz3A==}
 
-  '@ot-builder/ot-vtt-private@1.7.6':
-    resolution: {integrity: sha512-tR/L0Wn6fpk4VUSPQnRXDf+NILm6YDWyShdD7pfsxxQq6mqZdApONAx6p+zb8w9fmq4hRtUbtfgsHhToNBYPqA==}
+  '@ot-builder/ot-vtt-private@1.8.1':
+    resolution: {integrity: sha512-3SQnDbHZCsVoreZNAa8DkZDqpiwZUIQRIdr0LcC3fITv2TsWvDLVg4CjMwTvKxy+QMw83aCIqiYzKuZ0rCXNVA==}
 
-  '@ot-builder/ot@1.7.6':
-    resolution: {integrity: sha512-+LPhcWKQo654dTasBuLm869DVotr8RQMhtjPp1OxmauCwrNlc4pImOz8hrSg0RqizhGZt0vBQStPInH5+sNoIg==}
+  '@ot-builder/ot@1.8.1':
+    resolution: {integrity: sha512-fHEVxoGXYofGx2DGsDl/nB/FNmZALPkl37A/nmgUlETKqwB7x6y+3SD2eyMLjyOLDsSFghSrMqeWudavPO2bHg==}
 
-  '@ot-builder/prelude@1.7.5':
-    resolution: {integrity: sha512-/dJygv9cfKD8Gso6Krli/jmwCORJJgNJFe6/2bFcviOa3LPgdfEeVBj6Au8VqS1DjSg4dymdaje7l1IUxHHfQg==}
+  '@ot-builder/prelude@1.8.1':
+    resolution: {integrity: sha512-fz7tee5OVQ3W19swlppERdzWlNdGpNqkpcuZwS+0QP+7K0MA7OK36YLyGZybLTwoHSsnb47CD1mh074sAFCWKA==}
 
-  '@ot-builder/primitive@1.7.6':
-    resolution: {integrity: sha512-k+Url+wYu/8+4FMxPR2R8VdIWVW5NEwxVSyV+Cz0k/dqqXELG9TG8OHGePDTqqR6W24jfGJ3/EdC54QoJK35kw==}
+  '@ot-builder/primitive@1.8.1':
+    resolution: {integrity: sha512-kb/BOpJCwsuk9s/9+jIdAvkL/JSGDEJv20TeT3cZcvs/06oHch9/7KEM+vJvXf/sjn0cbXd/4EIupaZbRBHeyw==}
 
-  '@ot-builder/rectify@1.7.6':
-    resolution: {integrity: sha512-ObwzuTycOVz6GLEB4YaaECcgLHH25zsc/sLnqM1OwuK8qvdyC5ocT7LOjZd79bW2qjb6gDzDwV3acfwJSwZI6w==}
+  '@ot-builder/rectify@1.8.1':
+    resolution: {integrity: sha512-Z5fwQ6cR5qDat5d8XajWzNIboCmF5/RqEdUJQMZ8FGwdWq6lGo+6uq/wl0L/9gXXp/3mdaQHWUKe4Jx47UyUuw==}
 
-  '@ot-builder/stat-glyphs@1.7.6':
-    resolution: {integrity: sha512-y6EDgZ+FzM0mxKrQ2beo5XRlVFkUwYGG6/4MaXLm52SmFhBnVmjtfiM6uufDgWxOLxWs8dYjrwMrnHjN+Kbd1g==}
+  '@ot-builder/stat-glyphs@1.8.1':
+    resolution: {integrity: sha512-gBaxCVRHxgzurIM3yggmrCXwwT/MK6oRjNjWMmgVvzdvrYHNXtamJwYWdLtYhhjG9y9iBZzvqjz3GBfrGV92rg==}
 
-  '@ot-builder/trace@1.7.6':
-    resolution: {integrity: sha512-qjZwUuJruzNYUCG9dvzFGXc3WESVk5dI90JxmyqjT3YaIjKXN/kKLvFHq7VTvdq9V13f4hqkLNdVKcz1gpy0JQ==}
+  '@ot-builder/trace@1.8.1':
+    resolution: {integrity: sha512-u+/Z2ry2lFIk+BlcqUe8z6ogqfh9cXA+1upu5yGYhEUDWvWqfKZphFiaDe3PkBJSrMyUE/WYox7J2t1XFTh7VQ==}
 
-  '@ot-builder/var-store@1.7.6':
-    resolution: {integrity: sha512-PW0lM0ostJ6O9M3EQxBCcONKOValdXMvm0f8QY5kLXG5KUvW2dY3CeWvX37ecMxWks5RWV4DF1BGiSFOsd2DiA==}
+  '@ot-builder/var-store@1.8.1':
+    resolution: {integrity: sha512-d7p4GXIz2gY/JI8U/4D4hmvo/6mCQv/iIC4PSnmryD1GJmdKrBkKusogcc5vCwIZjc5rWWyt0wWQBt0IgrpbVQ==}
 
-  '@ot-builder/variance@1.7.6':
-    resolution: {integrity: sha512-kP7IgxtAUkJz3Zv7Y/3BT/yAgIufbjIFWxIsMnkYNpM22WpVIGo8GXlHpw6NJG/6LiuPNL7Yn1JjkXPUHXuBFA==}
+  '@ot-builder/variance@1.8.1':
+    resolution: {integrity: sha512-aMXPcffAxr18OIHTqRDvcuPQmhU/UsaYR6kod4LtcK/WGygVjPafw1hF5SJc3lVF7NdMxWjcylibHCOGErkHUw==}
 
   '@parcel/cache@2.16.1':
     resolution: {integrity: sha512-qDlHQQ7RDfSi5MBnuFGCfQYiQQomsA5aZLntO5MCRD62VnMf9qz/RrCqpGFGOooljMoUaeVl0Q8ARvorRJJi8w==}
@@ -653,8 +653,8 @@ packages:
   '@types/keyv@3.1.4':
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
 
-  '@types/node@20.19.25':
-    resolution: {integrity: sha512-ZsJzA5thDQMSQO788d7IocwwQbI8B5OPzmqNvpf3NY/+MHDAS759Wo0gd2WQeXYt5AAAQjzcrTVC6SKCuYgoCQ==}
+  '@types/node@22.20.2':
+    resolution: {integrity: sha512-xlvWf4Vs9n1PEVYwP1n4vvG07M6y8WgvJ2t0vbrWTmijsIHp1cS+uJ2kMIRdY3nHZK0nCYKrPeD171+SzF4/zw==}
 
   '@types/responselike@1.0.3':
     resolution: {integrity: sha512-H/+L+UkTV33uf49PH5pCAUBVPNj2nDBXTN+qS1dOwyyg24l3CcicicCA7ca+HMvJBZcFgl5r8e+RR6elsb4Lyw==}
@@ -1105,7 +1105,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   gopd@1.2.0:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
@@ -1166,8 +1166,8 @@ packages:
     resolution: {integrity: sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA==}
     engines: {node: '>= 6'}
 
-  iconv-lite@0.6.3:
-    resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
+  iconv-lite@0.7.3:
+    resolution: {integrity: sha512-IKXpvIzjnC9XTAUbVBcMfGS0EPaIXtW6v+zr+RRp+hqULEpo0owZax6wyRwPOJbWbzjYspQwusTsfVr0ifh4uQ==}
     engines: {node: '>=0.10.0'}
 
   ieee754@1.2.1:
@@ -1321,6 +1321,10 @@ packages:
   isexe@3.1.1:
     resolution: {integrity: sha512-LpB/54B+/2J5hqQ7imZHfdU31OlgQqx7ZicVlkm9kzg9/w8GKLEcFfJl/t7DCEDueOyBAD6zCCwTO6Fzs0NoEQ==}
     engines: {node: '>=16'}
+
+  isexe@4.0.0:
+    resolution: {integrity: sha512-FFUtZMpoZ8RqHS3XeXEmHWLA4thH+ZxCv2lOiPIn1Xc7CxrqhWzNSDzD+/chS/zbYezmiwWLdQC09JdQKmthOw==}
+    engines: {node: '>=20'}
 
   js-yaml@3.14.2:
     resolution: {integrity: sha512-PMSmkqxr106Xa156c2M265Z+FTrPl+oxd/rgOQy2tijQeK5TxQ43psO1ZCwhVOSdnn+RzkzlRz/eY4BgJBYVpg==}
@@ -1547,11 +1551,11 @@ packages:
     resolution: {integrity: sha512-0CWcCECdMVc2Rw3U5w9ZjqX6ga6ubk1xDVKxtBQPK7wis/0F2r9T6k4ydGYhecl7YUBxBVxhL5oisPsNxAPe2g==}
     deprecated: This package is no longer supported.
 
-  ot-builder@1.7.6:
-    resolution: {integrity: sha512-poC5qJdovDHvbdfRopJdgSvUNykAnJClAmXvIneEWXQgMecrkhtvgAGglfXLVPjcmMz4AhfdJzfzsOez4eOZYw==}
+  ot-builder@1.8.1:
+    resolution: {integrity: sha512-csea6EsPzMEjCXuOPBVa6PZhUNmS0wOHgVA8PluGLxL/JeqkF3ChrMPCvilHAT5Gaq8NQ/iavzQ/hf2NAYepvQ==}
 
-  otb-ttc-bundle@1.7.6:
-    resolution: {integrity: sha512-OL+1Fy9VjP1IZcM0tmKwuL80T44EHe9dOqOBiftd9i97uE7tvEXmeATb32PYsOHt6XUsZVViNepjiR7Ulv5Mow==}
+  otb-ttc-bundle@1.8.1:
+    resolution: {integrity: sha512-Lp1nM0pyzzHuiQOK0M46ua+z+nAJ0+SFcurzQdYMhjLh5GM+XGtYzixzu/SJuFxf7GZnfPacUxdJeHQb79vjeg==}
     hasBin: true
 
   package-json@2.4.0:
@@ -1617,6 +1621,7 @@ packages:
   prebuild-install@7.1.3:
     resolution: {integrity: sha512-8Mf2cbV7x1cXPUILADGI3wuhfqWvtiLA1iclTDbFRZkgRQS0NqsPZphna9V+HyTEadheuPmjaJMsbzKQFOzLug==}
     engines: {node: '>=10'}
+    deprecated: No longer maintained. Please contact the author of the relevant native addon; alternatives are available.
     hasBin: true
 
   prepend-http@1.0.4:
@@ -1720,6 +1725,11 @@ packages:
 
   semver@7.7.3:
     resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
+    engines: {node: '>=10'}
+    hasBin: true
+
+  semver@7.8.5:
+    resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -1864,6 +1874,7 @@ packages:
   tar@6.2.1:
     resolution: {integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==}
     engines: {node: '>=10'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   timed-out@3.1.3:
     resolution: {integrity: sha512-3RB4qgvPkxF/FGPnrzaWLhW1rxNK2sdH0mFjbhxkfTR6QXvcM3EtYm9L44UrhODZrZ+yhDXeMncLqi8QXn2MJg==}
@@ -1935,19 +1946,15 @@ packages:
     resolution: {integrity: sha512-6Z7Ma2aVEWisaL6TvBCy7P8rm2LQoPv6dJ7ecIaIixHcwfbJ0x7mWdbcwlIM5IGQxPZSFYeqRCqlOOeKoJYMkw==}
     engines: {node: '>= 4'}
 
-  uuid@13.0.0:
-    resolution: {integrity: sha512-XQegIaBTVUjSHliKqcnFqYypAd4S+WCYt5NIeRs6w/UAry7z8Y9j5ZwRRL4kzq9U3sD6v+85er9FvkEaBpji2w==}
-    hasBin: true
-
   uuid@2.0.3:
     resolution: {integrity: sha512-FULf7fayPdpASncVy4DLh3xydlXEJJpvIELjYjNeQWYUZ9pclcpvCZSr2gkmN2FrrGcI7G/cJsIEwk5/8vfXpg==}
-    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
 
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
-  verda@1.13.0:
-    resolution: {integrity: sha512-96t4ABl2mqKaIb2wbvrR4wXmZsTcl0O4G0jjIxFLhK3oVDlhbZfXW9ic47HomiisM/Mmfs6s5nmOjHSeuDaaXQ==}
+  verda@1.14.0:
+    resolution: {integrity: sha512-qJ4eaMZZvvfPYtpKOQCPubV7Wyye3YZMPElgUoJH9Je/UGPrEXp2++V1mu97xZfWuc6Uq1plpXq/8dBvi+qvSA==}
     engines: {node: '>= 14.0.0'}
     hasBin: true
 
@@ -1975,6 +1982,11 @@ packages:
   which@6.0.0:
     resolution: {integrity: sha512-f+gEpIKMR9faW/JgAgPK1D7mekkFoqbmiwvNzuhsHetni20QSgzg9Vhn0g2JSJkkfehQnqdUAx7/e15qS1lPxg==}
     engines: {node: ^20.17.0 || >=22.9.0}
+    hasBin: true
+
+  which@7.0.0:
+    resolution: {integrity: sha512-RancgH2dmbLdHl6LRhEqvklWMgl/Hdnun0Y90KhBOLkMefg8Qa7/Zel8Sm+8HEcP6DEjzsWzpkuBQEZok58isA==}
+    engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
     hasBin: true
 
   wide-align@1.1.5:
@@ -2007,15 +2019,14 @@ snapshots:
 
   '@iarna/toml@2.2.5': {}
 
-  '@iosevka/monorepo@https://codeload.github.com/be5invis/Iosevka/tar.gz/f2cab61c0de33c8c7158ede37c6241e04b5cc22b':
+  '@iosevka/monorepo@https://codeload.github.com/be5invis/Iosevka/tar.gz/fe27e532e296102a2afb5b27963cf034a50866f7':
     dependencies:
       '@iarna/toml': 2.2.5
       deep-equal: 2.2.3
-      otb-ttc-bundle: 1.7.6
-      semver: 7.7.3
-      uuid: 13.0.0
-      verda: 1.13.0
-      which: 6.0.0
+      otb-ttc-bundle: 1.8.1
+      semver: 7.8.5
+      verda: 1.14.0
+      which: 7.0.0
 
   '@lezer/common@1.3.0': {}
 
@@ -2161,371 +2172,371 @@ snapshots:
       - '@parcel/core'
       - napi-wasm
 
-  '@ot-builder/bin-composite-types@1.7.6':
+  '@ot-builder/bin-composite-types@1.8.1':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/prelude': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/bin-util@1.7.6':
+  '@ot-builder/bin-util@1.8.1':
     dependencies:
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/prelude': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/cli-help-shower@1.7.5':
+  '@ot-builder/cli-help-shower@1.8.1':
     dependencies:
       picocolors: 1.1.1
       tslib: 2.8.1
 
-  '@ot-builder/cli-proc@1.7.6':
+  '@ot-builder/cli-proc@1.8.1':
     dependencies:
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/io-bin-font': 1.7.6
-      '@ot-builder/ot': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/rectify': 1.7.6
-      '@ot-builder/trace': 1.7.6
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/io-bin-font': 1.8.1
+      '@ot-builder/ot': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      '@ot-builder/rectify': 1.8.1
+      '@ot-builder/trace': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/cli-shared@1.7.6':
+  '@ot-builder/cli-shared@1.8.1':
     dependencies:
-      '@ot-builder/io-bin-font': 1.7.6
-      '@ot-builder/ot': 1.7.6
+      '@ot-builder/io-bin-font': 1.8.1
+      '@ot-builder/ot': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/common-impl@1.7.5':
+  '@ot-builder/common-impl@1.8.1':
     dependencies:
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/prelude': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/errors@1.7.5':
+  '@ot-builder/errors@1.8.1':
     dependencies:
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-cff@1.7.6':
+  '@ot-builder/io-bin-cff@1.8.1':
     dependencies:
-      '@ot-builder/bin-composite-types': 1.7.6
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/stat-glyphs': 1.7.6
-      '@ot-builder/var-store': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-composite-types': 1.8.1
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      '@ot-builder/stat-glyphs': 1.8.1
+      '@ot-builder/var-store': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-encoding@1.7.6':
+  '@ot-builder/io-bin-encoding@1.8.1':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/ot-encoding': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/io-bin-sfnt': 1.8.1
+      '@ot-builder/ot-encoding': 1.8.1
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/ot-sfnt': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-ext-private@1.7.6':
+  '@ot-builder/io-bin-ext-private@1.8.1':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/ot-ext-private': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/io-bin-sfnt': 1.8.1
+      '@ot-builder/ot-ext-private': 1.8.1
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/ot-sfnt': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-font@1.7.6':
+  '@ot-builder/io-bin-font@1.8.1':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/io-bin-encoding': 1.7.6
-      '@ot-builder/io-bin-ext-private': 1.7.6
-      '@ot-builder/io-bin-glyph-store': 1.7.6
-      '@ot-builder/io-bin-layout': 1.7.6
-      '@ot-builder/io-bin-metadata': 1.7.6
-      '@ot-builder/io-bin-name': 1.7.6
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/io-bin-vtt-private': 1.7.6
-      '@ot-builder/ot': 1.7.6
-      '@ot-builder/ot-encoding': 1.7.6
-      '@ot-builder/ot-ext-private': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-layout': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-name': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/ot-vtt-private': 1.7.6
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/io-bin-encoding': 1.8.1
+      '@ot-builder/io-bin-ext-private': 1.8.1
+      '@ot-builder/io-bin-glyph-store': 1.9.1
+      '@ot-builder/io-bin-layout': 1.8.1
+      '@ot-builder/io-bin-metadata': 1.8.1
+      '@ot-builder/io-bin-name': 1.8.1
+      '@ot-builder/io-bin-sfnt': 1.8.1
+      '@ot-builder/io-bin-vtt-private': 1.8.1
+      '@ot-builder/ot': 1.8.1
+      '@ot-builder/ot-encoding': 1.8.1
+      '@ot-builder/ot-ext-private': 1.8.1
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/ot-layout': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/ot-name': 1.8.1
+      '@ot-builder/ot-sfnt': 1.8.1
+      '@ot-builder/ot-vtt-private': 1.8.1
+      '@ot-builder/prelude': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-glyph-store@1.7.6':
+  '@ot-builder/io-bin-glyph-store@1.9.1':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/io-bin-cff': 1.7.6
-      '@ot-builder/io-bin-metric': 1.7.6
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/io-bin-ttf': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/stat-glyphs': 1.7.6
-      '@ot-builder/var-store': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/io-bin-cff': 1.8.1
+      '@ot-builder/io-bin-metric': 1.8.1
+      '@ot-builder/io-bin-sfnt': 1.8.1
+      '@ot-builder/io-bin-ttf': 1.9.1
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/ot-sfnt': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      '@ot-builder/stat-glyphs': 1.8.1
+      '@ot-builder/var-store': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-layout@1.7.6':
+  '@ot-builder/io-bin-layout@1.8.1':
     dependencies:
-      '@ot-builder/bin-composite-types': 1.7.6
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-layout': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/var-store': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-composite-types': 1.8.1
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/io-bin-sfnt': 1.8.1
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/ot-layout': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/ot-sfnt': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      '@ot-builder/var-store': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-metadata@1.7.6':
+  '@ot-builder/io-bin-metadata@1.8.1':
     dependencies:
-      '@ot-builder/bin-composite-types': 1.7.6
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/var-store': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-composite-types': 1.8.1
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/io-bin-sfnt': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/ot-sfnt': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      '@ot-builder/var-store': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-metric@1.7.6':
+  '@ot-builder/io-bin-metric@1.8.1':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/var-store': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      '@ot-builder/var-store': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-name@1.7.6':
+  '@ot-builder/io-bin-name@1.8.1':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-name': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      iconv-lite: 0.6.3
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/io-bin-sfnt': 1.8.1
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/ot-name': 1.8.1
+      '@ot-builder/ot-sfnt': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      iconv-lite: 0.7.3
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-sfnt@1.7.6':
+  '@ot-builder/io-bin-sfnt@1.8.1':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/ot-sfnt': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-ttf@1.7.6':
+  '@ot-builder/io-bin-ttf@1.9.1':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/stat-glyphs': 1.7.6
-      '@ot-builder/var-store': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      '@ot-builder/stat-glyphs': 1.8.1
+      '@ot-builder/var-store': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/io-bin-vtt-private@1.7.6':
+  '@ot-builder/io-bin-vtt-private@1.8.1':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/io-bin-sfnt': 1.7.6
-      '@ot-builder/io-bin-ttf': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/ot-vtt-private': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/variance': 1.7.6
-      iconv-lite: 0.6.3
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/io-bin-sfnt': 1.8.1
+      '@ot-builder/io-bin-ttf': 1.9.1
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/ot-sfnt': 1.8.1
+      '@ot-builder/ot-vtt-private': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      '@ot-builder/variance': 1.8.1
+      iconv-lite: 0.7.3
       tslib: 2.8.1
 
-  '@ot-builder/ot-encoding@1.7.6':
+  '@ot-builder/ot-encoding@1.8.1':
     dependencies:
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/prelude': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/ot-ext-private@1.7.6':
+  '@ot-builder/ot-ext-private@1.8.1':
     dependencies:
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/prelude': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/ot-glyphs@1.7.6':
+  '@ot-builder/ot-glyphs@1.8.1':
     dependencies:
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/ot-layout@1.7.6':
+  '@ot-builder/ot-layout@1.8.1':
     dependencies:
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/ot-metadata@1.7.6':
+  '@ot-builder/ot-metadata@1.8.1':
     dependencies:
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/ot-name@1.7.6':
+  '@ot-builder/ot-name@1.8.1':
     dependencies:
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/ot-sfnt@1.7.6':
+  '@ot-builder/ot-sfnt@1.8.1':
     dependencies:
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/ot-standard-glyph-namer@1.7.6':
+  '@ot-builder/ot-standard-glyph-namer@1.8.1':
     dependencies:
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/prelude': 1.8.1
       aglfn: 1.0.2
       tslib: 2.8.1
 
-  '@ot-builder/ot-vtt-private@1.7.6':
+  '@ot-builder/ot-vtt-private@1.8.1':
     dependencies:
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/ot@1.7.6':
+  '@ot-builder/ot@1.8.1':
     dependencies:
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/ot-encoding': 1.7.6
-      '@ot-builder/ot-ext-private': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-layout': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/ot-name': 1.7.6
-      '@ot-builder/ot-sfnt': 1.7.6
-      '@ot-builder/ot-standard-glyph-namer': 1.7.6
-      '@ot-builder/ot-vtt-private': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/ot-encoding': 1.8.1
+      '@ot-builder/ot-ext-private': 1.8.1
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/ot-layout': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/ot-name': 1.8.1
+      '@ot-builder/ot-sfnt': 1.8.1
+      '@ot-builder/ot-standard-glyph-namer': 1.8.1
+      '@ot-builder/ot-vtt-private': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/prelude@1.7.5':
+  '@ot-builder/prelude@1.8.1':
     dependencies:
       tslib: 2.8.1
 
-  '@ot-builder/primitive@1.7.6':
+  '@ot-builder/primitive@1.8.1':
     dependencies:
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/prelude': 1.7.5
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/prelude': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/rectify@1.7.6':
+  '@ot-builder/rectify@1.8.1':
     dependencies:
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/ot': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/ot': 1.8.1
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/stat-glyphs@1.7.6':
+  '@ot-builder/stat-glyphs@1.8.1':
     dependencies:
-      '@ot-builder/bin-composite-types': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-composite-types': 1.8.1
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/trace@1.7.6':
+  '@ot-builder/trace@1.8.1':
     dependencies:
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/ot': 1.7.6
-      '@ot-builder/ot-glyphs': 1.7.6
-      '@ot-builder/ot-metadata': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/ot': 1.8.1
+      '@ot-builder/ot-glyphs': 1.8.1
+      '@ot-builder/ot-metadata': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/var-store@1.7.6':
+  '@ot-builder/var-store@1.8.1':
     dependencies:
-      '@ot-builder/bin-composite-types': 1.7.6
-      '@ot-builder/bin-util': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/errors': 1.7.5
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/variance': 1.7.6
+      '@ot-builder/bin-composite-types': 1.8.1
+      '@ot-builder/bin-util': 1.8.1
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/errors': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      '@ot-builder/variance': 1.8.1
       tslib: 2.8.1
 
-  '@ot-builder/variance@1.7.6':
+  '@ot-builder/variance@1.8.1':
     dependencies:
-      '@ot-builder/bin-composite-types': 1.7.6
-      '@ot-builder/common-impl': 1.7.5
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
+      '@ot-builder/bin-composite-types': 1.8.1
+      '@ot-builder/common-impl': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
       tslib: 2.8.1
 
   '@parcel/cache@2.16.1(@parcel/core@2.16.1)':
@@ -2844,15 +2855,15 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 20.19.25
+      '@types/node': 22.20.2
 
-  '@types/node@20.19.25':
+  '@types/node@22.20.2':
     dependencies:
       undici-types: 6.21.0
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 20.19.25
+      '@types/node': 22.20.2
 
   abbrev@1.1.1:
     optional: true
@@ -3438,7 +3449,7 @@ snapshots:
       - supports-color
     optional: true
 
-  iconv-lite@0.6.3:
+  iconv-lite@0.7.3:
     dependencies:
       safer-buffer: 2.1.2
 
@@ -3573,6 +3584,8 @@ snapshots:
   isarray@2.0.5: {}
 
   isexe@3.1.1: {}
+
+  isexe@4.0.0: {}
 
   js-yaml@3.14.2:
     dependencies:
@@ -3825,22 +3838,22 @@ snapshots:
       os-homedir: 1.0.2
       os-tmpdir: 1.0.2
 
-  ot-builder@1.7.6:
+  ot-builder@1.8.1:
     dependencies:
-      '@ot-builder/cli-proc': 1.7.6
-      '@ot-builder/io-bin-font': 1.7.6
-      '@ot-builder/ot': 1.7.6
-      '@ot-builder/prelude': 1.7.5
-      '@ot-builder/primitive': 1.7.6
-      '@ot-builder/rectify': 1.7.6
-      '@ot-builder/trace': 1.7.6
+      '@ot-builder/cli-proc': 1.8.1
+      '@ot-builder/io-bin-font': 1.8.1
+      '@ot-builder/ot': 1.8.1
+      '@ot-builder/prelude': 1.8.1
+      '@ot-builder/primitive': 1.8.1
+      '@ot-builder/rectify': 1.8.1
+      '@ot-builder/trace': 1.8.1
       tslib: 2.8.1
 
-  otb-ttc-bundle@1.7.6:
+  otb-ttc-bundle@1.8.1:
     dependencies:
-      '@ot-builder/cli-help-shower': 1.7.5
-      '@ot-builder/cli-shared': 1.7.6
-      ot-builder: 1.7.6
+      '@ot-builder/cli-help-shower': 1.8.1
+      '@ot-builder/cli-shared': 1.8.1
+      ot-builder: 1.8.1
       tslib: 2.8.1
 
   package-json@2.4.0:
@@ -4038,6 +4051,8 @@ snapshots:
     optional: true
 
   semver@7.7.3: {}
+
+  semver@7.8.5: {}
 
   set-blocking@2.0.0:
     optional: true
@@ -4283,8 +4298,6 @@ snapshots:
 
   utility-types@3.11.0: {}
 
-  uuid@13.0.0: {}
-
   uuid@2.0.3: {}
 
   validate-npm-package-license@3.0.4:
@@ -4292,7 +4305,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  verda@1.13.0:
+  verda@1.14.0:
     dependencies:
       chalk: 5.6.2
       cli-cursor: 5.0.0
@@ -4343,6 +4356,10 @@ snapshots:
   which@6.0.0:
     dependencies:
       isexe: 3.1.1
+
+  which@7.0.0:
+    dependencies:
+      isexe: 4.0.0
 
   wide-align@1.1.5:
     dependencies:
